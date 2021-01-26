@@ -1,6 +1,0 @@
-protocol aProtocol {
-    var aInstanceVariable: String { get }
-    static var aStaticVariable: String {get set}
-    func aInstanceFunction(firstName: String, lastName: String)
-    static func aStaticFunction(firstName: String, lastName: String)
-}
