@@ -1,0 +1,63 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+
+
+class "aProtocol" as aProtocol << (P,GoldenRod) protocol >> {
+  ~aProtocolInstanceVar : String
+  ~aProtocolInstanceMethod(param1:param2:)
+}
+class "aClass" as aClass {
+  +init()
+  +aPublicInstanceVar : String
+  +{static} aStaticPublicInstanceVar : String
+  ~anInternalInstanceVar : Double
+  -aPrivateInstanceVar : Int
+  -aPublicInstanceVarTypeInference
+  +aPublicInstanceMethod(param1:param2:)
+  +{static} aStaticPublicInstanceMethod(param1:param2:)
+}
+class "anInternalSubClass" as anInternalSubClass {
+  +init()
+  +aSubInstanceVar : String
+  +aSubInstanceMethod(param1:param2:)
+  +linkToStruct : aPublicStruct?
+}
+class "anInternalClass" as anInternalClass {
+  ~anInternalInstanceVar : Double
+}
+class "aPrivateClass" as aPrivateClass {
+  ~anInternalInstanceVar : Double
+}
+class "aPublicStruct" as aPublicStruct << (S, SkyBlue) struct >> {
+  +aPublicInstanceVar : String
+  ~anInternalInstanceVar : Double
+  -aPrivateInstanceVar : Int
+  -aPublicInstanceVarTypeInference
+  +aPublicInstanceMethod(param1:param2:)
+  +{static} aStaticPublicInstanceMethod(param1:param2:)
+}
+class "aPublicStruct" as aPublicStruct0 << (E,orchid) extension >> {
+  +anExtensionComputedInstanceVar : String
+  +anExtensionInstanceMethod(param1:param2:)
+}
+class "aPublicStruct" as aPublicStruct1 << (E,orchid) extension >> {
+  aProtocolInstanceVar : String
+  aProtocolInstanceMethod(param1:param2:)
+}
+class "anInternalStruct" as anInternalStruct << (S, SkyBlue) struct >> {
+  ~anInternalInstanceVar : Double
+  -aPrivateInstanceVar : Int
+  -aPublicInstanceVarTypeInference
+}
+class "anInternalStruct" as anInternalStruct2 << (E,orchid) extension >> {
+  anExtensionComputedInstanceVar : String
+}
+anInternalSubClass --|> aClass : inherits
+aPublicStruct ..|> aProtocol : confirms to
+aPublicStruct <.. aPublicStruct0 : ext
+aPublicStruct <.. aPublicStruct1 : ext
+anInternalStruct <.. anInternalStruct2 : ext
+@enduml

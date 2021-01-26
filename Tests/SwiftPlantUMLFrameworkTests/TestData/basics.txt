@@ -1,0 +1,86 @@
+protocol aProtocol {
+    var aProtocolInstanceVar: String { get }
+    func aProtocolInstanceMethod(param1: String, param2: Double) -> Bool
+}
+
+public class aClass {
+    public init() {
+        aPublicInstanceVar = ""
+        anInternalInstanceVar = 1.0
+        aPrivateInstanceVar = 1
+    }
+    public var aPublicInstanceVar: String
+    static public var aStaticPublicInstanceVar: String = "String"
+    internal var anInternalInstanceVar: Double
+    private var aPrivateInstanceVar: Int
+    private var aPublicInstanceVarTypeInference = "aString"
+    public func aPublicInstanceMethod(param1: String, param2: Double) -> Bool {
+        return true
+    }
+    static public func aStaticPublicInstanceMethod (param1: String, param2: Double) -> Bool {
+        return true
+    }
+}
+
+class anInternalSubClass: aClass {
+    public override init() {
+        aSubInstanceVar = ""
+        super.init()
+    }
+    public var aSubInstanceVar: String
+    public func aSubInstanceMethod(param1: String, param2: Double) -> Bool {
+        return true
+    }
+    public var linkToStruct: aPublicStruct? = nil
+}
+
+class anInternalClass {
+    internal var anInternalInstanceVar: Double = 1.0
+}
+
+private class aPrivateClass {
+    internal var anInternalInstanceVar: Double = 1.0
+}
+
+public struct aPublicStruct {
+    public var aPublicInstanceVar: String
+    internal var anInternalInstanceVar: Double
+    private var aPrivateInstanceVar: Int
+    private var aPublicInstanceVarTypeInference = "aString"
+    public func aPublicInstanceMethod(param1: String, param2: Double) -> Bool {
+        return true
+    }
+    static public func aStaticPublicInstanceMethod (param1: String, param2: Double) -> Bool {
+        return true
+    }
+}
+
+extension aPublicStruct {
+    public var anExtensionComputedInstanceVar: String {
+        "aString"
+    }
+    public func anExtensionInstanceMethod(param1: String, param2: Double) -> Bool {
+        return true
+    }
+}
+
+extension aPublicStruct: aProtocol {
+    var aProtocolInstanceVar: String {
+        "aString"
+    }
+    func aProtocolInstanceMethod(param1: String, param2: Double) -> Bool {
+        return true
+    }
+}
+
+struct anInternalStruct {
+    var anInternalInstanceVar: Double
+    private var aPrivateInstanceVar: Int
+    private var aPublicInstanceVarTypeInference = "aString"
+}
+
+extension anInternalStruct {
+    var anExtensionComputedInstanceVar: String {
+        "aString"
+    }
+}

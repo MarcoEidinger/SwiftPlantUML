@@ -1,0 +1,5 @@
+module: SwiftPlantUML
+author: Marco Eidinger
+author_url: https://www.eidinger.us
+theme: jony
+copyright: '© 2021 [https://github.com/MarcoEidinger/SwiftPlantUML](https://github.com/MarcoEidinger/SwiftPlantUML) under MIT'
