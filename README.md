@@ -43,9 +43,11 @@ As `classdiagram` is the default subcommand you can omit it.
 
 ## Installation
 
-### Homebrew
+### Using [Homebrew](https://brew.sh/)
 
-Coming soon
+```
+brew install https://raw.githubusercontent.com/MarcoEidinger/SwiftPlantUML/main/swiftplantuml.rb
+```
 
 ### Using [Mint](https://github.com/yonaskolb/mint):
 
