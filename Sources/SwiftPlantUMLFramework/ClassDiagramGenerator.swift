@@ -5,9 +5,20 @@ public struct ClassDiagramGenerator {
     /// default initializer
     public init() {}
 
-    /// generate diagram
+    /// generate diagram from Swift file(s)
+    /// - Parameters:
+    ///   - paths: representing paths to Swift source code files on the file system
+    ///   - presenter: outputs the PlantUMLScript / Digram e.g. `PlantUMLBrowserPresenter` or `PlantUMLConsolePresenter`
     public func generate(for paths: [String], presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
         outputDiagram(for: generateScript(for: getFiles(for: paths)), with: presenter)
+    }
+
+    /// generate diagram from a String containing Swift code
+    /// - Parameters:
+    ///   - content: representing a string containing Swift code
+    ///   - presenter: outputs the PlantUMLScript / Digram e.g. `PlantUMLBrowserPresenter` or `PlantUMLConsolePresenter`
+    public func generate(from content: String, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
+        outputDiagram(for: generateScript(for: content), with: presenter)
     }
 
     func getFiles(for paths: [String]) -> [URL] {
@@ -39,6 +50,15 @@ public struct ClassDiagramGenerator {
         } else {
             return [url]
         }
+    }
+
+    func generateScript(for content: String) -> PlantUMLScript {
+        var allValidItems: [SyntaxStructure] = []
+
+        if let validItems = SyntaxStructure.create(from: content)?.substructure {
+            allValidItems.append(contentsOf: validItems)
+        }
+        return PlantUMLScript(items: allValidItems)
     }
 
     func generateScript(for files: [URL]) -> PlantUMLScript {
