@@ -1,3 +1,8 @@
+## [0.1.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.1.0...0.1.1) (2021-01-28)
+### Features
+
+* 🎸 generate diagram from a string containing Swift code ([ebdeb59](https://github.com/MarcoEidinger/SwiftPlantUML/commit/ebdeb59c2b788ec75c40e9786fad103416bce6f6))
+
 ## 0.1.0 (2020-01-25)
 
 - First public release! 🎉
