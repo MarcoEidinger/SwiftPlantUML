@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PlantUMLPresenting Protocol Reference</title>
+    <title>BrowserPresentationFormat Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/PlantUMLPresenting" class="dashAnchor"></a>
-    <a title="PlantUMLPresenting Protocol Reference"></a>
+    <a name="//apple_ref/swift/Enum/BrowserPresentationFormat" class="dashAnchor"></a>
+    <a title="BrowserPresentationFormat Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (96% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        PlantUMLPresenting Protocol Reference
+        BrowserPresentationFormat Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -76,15 +76,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>PlantUMLPresenting</h1>
+            <h1>BrowserPresentationFormat</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">PlantUMLPresenting</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">BrowserPresentationFormat</span></code></pre>
 
                 </div>
               </div>
-            <p>defines a unified interface for presenting a PlantUML script / diagram</p>
+            <p>presentation formats supported to render PlantUML scripts in browser</p>
 
           </section>
           <section class="section task-group-section">
@@ -93,9 +93,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22SwiftPlantUMLFramework0B13UMLPresentingP7present6script17completionHandleryAA0B9UMLScriptV_yyctF"></a>
-                    <a name="//apple_ref/swift/Method/present(script:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22SwiftPlantUMLFramework0B13UMLPresentingP7present6script17completionHandleryAA0B9UMLScriptV_yyctF">present(script:<wbr>completionHandler:<wbr>)</a>
+                    <a name="/s:22SwiftPlantUMLFramework25BrowserPresentationFormatO8imagePngyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/imagePng" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework25BrowserPresentationFormatO8imagePngyA2CmF">imagePng</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -103,14 +103,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>present script / diagram to user</p>
+                        <p>image only (as .png)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">present</span><span class="p">(</span><span class="nv">script</span><span class="p">:</span> <span class="kt"><a href="../Structs/PlantUMLScript.html">PlantUMLScript</a></span><span class="p">,</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">imagePng</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework25BrowserPresentationFormatO7defaultyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/default" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework25BrowserPresentationFormatO7defaultyA2CmF">default</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>editable script and corresponding diagram</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span></code></pre>
 
                         </div>
                       </div>
