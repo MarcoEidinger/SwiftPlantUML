@@ -46,7 +46,7 @@ public struct PlantUMLScript {
         text = plantumlTemplate.replacingOccurrences(of: STR2REPLACE, with: neep)
     }
 
-    func asURL(completionHandler: @escaping (Result<String, NetworkError>) -> Void) {
+    func encodedText(completionHandler: @escaping (Result<String, NetworkError>) -> Void) {
         let escapedScript = text.stringByAddingPercentEncodingForFormData(plusForSpace: true) ?? ""
         let parameters = "type=png&plantuml=\(escapedScript)"
         let postData = parameters.data(using: .utf8)
@@ -74,8 +74,8 @@ public struct PlantUMLScript {
                 completionHandler(.failure(.badURL))
                 return
             }
-            let result = String(data: data, encoding: .utf8)!
-            completionHandler(.success("https://www.planttext.com/api/plantuml/png/\(result)"))
+            let encodedText = String(data: data, encoding: .utf8)!
+            completionHandler(.success(encodedText))
         }
         task.resume()
     }

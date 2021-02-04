@@ -27,15 +27,17 @@ will be searched recursively.
 
 ```
 $ swiftplantuml classdiagram --help
-OVERVIEW: Generate PlantUML script and view diagram in browser
+OVERVIEW: Generate PlantUML script and view it and diagram in browser
 
-USAGE: swift-plant-uml classdiagram [<paths> ...] [--textonly]
+USAGE: swift-plant-uml classdiagram [<paths> ...] [--output <format>]
 
 ARGUMENTS:
-  <paths>                 List of paths to the files or directories containing swift sources 
+  <paths>                 List of paths to the files or directories containing
+                          swift sources
 
 OPTIONS:
-  --textonly              Print PlantUML script (without launching the browser) 
+  --output <format>       Defines output format. Options: browser,
+                          browserImageOnly, consoleOnly (default: browser)
   --version               Show the version.
   -h, --help              Show help information.
 ```
