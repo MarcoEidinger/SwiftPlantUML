@@ -16,7 +16,7 @@ with their instance and static members as well as their inheritance and implemen
 
 ### Command Line
 
-Example to generate and a diagram, based on a single Swift file, in your browser:
+Example to generate and render diagram, based on a single Swift file, in your browser:
 
 ```
 swiftplantuml ./Tests/SwiftPlantUMLFrameworkTests/TestData/basics.txt
