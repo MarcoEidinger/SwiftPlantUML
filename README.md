@@ -5,6 +5,7 @@ Generate UML class diagrams from swift code with this Command Line Interface (CL
 [![Build Status](https://github.com/MarcoEidinger/SwiftPlantUML/workflows/Swift/badge.svg)](https://github.com/MarcoEidinger/SwiftPlantUML/workflows/Swift)
 [![codecov](https://codecov.io/gh/MarcoEidinger/SwiftPlantUML/branch/main/graph/badge.svg?token=JOE7UL41JA)](https://codecov.io/gh/MarcoEidinger/SwiftPlantUML)
 [![docs](https://marcoeidinger.github.io/SwiftPlantUML/badge.svg)](https://marcoeidinger.github.io/SwiftPlantUML/)
+[![Xcode Extension](https://img.shields.io/badge/Xcode%20extension-available-brightgreen)](https://github.com/MarcoEidinger/SwiftPlantUML-Xcode-Extension)
 [![Twitter](https://img.shields.io/badge/twitter-@MarcoEidinger-blue.svg)](http://twitter.com/MarcoEidinger)
 
 Use one or more Swift files as input for a diagram to visualize `class`, `struct`, `protocol`, `enum` and `extension` types
@@ -43,6 +44,20 @@ OPTIONS:
 ```
 
 As `classdiagram` is the default subcommand you can omit it.
+
+### Swift package
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/MarcoEidinger/SwiftPlantUML.git", .upToNextMajor(from: "0.2.0"))
+]
+```
+
+[API documentation](https://marcoeidinger.github.io/SwiftPlantUML/)
+
+### Xcode source editor extension
+
+See [MarcoEidinger/SwiftPlantUML-Xcode-Extension](https://github.com/MarcoEidinger/SwiftPlantUML-Xcode-Extension) for more details
 
 ## Installation
 
