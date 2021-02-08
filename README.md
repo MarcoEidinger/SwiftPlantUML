@@ -72,7 +72,7 @@ In case this was not successfull (`Non-checksummed download of swiftplantuml for
 ```
 git clone https://github.com/MarcoEidinger/SwiftPlantUML.git
 cd SwiftPlantUML
-$ brew install --build-from-source swiftplantuml.rb
+brew install --build-from-source swiftplantuml.rb
 ```
 
 ### Using [Mint](https://github.com/yonaskolb/mint):
