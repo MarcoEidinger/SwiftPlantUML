@@ -64,17 +64,8 @@ See [MarcoEidinger/SwiftPlantUML-Xcode-Extension](https://github.com/MarcoEiding
 ### Using [Homebrew](https://brew.sh/)
 
 ```
-brew install https://raw.githubusercontent.com/MarcoEidinger/SwiftPlantUML/main/swiftplantuml.rb
+brew install MarcoEidinger/formulae/swiftplantuml
 ```
-
-In case this was not successfull (`Non-checksummed download of swiftplantuml formula file from an arbitrary URL is unsupported! (UsageError)`) please try the following workaround:
-
-```
-git clone https://github.com/MarcoEidinger/SwiftPlantUML.git
-cd SwiftPlantUML
-brew install --build-from-source swiftplantuml.rb
-```
-
 ### Using [Mint](https://github.com/yonaskolb/mint):
 
 ```
