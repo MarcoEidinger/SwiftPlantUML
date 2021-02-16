@@ -24,3 +24,9 @@ internal extension String {
         return encoded
     }
 }
+
+internal extension String {
+    func removeSquareBracketsWithContent() -> String {
+        replacingOccurrences(of: "\\<[^\\]]+\\>", with: "", options: .regularExpression)
+    }
+}

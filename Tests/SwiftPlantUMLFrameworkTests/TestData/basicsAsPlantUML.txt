@@ -31,6 +31,12 @@ class "anInternalClass" as anInternalClass {
 class "aPrivateClass" as aPrivateClass {
   ~anInternalInstanceVar : Double
 }
+class "aPrivateGenericClass" as aPrivateGenericClass {
+  ~elements : [Element]
+}
+class "aPrivateGenericSubClass" as aPrivateGenericSubClass {
+  -otherProp : String
+}
 class "aPublicStruct" as aPublicStruct << (S, SkyBlue) struct >> {
   +aPublicInstanceVar : String
   ~anInternalInstanceVar : Double
@@ -56,6 +62,7 @@ class "anInternalStruct" as anInternalStruct2 << (E,orchid) extension >> {
   anExtensionComputedInstanceVar : String
 }
 anInternalSubClass --|> aClass : inherits
+aPrivateGenericSubClass --|> aPrivateGenericClass : inherits
 aPublicStruct ..|> aProtocol : confirms to
 aPublicStruct <.. aPublicStruct0 : ext
 aPublicStruct <.. aPublicStruct1 : ext

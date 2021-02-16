@@ -28,7 +28,7 @@ class PlantUMLContext {
     var index = 0
 
     func addLinking(item: SyntaxStructure, parent: SyntaxStructure) {
-        let linkTo = parent.name ?? "___"
+        let linkTo = parent.name?.removeSquareBracketsWithContent() ?? "___"
         let namedConnection = (uniqElementAndTypes[linkTo] != nil) ? ": \(uniqElementAndTypes[linkTo] ?? "--ERROR--")" : ""
         var linkTypeKey = item.name! + "LinkType"
 
