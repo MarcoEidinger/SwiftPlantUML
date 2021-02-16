@@ -42,6 +42,14 @@ private class aPrivateClass {
     internal var anInternalInstanceVar: Double = 1.0
 }
 
+private class aPrivateGenericClass<Element> {
+    internal var elements: [Element] = []
+}
+
+private class aPrivateGenericSubClass<Element>: aPrivateGenericClass<Element> {
+    private var otherProp: String = "Hello"
+}
+
 public struct aPublicStruct {
     public var aPublicInstanceVar: String
     internal var anInternalInstanceVar: Double
