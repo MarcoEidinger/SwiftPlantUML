@@ -1,3 +1,8 @@
+## [0.2.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.2.0...0.2.1) (2021-02-18)
+### Bug Fixes
+
+* 🐛 script error for generic class inheritance ([047d62a](https://github.com/MarcoEidinger/SwiftPlantUML/commit/047d62a21e6641653efaac57d92e55c3992662c5)), closes [#8](https://github.com/MarcoEidinger/SwiftPlantUML/issues/8)
+
 ## [0.2.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.1.1...0.2.0) (2021-02-04)
 
 ### ⚠ BREAKING CHANGES
