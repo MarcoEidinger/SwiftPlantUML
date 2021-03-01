@@ -1,0 +1,999 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "https://github.com/MarcoEidinger/SwiftPlantUML/Configuration/Schema/json-schema-swiftplantuml.json",
+	"type": "object",
+	"title": "SwiftPlantUML configuration",
+	"description": "The JSON schema for SwiftPlantUML configuration",
+	"default": {},
+	"examples": [{
+		"files": {
+			"include": [
+				"Sources/SwiftPlantUMLFramework/**/*.swift"
+			],
+			"exclude": [
+				"Tests/**/*.swift"
+			]
+		},
+		"elements": {
+			"havingAccessLevel": [
+				"public",
+				"internal",
+				"private"
+			],
+			"showMembersWithAccessLevel": [
+				"public",
+				"internal",
+				"private"
+			],
+			"showGenerics": true,
+			"showExtensions": false,
+			"showMemberAccessLevelAttribute": true,
+			"exclude": [
+				"Logger",
+				"LogLevel"
+			]
+		},
+		"hideShowCommands": [
+			"hide empty members"
+		],
+		"skinparamCommands": [
+			"skinparam sequenceMessageAlign center"
+		],
+		"includeRemoteURL": "https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml",
+		"relationships": {
+			"inheritance": {
+				"label": "inherits from",
+				"style": {
+					"lineStyle": "dotted",
+					"lineColor": "DarkViolet",
+					"textColor": "DarkViolet"
+				},
+				"exclude": [
+					"Codable"
+				]
+			},
+			"realize": {
+				"label": "confirms to",
+				"style": {
+					"lineStyle": "dashed",
+					"lineColor": "Blue",
+					"textColor": "Blue"
+				}
+			},
+			"dependency": {
+				"label": "extends",
+				"style": {
+					"lineStyle": "bold",
+					"lineColor": "DarkGreen",
+					"textColor": "DarkViolet"
+				}
+			}
+		},
+		"stereotypes": {
+			"class": {
+				"name": "class",
+				"spot": {
+					"character": "C",
+					"color": "AliceBlue"
+				}
+			},
+			"struct": {
+				"spot": {
+					"character": "S",
+					"color": "AntiqueWhite"
+				}
+			},
+			"extension": {
+				"spot": {
+					"character": "X",
+					"color": "AntiqueWhite"
+				}
+			},
+			"enum": {
+				"spot": {
+					"character": "E",
+					"color": "AntiqueWhite"
+				}
+			},
+			"protocol": {
+				"spot": {
+					"character": "P",
+					"color": "AntiqueWhite"
+				}
+			}
+		}
+	}],
+	"definitions": {
+		"AccessLevel": {
+			"oneOf": [{
+					"enum": ["public", "internal", "private"]
+				},
+				{
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/definitions/AccessLevel"
+					}
+				}
+			]
+		},
+		"LineStyle": {
+			"oneOf": [{
+					"enum": ["bold", "dashed", "dotted", "hidden", "plain"]
+				},
+				{
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/definitions/LineStyle"
+					}
+				}
+			]
+		},
+		"Color": {
+			"oneOf": [{
+					"enum": ["AliceBlue", "AntiqueWhite", "Aqua", "Aquamarine", "Azure", "Beige", "Bisque", "Black", "BlanchedAlmond", "Blue", "BlueViolet", "Brown", "BurlyWood", "CadetBlue", "Chartreuse", "Chocolate", "Coral", "CornflowerBlue", "Cornsilk", "Crimson", "Cyan", "DarkBlue", "DarkCyan", "DarkGoldenRod", "DarkGray", "DarkGreen", "DarkGrey", "DarkKhaki", "DarkMagenta", "DarkOliveGreen", "DarkOrchid", "DarkRed", "DarkSalmon", "DarkSeaGreen", "DarkSlateBlue", "DarkSlateGray", "DarkSlateGrey", "DarkTurquoise", "DarkViolet", "Darkorange", "DeepPink", "DeepSkyBlue", "DimGray", "DimGrey", "DodgerBlue", "FireBrick", "FloralWhite", "ForestGreen", "Fuchsia", "Gainsboro", "GhostWhite", "Gold", "GoldenRod", "Gray", "Green", "GreenYellow", "Grey", "HoneyDew", "HotPink", "IndianRed", "Indigo", "Ivory", "Khaki", "Lavender", "LavenderBlush", "LawnGreen", "LemonChiffon", "LightBlue", "LightCoral", "LightCyan", "LightGoldenRodYellow", "LightGray", "LightGreen", "LightGrey", "LightPink", "LightSalmon", "LightSeaGreen", "LightSkyBlue", "LightSlateGray", "LightSlateGrey", "LightSteelBlue", "LightYellow", "Lime", "LimeGreen", "Linen", "Magenta", "Maroon", "MediumAquaMarine", "MediumBlue", "MediumOrchid", "MediumPurple", "MediumSeaGreen", "MediumSlateBlue", "MediumSpringGreen", "MediumTurquoise", "MediumVioletRed", "MidnightBlue", "MintCream", "MistyRose", "Moccasin", "NavajoWhite", "Navy", "OldLace", "Olive", "OliveDrab", "Orange", "OrangeRed", "Orchid", "PaleGoldenRod", "PaleGreen", "PaleTurquoise", "PaleVioletRed", "PapayaWhip", "PeachPuff", "Peru", "Pink", "Plum", "PowderBlue", "Purple", "Red", "RosyBrown", "RoyalBlue", "SaddleBrown", "Salmon", "SandyBrown", "SeaGreen", "SeaShell", "Sienna", "Silver", "SkyBlue", "SlateBlue", "SlateGray", "SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet", "Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen"]
+				},
+				{
+					"type": "object",
+					"additionalProperties": {
+						"$ref": "#/definitions/Color"
+					}
+				}
+			]
+		}
+	},
+	"required": [],
+	"properties": {
+		"files": {
+			"$id": "#/properties/files",
+			"type": "object",
+			"title": "The files schema",
+			"description": "Otions which files shall be considered for class diagram generation",
+			"default": {},
+			"examples": [{
+				"include": [
+					"Sources/SwiftPlantUMLFramework/**/*.swift"
+				],
+				"exclude": [
+					"Tests/**/*.swift"
+				]
+			}],
+			"required": [
+				"include",
+				"exclude"
+			],
+			"properties": {
+				"include": {
+					"$id": "#/properties/files/properties/include",
+					"type": "array",
+					"title": "The include schema",
+					"description": "Paths to source files to be included",
+					"default": [],
+					"examples": [
+						[
+							"Sources/SwiftPlantUMLFramework/**/*.swift"
+						]
+					],
+					"additionalItems": true,
+					"items": {
+						"$id": "#/properties/files/properties/include/items",
+						"anyOf": [{
+							"$id": "#/properties/files/properties/include/items/anyOf/0",
+							"type": "string",
+							"title": "The first anyOf schema",
+							"description": "An explanation about the purpose of this instance.",
+							"default": "",
+							"examples": [
+								"Sources/SwiftPlantUMLFramework/**/*.swift"
+							]
+						}]
+					}
+				},
+				"exclude": {
+					"$id": "#/properties/files/properties/exclude",
+					"type": "array",
+					"title": "The exclude schema",
+					"description": "Paths to Swift source files to be excluded",
+					"default": [],
+					"examples": [
+						[
+							"Tests/**/*.swift"
+						]
+					],
+					"additionalItems": true,
+					"items": {
+						"$id": "#/properties/files/properties/exclude/items",
+						"anyOf": [{
+							"$id": "#/properties/files/properties/exclude/items/anyOf/0",
+							"type": "string",
+							"title": "The first anyOf schema",
+							"description": "An explanation about the purpose of this instance.",
+							"default": "",
+							"examples": [
+								"Tests/**/*.swift"
+							]
+						}]
+					}
+				}
+			},
+			"additionalProperties": true
+		},
+		"elements": {
+			"$id": "#/properties/elements",
+			"type": "object",
+			"title": "The elements schema",
+			"description": "Options which and how elements shall be considered for class diagram generation",
+			"default": {},
+			"examples": [{
+				"havingAccessLevel": [
+					"public",
+					"internal",
+					"private"
+				],
+				"showMembersWithAccessLevel": [
+					"public",
+					"internal",
+					"private"
+				],
+				"showGenerics": true,
+				"showExtensions": false,
+				"showMemberAccessLevelAttribute": true,
+				"exclude": [
+					"Logger",
+					"LogLevel"
+				]
+			}],
+			"required": [],
+			"properties": {
+				"havingAccessLevel": {
+					"$id": "#/properties/elements/properties/havingAccessLevel",
+					"type": "array",
+					"title": "The havingAccessLevel schema",
+					"description": "Only elements (classes, structs, ...) with the specified access level will be processed and rendered in the class diagram",
+					"default": ["public"],
+					"examples": [
+						[
+							"public",
+							"internal"
+						]
+					],
+					"additionalItems": true,
+					"items": {
+						"$id": "#/properties/elements/properties/havingAccessLevel/items",
+						"anyOf": [{
+							"$id": "#/properties/elements/properties/havingAccessLevel/items/anyOf/0",
+							"anyOf": [{
+								"$ref": "#/definitions/AccessLevel"
+							}]
+						}]
+					}
+				},
+				"showMembersWithAccessLevel": {
+					"$id": "#/properties/elements/properties/showMembersWithAccessLevel",
+					"type": "array",
+					"title": "The showMembersWithAccessLevel schema",
+					"description": "Only members (properties and functions) with the specified access level will be processed and renderd in the class diagram",
+					"default": [],
+					"examples": [
+						[
+							"public",
+							"internal"
+						]
+					],
+					"additionalItems": true,
+					"items": {
+						"$id": "#/properties/elements/properties/showMembersWithAccessLevel/items",
+						"anyOf": [{
+							"$ref": "#/definitions/AccessLevel"
+						}]
+					}
+				},
+				"showGenerics": {
+					"$id": "#/properties/elements/properties/showGenerics",
+					"type": "boolean",
+					"title": "The showGenerics schema",
+					"description": "Show generic type and type constraint information for a struct/class",
+					"default": true,
+					"examples": [
+						true
+					]
+				},
+				"showExtensions": {
+					"$id": "#/properties/elements/properties/showExtensions",
+					"type": "boolean",
+					"title": "The showExtensions schema",
+					"description": "show Swift extensions",
+					"default": true,
+					"examples": [
+						false
+					]
+				},
+				"showMemberAccessLevelAttribute": {
+					"$id": "#/properties/elements/properties/showMemberAccessLevelAttribute",
+					"type": "boolean",
+					"title": "The showMemberAccessLevelAttribute schema",
+					"description": "show [access level](https://plantuml.com/class-diagram#3644720244dd6c6a) for members",
+					"default": true,
+					"examples": [
+						true
+					]
+				},
+				"exclude": {
+					"$id": "#/properties/elements/properties/exclude",
+					"type": "array",
+					"title": "The exclude schema",
+					"description": "Exclude elements for given names (wildcard support with `*`), e.g. use `*Test*`to hide classes/structs/... who contain `Test` in their name",
+					"default": [],
+					"examples": [
+						[
+							"Logger",
+							"LogLevel"
+						]
+					],
+					"additionalItems": true,
+					"items": {
+						"$id": "#/properties/elements/properties/exclude/items",
+						"anyOf": [{
+							"$id": "#/properties/elements/properties/exclude/items/anyOf/0",
+							"type": "string",
+							"title": "The first anyOf schema",
+							"description": "An explanation about the purpose of this instance.",
+							"default": "",
+							"examples": [
+								"Logger",
+								"LogLevel"
+							]
+						}]
+					}
+				}
+			},
+			"additionalProperties": true
+		},
+		"hideShowCommands": {
+			"$id": "#/properties/hideShowCommands",
+			"type": "array",
+			"title": "The hideShowCommands schema",
+			"description": "Parameterize the display of entities using the hide/show command.https://plantuml.com/class-diagram#6a8ec84e53ede3ae",
+			"default": [],
+			"examples": [
+				[
+					"hide empty members"
+				]
+			],
+			"additionalItems": true,
+			"items": {
+				"$id": "#/properties/hideShowCommands/items",
+				"anyOf": [{
+					"$id": "#/properties/hideShowCommands/items/anyOf/0",
+					"type": "string",
+					"title": "The first anyOf schema",
+					"description": "An explanation about the purpose of this instance.",
+					"default": "",
+					"examples": [
+						"hide empty members"
+					]
+				}]
+			}
+		},
+		"skinparamCommands": {
+			"$id": "#/properties/skinparamCommands",
+			"type": "array",
+			"title": "The skinparamCommands schema",
+			"description": "Add skinparam values to change colors and font of the drawing. See https://plantuml.com/skinparam for more details",
+			"default": [],
+			"examples": [
+				[
+					"skinparam sequenceMessageAlign center"
+				]
+			],
+			"additionalItems": true,
+			"items": {
+				"$id": "#/properties/skinparamCommands/items",
+				"anyOf": [{
+					"$id": "#/properties/skinparamCommands/items/anyOf/0",
+					"type": "string",
+					"title": "The first anyOf schema",
+					"description": "An explanation about the purpose of this instance.",
+					"default": "",
+					"examples": [
+						"skinparam sequenceMessageAlign center"
+					]
+				}]
+			}
+		},
+		"includeRemoteURL": {
+			"$id": "#/properties/includeRemoteURL",
+			"type": "string",
+			"title": "The includeRemoteURL schema",
+			"description": "Wil be added to PlantUMLScript as `!include` directive to include a file (from Internet/Intranet) in your diagram",
+			"default": "",
+			"examples": [
+				"https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml"
+			]
+		},
+		"relationships": {
+			"$id": "#/properties/relationships",
+			"type": "object",
+			"title": "The relationships schema",
+			"description": "Options which relationships to show and how to style them",
+			"default": {},
+			"examples": [{
+				"inheritance": {
+					"label": "inherits from",
+					"style": {
+						"lineStyle": "dotted",
+						"lineColor": "DarkViolet",
+						"textColor": "DarkViolet"
+					},
+					"exclude": [
+						"Codable"
+					]
+				},
+				"realize": {
+					"label": "confirms to",
+					"style": {
+						"lineStyle": "dashed",
+						"lineColor": "Blue",
+						"textColor": "Blue"
+					}
+				},
+				"dependency": {
+					"label": "extends",
+					"style": {
+						"lineStyle": "bold",
+						"lineColor": "DarkGreen",
+						"textColor": "DarkViolet"
+					}
+				}
+			}],
+			"required": [],
+			"properties": {
+				"inheritance": {
+					"$id": "#/properties/relationships/properties/inheritance",
+					"type": "object",
+					"title": "The inheritance schema",
+					"description": "Struct/Class inherits from another struct/class",
+					"default": {},
+					"examples": [{
+						"label": "inherits from",
+						"style": {
+							"lineStyle": "dotted",
+							"lineColor": "DarkViolet",
+							"textColor": "DarkViolet"
+						},
+						"exclude": [
+							"Codable"
+						]
+					}],
+					"required": [],
+					"properties": {
+						"label": {
+							"$id": "#/properties/relationships/properties/inheritance/properties/label",
+							"type": "string",
+							"title": "The label schema",
+							"description": "Label shown next to relationship arrow",
+							"default": "inherits",
+							"examples": [
+								"inherits from"
+							]
+						},
+						"style": {
+							"$id": "#/properties/relationships/properties/inheritance/properties/style",
+							"type": "object",
+							"title": "The style schema",
+							"description": "Style information for relation (linking or arrow) and its label",
+							"default": {},
+							"examples": [{
+								"lineStyle": "dotted",
+								"lineColor": "DarkViolet",
+								"textColor": "DarkViolet"
+							}],
+							"required": [
+								"lineStyle",
+								"lineColor",
+								"textColor"
+							],
+							"properties": {
+								"lineStyle": {
+									"$id": "#/properties/relationships/properties/class/properties/lineStyle",
+									"anyOf": [{
+										"$ref": "#/definitions/LineStyle"
+									}]
+								},
+								"lineColor": {
+									"$id": "#/properties/relationships/properties/class/properties/lineColor",
+									"type": "string",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								},
+								"textColor": {
+									"$id": "#/properties/relationships/properties/class/properties/textColor",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						},
+						"exclude": {
+							"$id": "#/properties/relationships/properties/inheritance/properties/exclude",
+							"type": "array",
+							"title": "The exclude schema",
+							"description": "Exclude inheritance relationships in which the parent has one of these names (wildcard support with `*`)",
+							"default": [],
+							"examples": [
+								[
+									"Codable"
+								]
+							],
+							"additionalItems": true,
+							"items": {
+								"$id": "#/properties/relationships/properties/inheritance/properties/exclude/items",
+								"anyOf": [{
+									"$id": "#/properties/relationships/properties/inheritance/properties/exclude/items/anyOf/0",
+									"type": "string",
+									"title": "The first anyOf schema",
+									"description": "An explanation about the purpose of this instance.",
+									"default": "",
+									"examples": [
+										"Codable"
+									]
+								}]
+							}
+						}
+					},
+					"additionalProperties": true
+				},
+				"realize": {
+					"$id": "#/properties/relationships/properties/realize",
+					"type": "object",
+					"title": "The realize schema",
+					"description": "Struct/Class realizes protocol",
+					"default": {},
+					"examples": [{
+						"label": "confirms to",
+						"style": {
+							"lineStyle": "dashed",
+							"lineColor": "Blue",
+							"textColor": "Blue"
+						}
+					}],
+					"required": [],
+					"properties": {
+						"label": {
+							"$id": "#/properties/relationships/properties/realize/properties/label",
+							"type": "string",
+							"title": "The label schema",
+							"description": "Label shown next to relationship arrow",
+							"default": "confirms to",
+							"examples": [
+								"confirms to"
+							]
+						},
+						"style": {
+							"$id": "#/properties/relationships/properties/realize/properties/style",
+							"type": "object",
+							"title": "The style schema",
+							"description": "Style information for relation (linking or arrow) and its label",
+							"default": {},
+							"examples": [{
+								"lineStyle": "dashed",
+								"lineColor": "Blue",
+								"textColor": "Blue"
+							}],
+							"required": [],
+							"properties": {
+								"lineStyle": {
+									"$id": "#/properties/relationships/properties/class/properties/lineStyle",
+									"anyOf": [{
+										"$ref": "#/definitions/LineStyle"
+									}]
+								},
+								"lineColor": {
+									"$id": "#/properties/relationships/properties/class/properties/lineColor",
+									"type": "string",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								},
+								"textColor": {
+									"$id": "#/properties/relationships/properties/class/properties/textColor",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						}
+					},
+					"additionalProperties": true
+				},
+				"dependency": {
+					"$id": "#/properties/relationships/properties/dependency",
+					"type": "object",
+					"title": "The dependency schema",
+					"description": "Struct/Class has exension",
+					"default": {},
+					"examples": [{
+						"label": "extends",
+						"style": {
+							"lineStyle": "bold",
+							"lineColor": "DarkGreen",
+							"textColor": "DarkViolet"
+						}
+					}],
+					"required": [],
+					"properties": {
+						"label": {
+							"$id": "#/properties/relationships/properties/dependency/properties/label",
+							"type": "string",
+							"title": "The label schema",
+							"description": "Label shown next to relationship arrow",
+							"default": "ext",
+							"examples": [
+								"extends"
+							]
+						},
+						"style": {
+							"$id": "#/properties/relationships/properties/dependency/properties/style",
+							"type": "object",
+							"title": "The style schema",
+							"description": "Style information for relation (linking or arrow) and its label",
+							"default": {},
+							"examples": [{
+								"lineStyle": "bold",
+								"lineColor": "DarkGreen",
+								"textColor": "DarkViolet"
+							}],
+							"required": [
+								"lineStyle",
+								"lineColor",
+								"textColor"
+							],
+							"properties": {
+								"lineStyle": {
+									"$id": "#/properties/relationships/properties/class/properties/lineStyle",
+									"anyOf": [{
+										"$ref": "#/definitions/LineStyle"
+									}]
+								},
+								"lineColor": {
+									"$id": "#/properties/relationships/properties/class/properties/lineColor",
+									"type": "string",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								},
+								"textColor": {
+									"$id": "#/properties/relationships/properties/class/properties/textColor",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						}
+					},
+					"additionalProperties": true
+				}
+			},
+			"additionalProperties": true
+		},
+		"stereotypes": {
+			"$id": "#/properties/stereotypes",
+			"type": "object",
+			"title": "The stereotypes schema",
+			"description": "Sterotypes (spotted character with background color and optional name) to be shown for an entity type",
+			"default": {},
+			"examples": [{
+				"class": {
+					"name": "class",
+					"spot": {
+						"character": "C",
+						"color": "AliceBlue"
+					}
+				},
+				"struct": {
+					"spot": {
+						"character": "S",
+						"color": "AntiqueWhite"
+					}
+				},
+				"extension": {
+					"spot": {
+						"character": "X",
+						"color": "AntiqueWhite"
+					}
+				},
+				"enum": {
+					"spot": {
+						"character": "E",
+						"color": "AntiqueWhite"
+					}
+				},
+				"protocol": {
+					"spot": {
+						"character": "P",
+						"color": "AntiqueWhite"
+					}
+				}
+			}],
+			"required": [],
+			"properties": {
+				"class": {
+					"$id": "#/properties/stereotypes/properties/class",
+					"type": "object",
+					"title": "The class schema",
+					"description": "Stereotype to be applied for all classes",
+					"default": {},
+					"examples": [{
+						"name": "class",
+						"spot": {
+							"character": "C",
+							"color": "AliceBlue"
+						}
+					}],
+					"required": [
+						"spot"
+					],
+					"properties": {
+						"name": {
+							"$id": "#/properties/stereotypes/properties/class/properties/name",
+							"type": "string",
+							"title": "The name schema",
+							"description": "Displayed as << name >> in diagram",
+							"default": "",
+							"examples": [
+								"class"
+							]
+						},
+						"spot": {
+							"$id": "#/properties/stereotypes/properties/class/properties/spot",
+							"type": "object",
+							"title": "The spot schema",
+							"description": "Spotted character with background color",
+							"default": {},
+							"examples": [{
+								"character": "C",
+								"color": "AliceBlue"
+							}],
+							"required": [
+								"character"
+							],
+							"properties": {
+								"character": {
+									"$id": "#/properties/stereotypes/properties/class/properties/spot/properties/character",
+									"type": "string",
+									"title": "The character schema",
+									"description": "Spotted character",
+									"default": "",
+									"examples": [
+										"C"
+									]
+								},
+								"color": {
+									"$id": "#/properties/stereotypes/properties/class/properties/spot/properties/color",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						}
+					},
+					"additionalProperties": true
+				},
+				"struct": {
+					"$id": "#/properties/stereotypes/properties/struct",
+					"type": "object",
+					"title": "The struct schema",
+					"description": "Stereotype to be applied for all structs",
+					"default": {},
+					"examples": [{
+						"spot": {
+							"character": "S",
+							"color": "AntiqueWhite"
+						}
+					}],
+					"required": [
+						"spot"
+					],
+					"properties": {
+						"spot": {
+							"$id": "#/properties/stereotypes/properties/struct/properties/spot",
+							"type": "object",
+							"title": "The spot schema",
+							"description": "Spotted character with background color",
+							"default": {},
+							"examples": [{
+								"character": "S",
+								"color": "AntiqueWhite"
+							}],
+							"required": [
+								"character"
+							],
+							"properties": {
+								"character": {
+									"$id": "#/properties/stereotypes/properties/struct/properties/spot/properties/character",
+									"type": "string",
+									"title": "The character schema",
+									"description": "Spotted character",
+									"default": "",
+									"examples": [
+										"S"
+									]
+								},
+								"color": {
+									"$id": "#/properties/stereotypes/properties/struct/properties/spot/properties/color",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						}
+					},
+					"additionalProperties": true
+				},
+				"extension": {
+					"$id": "#/properties/stereotypes/properties/extension",
+					"type": "object",
+					"title": "The extension schema",
+					"description": "stereotype to be applied for all extensions",
+					"default": {},
+					"examples": [{
+						"spot": {
+							"character": "X",
+							"color": "AntiqueWhite"
+						}
+					}],
+					"required": [
+						"spot"
+					],
+					"properties": {
+						"spot": {
+							"$id": "#/properties/stereotypes/properties/extension/properties/spot",
+							"type": "object",
+							"title": "The spot schema",
+							"description": "Spotted character with background color",
+							"default": {},
+							"examples": [{
+								"character": "X",
+								"color": "AntiqueWhite"
+							}],
+							"required": [
+								"character"
+							],
+							"properties": {
+								"character": {
+									"$id": "#/properties/stereotypes/properties/extension/properties/spot/properties/character",
+									"type": "string",
+									"title": "The character schema",
+									"description": "Spotted character",
+									"default": "",
+									"examples": [
+										"X"
+									]
+								},
+								"color": {
+									"$id": "#/properties/stereotypes/properties/extension/properties/spot/properties/color",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						}
+					},
+					"additionalProperties": true
+				},
+				"enum": {
+					"$id": "#/properties/stereotypes/properties/enum",
+					"type": "object",
+					"title": "The enum schema",
+					"description": "stereotype to be applied for all enums",
+					"default": {},
+					"examples": [{
+						"spot": {
+							"character": "E",
+							"color": "AntiqueWhite"
+						}
+					}],
+					"required": [
+						"spot"
+					],
+					"properties": {
+						"spot": {
+							"$id": "#/properties/stereotypes/properties/enum/properties/spot",
+							"type": "object",
+							"title": "The spot schema",
+							"description": "Spotted character with background color",
+							"default": {},
+							"examples": [{
+								"character": "E",
+								"color": "AntiqueWhite"
+							}],
+							"required": [
+								"character"
+							],
+							"properties": {
+								"character": {
+									"$id": "#/properties/stereotypes/properties/enum/properties/spot/properties/character",
+									"type": "string",
+									"title": "The character schema",
+									"description": "Spotted character",
+									"default": "",
+									"examples": [
+										"E"
+									]
+								},
+								"color": {
+									"$id": "#/properties/stereotypes/properties/enum/properties/spot/properties/color",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						}
+					},
+					"additionalProperties": true
+				},
+				"protocol": {
+					"$id": "#/properties/stereotypes/properties/protocol",
+					"type": "object",
+					"title": "The protocol schema",
+					"description": "stereotype to be applied for all protocols",
+					"default": {},
+					"examples": [{
+						"spot": {
+							"character": "P",
+							"color": "AntiqueWhite"
+						}
+					}],
+					"required": [
+						"spot"
+					],
+					"properties": {
+						"spot": {
+							"$id": "#/properties/stereotypes/properties/protocol/properties/spot",
+							"type": "object",
+							"title": "The spot schema",
+							"description": "Spotted character with background color",
+							"default": {},
+							"examples": [{
+								"character": "P",
+								"color": "AntiqueWhite"
+							}],
+							"required": [
+								"character"
+							],
+							"properties": {
+								"character": {
+									"$id": "#/properties/stereotypes/properties/protocol/properties/spot/properties/character",
+									"type": "string",
+									"title": "The character schema",
+									"description": "Spotted character",
+									"default": "",
+									"examples": [
+										"P"
+									]
+								},
+								"color": {
+									"$id": "#/properties/stereotypes/properties/protocol/properties/spot/properties/color",
+									"anyOf": [{
+										"$ref": "#/definitions/Color"
+									}]
+								}
+							},
+							"additionalProperties": true
+						}
+					},
+					"additionalProperties": true
+				}
+			},
+			"additionalProperties": true
+		}
+	},
+	"additionalProperties": true
+}

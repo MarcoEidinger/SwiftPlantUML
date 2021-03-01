@@ -3,35 +3,36 @@ import SourceKittenFramework
 import XCTest
 
 final class PlantUMLScriptTests: XCTestCase {
-    func testNoItemsAndNoStyle() {
-        let script = PlantUMLScript(items: [], style: "")
-        // print(script.text)
-        let expected = """
-        @startuml
-
-
-
-
-        @enduml
-        """
-        XCTAssertEqual(script.text, expected)
-    }
-
     func testNoItems() {
         let script = PlantUMLScript(items: [])
-        let expected = """
-        @startuml
-        ' STYLE START
-        hide empty members
-        skinparam shadowing false
-        ' STYLE END
+        XCTAssertTrue(script.text.contains("@startuml"))
+        XCTAssertTrue(script.text.contains("' STYLE START"))
+        XCTAssertTrue(script.text.contains("hide empty members"))
+        XCTAssertTrue(script.text.contains("skinparam shadowing false"))
+        XCTAssertTrue(script.text.contains("' STYLE END"))
+        XCTAssertTrue(script.text.contains("@enduml"))
 
+        XCTAssertFalse(script.text.contains("!include"))
+    }
 
+    func testScriptWithInclude() {
+        let script = PlantUMLScript(items: [], configuration: Configuration(includeRemoteURL: "https://anyInternetUrlToFile.com/example.txt"))
+        XCTAssertTrue(script.text.contains("!include https://anyInternetUrlToFile.com/example.txt"))
+    }
 
+    func testScriptWithEmptyHideAndSkinCommands() {
+        let script = PlantUMLScript(items: [], configuration: Configuration(hideShowCommands: [], skinparamCommands: []))
+        XCTAssertFalse(script.text.contains("' STYLE START"))
+        XCTAssertFalse(script.text.contains("' STYLE END"))
+    }
 
-        @enduml
-        """
-        XCTAssertEqual(script.text, expected)
+    func testScriptWithCustomSkinCommands() {
+        let script = PlantUMLScript(items: [], configuration: Configuration(skinparamCommands: ["skinparam classFontColor red"]))
+        XCTAssertTrue(script.text.contains("' STYLE START"))
+        XCTAssertTrue(script.text.contains("skinparam classFontColor red"))
+        XCTAssertTrue(script.text.contains("' STYLE END"))
+
+        XCTAssertFalse(script.text.contains("skinparam shadowing false"))
     }
 
     func testWithRootSyntaxStructure() {
@@ -54,7 +55,9 @@ final class PlantUMLScriptTests: XCTestCase {
 
     func testWithRootsSubSyntaxStructure() {
         guard let items = try! SyntaxStructure.create(from: getTestFile())?.substructure else { return XCTFail("cannot read test data") }
-        let script = PlantUMLScript(items: items)
+        // var config = PlantUMLConfiguration.default
+        // config.extensionStereotype = Stereotype(spot: Spot(character: "V", color: .Red), name: "EXT")
+        let script = PlantUMLScript(items: items) // , configuration: config)
         XCTAssertTrue(script.text.contains("aClass"))
         let expected = try! getTestFileContent(named: "basicsAsPlantUML")
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)

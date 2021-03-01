@@ -1,0 +1,5 @@
+relationships:
+  inheritance:
+    label: "inherits from"
+    style:
+      lineStyle: dotted

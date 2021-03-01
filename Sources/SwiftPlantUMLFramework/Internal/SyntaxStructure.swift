@@ -2,6 +2,19 @@ import Foundation
 
 /// Swift type representationg an AST element (analogue to SourceKitten's Structure)
 internal struct SyntaxStructure: Codable {
+    internal init(accessibility: ElementAccessibility?, attribute: String?, attributes: [SyntaxStructure]?, elements: [SyntaxStructure]?, inheritedTypes: [SyntaxStructure]?, kind: ElementKind?, name: String?, runtimename: String?, substructure: [SyntaxStructure]?, typename: String?) {
+        self.accessibility = accessibility
+        self.attribute = attribute
+        self.attributes = attributes
+        self.elements = elements
+        self.inheritedTypes = inheritedTypes
+        self.kind = kind
+        self.name = name
+        self.runtimename = runtimename
+        self.substructure = substructure
+        self.typename = typename
+    }
+
     /// access level
     internal let accessibility: ElementAccessibility?
     private let attribute: String?
@@ -62,7 +75,7 @@ extension UnknownCaseRepresentable {
 
 ///
 internal enum ElementAccessibility: String, RawRepresentable, Comparable {
-    static func < (lhs: ElementAccessibility, rhs: ElementAccessibility) -> Bool {
+    internal static func < (lhs: ElementAccessibility, rhs: ElementAccessibility) -> Bool {
         lhs.value < rhs.value
     }
 
@@ -85,6 +98,17 @@ internal enum ElementAccessibility: String, RawRepresentable, Comparable {
             return 2
         case .other:
             return 1
+        }
+    }
+
+    internal init?(orig: AccessLevel) {
+        switch orig {
+        case .public:
+            self.init(rawValue: "source.lang.swift.accessibility.public")
+        case .internal:
+            self.init(rawValue: "source.lang.swift.accessibility.internal")
+        case .private:
+            self.init(rawValue: "source.lang.swift.accessibility.private")
         }
     }
 }

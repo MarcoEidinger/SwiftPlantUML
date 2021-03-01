@@ -1,0 +1,66 @@
+files:
+  include:
+  - "Sources/SwiftPlantUMLFramework/**/*.swift"
+  exclude:
+  - "Tests/**/*.swift"
+elements:
+  havingAccessLevel:
+  - public
+  showMembersWithAccessLevel:
+  - public
+  - internal
+  - private
+  showGenerics: true
+  showExtensions: false
+  showMemberAccessLevelAttribute: true
+  exclude:
+  - Logger
+  - LogLevel
+hideShowCommands:
+- hide empty members
+skinparamCommands:
+- skinparam sequenceMessageAlign center ## just an example; this will have no impact to a class diagram
+includeRemoteURL: https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml
+relationships:
+  inheritance:
+    label: "inherits from"
+    style:
+      lineStyle: dotted
+      lineColor: DarkViolet
+      textColor: DarkViolet
+    exclude:
+    - "Codable"
+  realize:
+    label: "confirms to"
+    style:
+      lineStyle: dashed
+      lineColor: Blue
+      textColor: Blue
+  dependency:
+    label: extends
+    style:
+      lineStyle: bold
+      lineColor: DarkGreen
+      textColor: DarkViolet
+stereotypes:
+  class:
+    name: class
+    spot:
+      character: C
+      color: AliceBlue
+  struct:
+    spot:
+      character: S
+      color: AntiqueWhite
+  extension:
+    spot:
+      character: X
+      color: AntiqueWhite
+  enum:
+    spot:
+      character: E
+      color: AntiqueWhite
+  protocol:
+    spot:
+      character: P
+      color: AntiqueWhite

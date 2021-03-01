@@ -1,0 +1,14 @@
+files:
+    exclude:
+    - "Tests/**/*.swift"
+elements:
+  havingAccessLevel:
+  - public
+  showMembersWithAccessLevel:
+  - public
+skinparamCommands:
+- skinparam classBackgroundColor PaleGreen
+- skinparam classArrowColor SeaGreen
+- skinparam classBorderColor SpringGreen
+- skinparam stereotypeCBackgroundColor YellowGreen
+- skinparam stereotypeCBackgroundColor<< Foo >> DimGray

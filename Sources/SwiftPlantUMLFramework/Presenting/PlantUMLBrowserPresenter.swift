@@ -11,6 +11,7 @@ public enum BrowserPresentationFormat {
 
 /// compress  diagram into an URL and launch in browser (PlantText server).
 public struct PlantUMLBrowserPresenter: PlantUMLPresenting {
+    /// format in which to present the script in the browser (default: editable script and corresponding diagram)
     public private(set) var format: BrowserPresentationFormat
 
     /// default initializer
@@ -19,6 +20,10 @@ public struct PlantUMLBrowserPresenter: PlantUMLPresenting {
         self.format = format
     }
 
+    /// present script / diagram to user
+    /// - Parameters:
+    ///   - script: in PlantUML notation
+    ///   - completionHandler: will be called when presentation was triggered
     public func present(script: PlantUMLScript, completionHandler: @escaping () -> Void) {
         script.encodedText { result in
             switch result {

@@ -13,6 +13,32 @@ with their instance and static members as well as their inheritance and implemen
 
 ![Example Diagram](https://github.com/MarcoEidinger/SwiftPlantUML/raw/main/.assets/exampleDiagram.png)
 
+<details>
+  <summary><strong>Table of Contents</strong> (click to expand)</summary>
+
+<!-- toc -->
+
+- [SwiftPlantUML](#swiftplantuml)
+	- [Usage](#usage)
+		- [Command Line](#command-line)
+		- [Swift package](#swift-package)
+		- [Xcode source editor extension](#xcode-source-editor-extension)
+	- [Installation](#installation)
+		- [Using Homebrew](#using-homebrew)
+		- [Using Mint](#using-mint)
+		- [Installing from source](#installing-from-source)
+	- [Configuration](#configuration)
+		- [Options](#options)
+		- [Examples](#examples)
+		- [Code Completion during Editing](#code-completion-during-editing)
+	- [Planned improvements](#planned-improvements)
+	- [Known limitations](#known-limitations)
+	- [Acknowledgements](#acknowledgements)
+
+<!-- tocstop -->
+
+</details>
+
 ## Usage
 
 ### Command Line
@@ -30,15 +56,18 @@ will be searched recursively.
 $ swiftplantuml classdiagram --help
 OVERVIEW: Generate PlantUML script and view it and diagram in browser
 
-USAGE: swift-plant-uml classdiagram [<paths> ...] [--output <format>]
+USAGE: swift-plant-uml classdiagram [--config <config>] [--exclude <exclude> ...] [--output <format>] [--verbose] [<paths> ...]
 
 ARGUMENTS:
-  <paths>                 List of paths to the files or directories containing
-                          swift sources
+  <paths>                 List of paths to the files or directories containing swift sources
 
 OPTIONS:
-  --output <format>       Defines output format. Options: browser,
-                          browserImageOnly, consoleOnly (default: browser)
+  --config <config>       Path to custom configuration filed (otherwise will search for
+                          `.swiftplantuml.yml` in current directory)
+  --exclude <exclude>     paths to ignore source files. Takes precedence over arguments
+  --output <format>       Defines output format. Options: browser, browserImageOnly,
+                          consoleOnly
+  --verbose               Verbose
   --version               Show the version.
   -h, --help              Show help information.
 ```
@@ -66,13 +95,13 @@ See [MarcoEidinger/SwiftPlantUML-Xcode-Extension](https://github.com/MarcoEiding
 ```
 brew install MarcoEidinger/formulae/swiftplantuml
 ```
-### Using [Mint](https://github.com/yonaskolb/mint):
+### Using [Mint](https://github.com/yonaskolb/mint)
 
 ```
 $ mint install MarcoEidinger/SwiftPlantUML
 ```
 
-### Installing from source:
+### Installing from source
 
 You can also build and install from source by cloning this project and running
 `make install` (Xcode 12 or later).
@@ -86,11 +115,72 @@ $ cd SwiftPlantUML
 $ make install
 ```
 
+## Configuration
+Configure SwiftPlantUML by adding a `.swiftplantuml.yml` file from the directory you'll run SwiftPlantUML from. Note: the same configuration options can be set programmatically with `Configuration`.
+
+### Options
+
+You are able to
+- include/exclude files (wildcards supported)
+- include/exclude elements by name (wildcards supported)
+- limit elements and members bases on their access level, e.g. show only `public` types
+- hide extensions
+- hide member access level attribute
+- configure styles, use [skin parameters](https://plantuml.com/skinparam) and even include external files for theming (e.g. [PUML Themes](https://bschwarz.github.io/puml-themes/))
+- exclude inheritance relationships based on parent (wildcards supported), e.g. do not show inheritance to `Codable`
+
+### Examples
+
+Simple Example:
+
+```yml
+files:
+    exclude:
+    - "Tests/**/*.swift" # paths to ignore for diagram. Takes precedence over `included`.
+elements:
+  havingAccessLevel:
+  - public
+  showMembersWithAccessLevel:
+  - public
+  showExtensions: false
+skinparamCommands: # see https://plantuml.com/skinparam
+- skinparam classBackgroundColor PaleGreen
+- skinparam classArrowColor SeaGreen
+- skinparam classBorderColor SpringGreen
+- skinparam stereotypeCBackgroundColor YellowGreen
+- skinparam stereotypeCBackgroundColor<< Foo >> DimGray
+relationships:
+  inheritance:
+    label: "inherits from"
+    style:
+      lineStyle: dotted
+      lineColor: DarkViolet
+      textColor: DarkViolet
+    exclude:
+    - "Codable"
+```
+
+Rich example: [here](./Configuration/Examples/Rich/.swiftplantuml.yml)
+
+### Code Completion during Editing
+
+![codeCompletion](https://user-images.githubusercontent.com/4176826/109438147-6f7b0a80-79dd-11eb-9002-adc584438159.gif)
+
+To get code completiong during editing use Visual Studio Code, the [YAML extension created by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) and the [JSON schema for SwiftPlantUML](./Configuration/Schema/json-schema-swiftplantuml.json).
+
+In Visual Studio Code:  `Code` -> `Preferences` -> `Settings` -> search for yaml
+
+<img width="503" alt="Screen Shot 2021-02-27 at 5 57 49 AM" src="https://user-images.githubusercontent.com/4176826/109389381-1b7b0380-78c1-11eb-9ba2-0b553aa4dd14.png">
+
+Click on `Edit in settings.json` and add the respective entry:
+
+```json
+"yaml.schemas": {"https://raw.githubusercontent.com/MarcoEidinger/SwiftPlantUML/main/Configuration/Schema/json-schema-swiftplantuml.json": "/.swiftplantuml.yml" }
+```
+
 ## Planned improvements
 - being able to render associations between elements
-- being able to limit elements and members bases on their access level
 - being able to merge extensions with their known type
-- being able to configure styles and skin parameters
 
 ## Known limitations
 - unknown type for variables declared with type inference (e.g. `var count = 0`)
