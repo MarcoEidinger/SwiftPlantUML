@@ -80,7 +80,27 @@ OPTIONS:
 
 As `classdiagram` is the default subcommand you can omit it.
 
-Note: unknown type in diagrams for variables declared with type inference (e.g. `var count = 0`) *unless* you specify `sdk` argument
+Note: unknown type in diagrams for variables declared with type inference (e.g. `var hasBasket = false`) *unless* you specify `sdk` argument
+
+<details>
+  <summary><strong>Type inference details</strong> (click to expand)</summary>
+
+In the following example the property `hasBasket` is of type `Bool` but the type is inferred and not explicitly declared.
+
+```swift
+class Bicycle: Vehicle {
+    var hasBasket = false
+}
+```
+
+SwiftPlantUML requires the macosx SDK in order to properly recognize the inferred type. If you have Xcode installed (which includes the macosx SDK) then use `--sdk $(xcrun --show-sdk-path -sdk macosx)`.
+
+|                    | No inferred type (*default*) | inferred type |
+|--------------------|-------------------|-----------------------|
+| Generated PlantUML |  `~hasBasket`                 |  `~hasBasket : Bool` 
+| Command            | `swiftplantuml classdiagram Tests/SwiftPlantUMLFrameworkTests/TestData/demo.txt`                  | `swiftplantuml classdiagram Tests/SwiftPlantUMLFrameworkTests/TestData/demo.txt --sdk $(xcrun --show-sdk-path -sdk macosx)`                      |                     |
+
+</details>
 
 ### Swift package
 
@@ -172,7 +192,7 @@ Rich example: [here](./Configuration/Examples/Rich/.swiftplantuml.yml)
 
 ### Code Completion during Editing
 
-![codeCompletion](https://user-images.githubusercontent.com/4176826/109438147-6f7b0a80-79dd-11eb-9002-adc584438159.gif)
+![codeCompletion](https://user-images.githubusercontent.com/4176826/109524456-66358080-7a65-11eb-8cb8-02452c1b3732.gif)
 
 To get code completiong during editing use Visual Studio Code, the [YAML extension created by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) and the [JSON schema for SwiftPlantUML](./Configuration/Schema/json-schema-swiftplantuml.json).
 
