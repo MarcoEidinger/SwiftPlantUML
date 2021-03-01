@@ -1,0 +1,4 @@
+files:
+    excludeQET:
+    - "Tests/**/Mock*.swift"
+

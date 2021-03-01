@@ -40,6 +40,62 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertNotNil(plantUMLElement)
     }
 
+    func testStructureExtension() {
+        let cut = SyntaxStructure.create(from: "public extension aExtension {}")
+        let found = cut?.find(.extension, named: "aExtension")
+        XCTAssertNotNil(found)
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext())
+        XCTAssertNotNil(plantUMLElement)
+    }
+
+    func testStructureElementsExcluded() {
+        let cut = SyntaxStructure.create(from: "public extension aExtension {}")
+        let found = cut?.find(.extension, named: "aExtension")
+        XCTAssertNotNil(found)
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(exclude: ["*Ext*"]))))
+        XCTAssertNil(plantUMLElement)
+    }
+
+    func testStructureExtensionExcluded() {
+        let cut = SyntaxStructure.create(from: "public extension aExtension {}")
+        let found = cut?.find(.extension, named: "aExtension")
+        XCTAssertNotNil(found)
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showExtensions: false))))
+        XCTAssertNil(plantUMLElement)
+    }
+
+    func testStructurePublicExcluded() {
+        let cut = SyntaxStructure.create(from: "struct aStruct {}")
+        let found = cut?.find(.struct, named: "aStruct")
+        XCTAssertNotNil(found)
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(havingAccessLevel: [.public]))))
+        XCTAssertNil(plantUMLElement)
+    }
+
+    func testStructureShowAccessLevelAttribute() {
+        let cut = SyntaxStructure.create(from: "struct aStruct { public var computedVariable: String { return \"Hello World\" }}")
+        let plantUMLElement = cut?.find(.struct, named: "aStruct")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showMemberAccessLevelAttribute: true))))
+        XCTAssertEqual(plantUMLElement, "class \"aStruct\" as aStruct << (S, SkyBlue) struct >> { \n  +computedVariable : String \n}")
+    }
+
+    func testStructureHideAccessLevelAttribute() {
+        let cut = SyntaxStructure.create(from: "struct aStruct { public var computedVariable: String { return \"Hello World\" }}")
+        let plantUMLElement = cut?.find(.struct, named: "aStruct")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showMemberAccessLevelAttribute: false))))
+        XCTAssertEqual(plantUMLElement, "class \"aStruct\" as aStruct << (S, SkyBlue) struct >> { \n  computedVariable : String \n}")
+    }
+
+    func testStructureShowGenerics() {
+        let cut = SyntaxStructure.create(from: "struct aStruct <Title: View> {}")
+        let plantUMLElement = cut?.find(.struct, named: "aStruct")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showGenerics: true))))
+        XCTAssertTrue(plantUMLElement!.contains("<Title: View>"))
+    }
+
+    func testStructureHideGenerics() {
+        let cut = SyntaxStructure.create(from: "struct aStruct <Title: View> {}")
+        let plantUMLElement = cut?.find(.struct, named: "aStruct")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showGenerics: false))))
+        XCTAssertFalse(plantUMLElement!.contains("<Title: View>"))
+    }
+
     func getTestFile() throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: "demo", ofType: "txt", inDirectory: "TestData") ?? "nonesense"

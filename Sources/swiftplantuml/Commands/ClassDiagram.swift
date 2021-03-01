@@ -1,12 +1,7 @@
 import ArgumentParser
 import Foundation
 import SwiftPlantUMLFramework
-
-enum ClassDiagramOutput: String, ExpressibleByArgument, CaseIterable {
-    case browser
-    case browserImageOnly
-    case consoleOnly
-}
+import Yams
 
 extension SwiftPlantUML {
     struct ClassDiagram: ParsableCommand {
@@ -16,17 +11,27 @@ extension SwiftPlantUML {
             helpNames: [.short, .long]
         )
 
-        @Argument(help: "List of paths to the files or directories containing swift sources")
-        var paths = [String]()
+        @Option(help: "Path to custom configuration filed (otherwise will search for `.swiftplantuml.yml` in current directory)")
+        var config: String?
+
+        @Option(help: "paths to ignore source files. Takes precedence over arguments")
+        var exclude = [String]()
 
         @Option(help: ArgumentHelp(
             "Defines output format. Options: \(ClassDiagramOutput.allCases.map(\.rawValue).joined(separator: ", "))",
             valueName: "format"
-        )
-        )
-        var output: ClassDiagramOutput = .browser
+        ))
+        var output: ClassDiagramOutput?
+
+        @Flag(help: "Verbose")
+        var verbose: Bool = false
+
+        @Argument(help: "List of paths to the files or directories containing swift sources")
+        var paths = [String]()
 
         mutating func run() {
+            Logger.shared = ConsoleLogger(verbose: verbose)
+
             var allPaths: [String]
             if !paths.isEmpty {
                 allPaths = paths
@@ -34,14 +39,27 @@ extension SwiftPlantUML {
                 allPaths = [] // Lint files in current working directory if no paths were specified.
             }
 
+            var config = ConfigurationProvider().getConfiguration(for: self.config)
+
+            if !exclude.isEmpty {
+                config.files.exclude = exclude
+            }
+
+            let directory = FileManager.default.currentDirectoryPath // "/Users/d041771/git/__Private/SwiftPlantUML"
+            let files = FileCollector().getFiles(for: allPaths, in: directory, honoring: config.files)
+
+            let generator = ClassDiagramGenerator()
+
             switch output {
             case .browserImageOnly:
-                ClassDiagramGenerator().generate(for: allPaths, presentedBy: PlantUMLBrowserPresenter(format: .imagePng))
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .imagePng))
             case .consoleOnly:
-                ClassDiagramGenerator().generate(for: allPaths, presentedBy: PlantUMLConsolePresenter())
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLConsolePresenter())
             default:
-                ClassDiagramGenerator().generate(for: allPaths, presentedBy: PlantUMLBrowserPresenter(format: .default))
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .default))
             }
         }
     }
 }
+
+extension ClassDiagramOutput: ExpressibleByArgument {}

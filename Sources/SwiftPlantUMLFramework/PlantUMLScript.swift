@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 internal enum NetworkError: Error {
     case badURL
@@ -6,13 +7,16 @@ internal enum NetworkError: Error {
 
 /// Swift type representing a PlantUML script (@startuml ... @enduml)
 public struct PlantUMLScript {
-    private var context = PlantUMLContext()
-
     /// textual representation of the script (@startuml ... @enduml)
     public private(set) var text: String = ""
 
+    /// public private(set) var configuration: PlantUMLConfiguration = .default
+    private var context: PlantUMLContext
+
     /// default initializer
-    internal init(items: [SyntaxStructure], style: String = PlantUMLScript.defaultStyling) {
+    internal init(items: [SyntaxStructure], configuration: Configuration = .default) {
+        context = PlantUMLContext(configuration: configuration)
+
         let STR2REPLACE = "STR2REPLACE"
 
 //        let plantumlTemplate = """
@@ -27,9 +31,10 @@ public struct PlantUMLScript {
 //        """
 
         var plantumlTemplate = "@startuml"
-        if !style.isEmpty {
-            plantumlTemplate.appendAsNewLine(style)
+        if let includeRemoteURL = configuration.includeRemoteURL {
+            plantumlTemplate.appendAsNewLine("!include \(includeRemoteURL)")
         }
+        plantumlTemplate.appendAsNewLine(defaultStyling)
         plantumlTemplate.appendAsNewLine("STR2REPLACE")
         plantumlTemplate.appendAsNewLine("@enduml")
 
@@ -81,13 +86,20 @@ public struct PlantUMLScript {
     }
 
     /// default styling block to hide empty members and disable shadowing
-    internal static var defaultStyling: String {
-        """
-        ' STYLE START
-        hide empty members
-        skinparam shadowing false
-        ' STYLE END
-        """
+    internal var defaultStyling: String {
+        let hideShowCommands: [String] = context.configuration.hideShowCommands ?? ["hide empty members"]
+        let skinparamCommands: [String] = context.configuration.skinparamCommands ?? ["skinparam shadowing false"]
+
+        if hideShowCommands.isEmpty, skinparamCommands.isEmpty {
+            return ""
+        } else {
+            return """
+            ' STYLE START
+            \(hideShowCommands.joined(separator: "\n"))
+            \(skinparamCommands.joined(separator: "\n"))
+            ' STYLE END
+            """
+        }
     }
 
     mutating func processStructureItem(item: SyntaxStructure, index _: Int) -> String? {

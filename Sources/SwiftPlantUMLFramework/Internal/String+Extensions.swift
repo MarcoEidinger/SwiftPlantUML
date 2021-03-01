@@ -26,7 +26,20 @@ internal extension String {
 }
 
 internal extension String {
-    func removeSquareBracketsWithContent() -> String {
+    func removeAngleBracketsWithContent() -> String {
         replacingOccurrences(of: "\\<[^\\]]+\\>", with: "", options: .regularExpression)
+    }
+}
+
+internal extension String {
+    func isMatching(searchPattern: String) -> Bool {
+        let pattern = "^\(searchPattern)$"
+            .replacingOccurrences(of: "[.+(){\\\\|]", with: "\\\\$0", options: .regularExpression)
+            .replacingOccurrences(of: "?", with: "[^/]")
+            .replacingOccurrences(of: "**/", with: "(.+/)?")
+            .replacingOccurrences(of: "**", with: ".+")
+            .replacingOccurrences(of: "*", with: "([^/]+)?")
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else { return true }
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: utf16.count)) != nil
     }
 }

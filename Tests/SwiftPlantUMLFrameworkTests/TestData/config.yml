@@ -1,0 +1,18 @@
+files:
+    include:
+    - "Sources/SwiftPlantUMLFramework/Plant*.swift"
+    - "Sources/SwiftPlantUMLFramework/**/Plant*.swift"
+    exclude:
+    - "Tests/**/*.swift"
+elements:
+  havingAccessLevel:
+  - public
+  showMembersWithAccessLevel:
+  - public
+  showExtensions: false
+skinparamCommands:
+- skinparam classBackgroundColor PaleGreen
+- skinparam classArrowColor SeaGreen
+- skinparam classBorderColor SpringGreen
+- skinparam stereotypeCBackgroundColor YellowGreen
+- skinparam stereotypeCBackgroundColor<< Foo >> DimGray

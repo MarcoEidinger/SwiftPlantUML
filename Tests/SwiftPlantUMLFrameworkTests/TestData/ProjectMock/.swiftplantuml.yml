@@ -1,0 +1,5 @@
+files:
+    include:
+    - "Level2/*.swift"
+    exclude:
+    - "Tests/**/*.swift"

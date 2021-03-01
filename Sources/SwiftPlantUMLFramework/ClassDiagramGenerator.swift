@@ -2,6 +2,8 @@ import Foundation
 
 /// UML Class Diagram powered by PlantUML
 public struct ClassDiagramGenerator {
+    private let fileCollector = FileCollector()
+
     /// default initializer
     public init() {}
 
@@ -9,59 +11,28 @@ public struct ClassDiagramGenerator {
     /// - Parameters:
     ///   - paths: representing paths to Swift source code files on the file system
     ///   - presenter: outputs the PlantUMLScript / Digram e.g. `PlantUMLBrowserPresenter` or `PlantUMLConsolePresenter`
-    public func generate(for paths: [String], presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
-        outputDiagram(for: generateScript(for: getFiles(for: paths)), with: presenter)
+    public func generate(for paths: [String], with configuration: Configuration = .default, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
+        outputDiagram(for: generateScript(for: fileCollector.getFiles(for: paths), with: configuration), with: presenter)
     }
 
     /// generate diagram from a String containing Swift code
     /// - Parameters:
     ///   - content: representing a string containing Swift code
     ///   - presenter: outputs the PlantUMLScript / Digram e.g. `PlantUMLBrowserPresenter` or `PlantUMLConsolePresenter`
-    public func generate(from content: String, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
-        outputDiagram(for: generateScript(for: content), with: presenter)
+    public func generate(from content: String, with configuration: Configuration = .default, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
+        outputDiagram(for: generateScript(for: content, with: configuration), with: presenter)
     }
 
-    func getFiles(for paths: [String]) -> [URL] {
-        var singleInputURL: URL?
-
-        if paths.isEmpty {
-            singleInputURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-        } else if paths.count == 1, paths[0] == "." {
-            singleInputURL = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-        } else {
-            return paths.map { URL(fileURLWithPath: $0) }
-        }
-
-        guard let url = singleInputURL else { return [] }
-        let isDirectory = (try? url.resourceValues(forKeys: [.isDirectoryKey]))?.isDirectory ?? false
-        if isDirectory {
-            var files = [URL]()
-            if let enumerator = FileManager.default.enumerator(at: url, includingPropertiesForKeys: [.isRegularFileKey], options: [.skipsHiddenFiles, .skipsPackageDescendants]) {
-                for case let fileURL as URL in enumerator {
-                    do {
-                        let fileAttributes = try fileURL.resourceValues(forKeys: [.isRegularFileKey, .typeIdentifierKey])
-                        if fileAttributes.isRegularFile!, fileAttributes.typeIdentifier == "public.swift-source" {
-                            files.append(fileURL)
-                        }
-                    } catch { print(error, fileURL) }
-                }
-            }
-            return files
-        } else {
-            return [url]
-        }
-    }
-
-    func generateScript(for content: String) -> PlantUMLScript {
+    func generateScript(for content: String, with configuration: Configuration = .default) -> PlantUMLScript {
         var allValidItems: [SyntaxStructure] = []
 
         if let validItems = SyntaxStructure.create(from: content)?.substructure {
             allValidItems.append(contentsOf: validItems)
         }
-        return PlantUMLScript(items: allValidItems)
+        return PlantUMLScript(items: allValidItems, configuration: configuration)
     }
 
-    func generateScript(for files: [URL]) -> PlantUMLScript {
+    func generateScript(for files: [URL], with configuration: Configuration = .default) -> PlantUMLScript {
         var allValidItems: [SyntaxStructure] = []
 
         for aFile in files {
@@ -70,7 +41,7 @@ public struct ClassDiagramGenerator {
             }
         }
 
-        return PlantUMLScript(items: allValidItems)
+        return PlantUMLScript(items: allValidItems, configuration: configuration)
     }
 
     func outputDiagram(for script: PlantUMLScript, with presenter: PlantUMLPresenting) {
