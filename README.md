@@ -3,7 +3,8 @@
 Generate UML class diagrams from swift code with this Command Line Interface (CLI) and Swift Package.
 
 [![Build Status](https://github.com/MarcoEidinger/SwiftPlantUML/workflows/Swift/badge.svg)](https://github.com/MarcoEidinger/SwiftPlantUML/workflows/Swift)
-[![codecov](https://codecov.io/gh/MarcoEidinger/SwiftPlantUML/branch/main/graph/badge.svg?token=JOE7UL41JA)](https://codecov.io/gh/MarcoEidinger/SwiftPlantUML)
+[![codecov](https://codecov.io/gh/MarcoEidinger/SwiftPlantUML/branch/main/graph/badge.svg)](https://codecov.io/gh/MarcoEidinger/SwiftPlantUML)
+[![codebeat badge](https://codebeat.co/badges/ef555787-2240-40be-9433-f3fa141d43a9)](https://codebeat.co/projects/github-com-marcoeidinger-swiftplantuml-main)
 [![docs](https://marcoeidinger.github.io/SwiftPlantUML/badge.svg)](https://marcoeidinger.github.io/SwiftPlantUML/)
 [![Xcode Extension](https://img.shields.io/badge/Xcode%20extension-available-brightgreen)](https://github.com/MarcoEidinger/SwiftPlantUML-Xcode-Extension)
 [![Twitter](https://img.shields.io/badge/twitter-@MarcoEidinger-blue.svg)](http://twitter.com/MarcoEidinger)
