@@ -17,7 +17,7 @@
     <a title="PlantUMLBrowserPresenter Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (96% documented)</p>
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
         <p class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -39,13 +39,34 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Enums/AccessLevel.html">AccessLevel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/BrowserPresentationFormat.html">BrowserPresentationFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ClassDiagramOutput.html">ClassDiagramOutput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PumlThemes.html">PumlThemes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Logging.html">Logging</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Protocols/PlantUMLPresenting.html">PlantUMLPresenting</a>
               </li>
@@ -58,6 +79,24 @@
                 <a href="../Structs/ClassDiagramGenerator.html">ClassDiagramGenerator</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Structs/Configuration.html">Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConfigurationProvider.html">ConfigurationProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConsoleLogger.html">ConsoleLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ElementOptions.html">ElementOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FileCollector.html">FileCollector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FileOptions.html">FileOptions</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Structs/PlantUMLBrowserPresenter.html">PlantUMLBrowserPresenter</a>
               </li>
               <li class="nav-group-task">
@@ -65,6 +104,24 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/PlantUMLScript.html">PlantUMLScript</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Relationship.html">Relationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RelationshipOptions.html">RelationshipOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RelationshipStyle.html">RelationshipStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Spot.html">Spot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stereotype.html">Stereotype</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stereotypes.html">Stereotypes</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/Version.html">Version</a>
@@ -103,7 +160,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>format in which to present the script in the browser (default: editable script and corresponding diagram)</p>
 
                       </div>
                       <div class="declaration">
@@ -166,9 +223,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22SwiftPlantUMLFramework0B13UMLPresentingP7present6script17completionHandleryAA0B9UMLScriptV_yyctF"></a>
+                    <a name="/s:22SwiftPlantUMLFramework0B19UMLBrowserPresenterV7present6script17completionHandleryAA0B9UMLScriptV_yyctF"></a>
                     <a name="//apple_ref/swift/Method/present(script:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22SwiftPlantUMLFramework0B13UMLPresentingP7present6script17completionHandleryAA0B9UMLScriptV_yyctF">present(script:<wbr>completionHandler:<wbr>)</a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework0B19UMLBrowserPresenterV7present6script17completionHandleryAA0B9UMLScriptV_yyctF">present(script:<wbr>completionHandler:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -176,7 +233,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>present script / diagram to user</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -186,6 +244,37 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>script</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>in PlantUML notation</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>will be called when presentation was triggered</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </section>
                   </div>
                 </li>
@@ -194,7 +283,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-02-18)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-01)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

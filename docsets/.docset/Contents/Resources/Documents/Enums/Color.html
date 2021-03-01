@@ -1,0 +1,4131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Color Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/Color" class="dashAnchor"></a>
+    <a title="Color Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Color Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AccessLevel.html">AccessLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BrowserPresentationFormat.html">BrowserPresentationFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ClassDiagramOutput.html">ClassDiagramOutput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PumlThemes.html">PumlThemes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Logging.html">Logging</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlantUMLPresenting.html">PlantUMLPresenting</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ClassDiagramGenerator.html">ClassDiagramGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Configuration.html">Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConfigurationProvider.html">ConfigurationProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConsoleLogger.html">ConsoleLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ElementOptions.html">ElementOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FileCollector.html">FileCollector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FileOptions.html">FileOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlantUMLBrowserPresenter.html">PlantUMLBrowserPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlantUMLConsolePresenter.html">PlantUMLConsolePresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlantUMLScript.html">PlantUMLScript</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Relationship.html">Relationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RelationshipOptions.html">RelationshipOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RelationshipStyle.html">RelationshipStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Spot.html">Spot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stereotype.html">Stereotype</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stereotypes.html">Stereotypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Version.html">Version</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Color</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Color</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Colors supported by PlantUML, see <a href="https://github.com/qywx/PlantUML-colors/blob/master/plantuml-colors-table.puml">https://github.com/qywx/PlantUML-colors/blob/master/plantuml-colors-table.puml</a></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9AliceBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/AliceBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9AliceBlueyA2CmF">AliceBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>AliceBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">AliceBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO12AntiqueWhiteyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/AntiqueWhite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO12AntiqueWhiteyA2CmF">AntiqueWhite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>AntiqueWhite</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">AntiqueWhite</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4AquayA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Aqua" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4AquayA2CmF">Aqua</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Aqua</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Aqua</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10AquamarineyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Aquamarine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10AquamarineyA2CmF">Aquamarine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Aquamarine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Aquamarine</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5AzureyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Azure" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5AzureyA2CmF">Azure</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Azure</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Azure</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5BeigeyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Beige" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5BeigeyA2CmF">Beige</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Beige</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Beige</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6BisqueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Bisque" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6BisqueyA2CmF">Bisque</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bisque</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Bisque</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5BlackyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Black" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5BlackyA2CmF">Black</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Black</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Black</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO14BlanchedAlmondyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/BlanchedAlmond" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO14BlanchedAlmondyA2CmF">BlanchedAlmond</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>BlanchedAlmond</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">BlanchedAlmond</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4BlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Blue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4BlueyA2CmF">Blue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Blue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10BlueVioletyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/BlueViolet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10BlueVioletyA2CmF">BlueViolet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>BlueViolet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">BlueViolet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5BrownyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Brown" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5BrownyA2CmF">Brown</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Brown</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Brown</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9BurlyWoodyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/BurlyWood" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9BurlyWoodyA2CmF">BurlyWood</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>BurlyWood</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">BurlyWood</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9CadetBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/CadetBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9CadetBlueyA2CmF">CadetBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>CadetBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">CadetBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10ChartreuseyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Chartreuse" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10ChartreuseyA2CmF">Chartreuse</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Chartreuse</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Chartreuse</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9ChocolateyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Chocolate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9ChocolateyA2CmF">Chocolate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Chocolate</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Chocolate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5CoralyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Coral" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5CoralyA2CmF">Coral</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Coral</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Coral</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO14CornflowerBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/CornflowerBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO14CornflowerBlueyA2CmF">CornflowerBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>CornflowerBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">CornflowerBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8CornsilkyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Cornsilk" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8CornsilkyA2CmF">Cornsilk</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cornsilk</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Cornsilk</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7CrimsonyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Crimson" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7CrimsonyA2CmF">Crimson</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Crimson</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Crimson</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4CyanyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Cyan" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4CyanyA2CmF">Cyan</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cyan</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Cyan</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8DarkBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8DarkBlueyA2CmF">DarkBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8DarkCyanyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkCyan" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8DarkCyanyA2CmF">DarkCyan</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkCyan</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkCyan</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13DarkGoldenRodyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkGoldenRod" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13DarkGoldenRodyA2CmF">DarkGoldenRod</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkGoldenRod</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkGoldenRod</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8DarkGrayyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkGray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8DarkGrayyA2CmF">DarkGray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkGray</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkGray</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9DarkGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9DarkGreenyA2CmF">DarkGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8DarkGreyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkGrey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8DarkGreyyA2CmF">DarkGrey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkGrey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkGrey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9DarkKhakiyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkKhaki" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9DarkKhakiyA2CmF">DarkKhaki</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkKhaki</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkKhaki</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11DarkMagentayA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkMagenta" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11DarkMagentayA2CmF">DarkMagenta</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkMagenta</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkMagenta</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO14DarkOliveGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkOliveGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO14DarkOliveGreenyA2CmF">DarkOliveGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkOliveGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkOliveGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10DarkOrchidyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkOrchid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10DarkOrchidyA2CmF">DarkOrchid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkOrchid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkOrchid</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7DarkRedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkRed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7DarkRedyA2CmF">DarkRed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkRed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkRed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10DarkSalmonyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkSalmon" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10DarkSalmonyA2CmF">DarkSalmon</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkSalmon</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkSalmon</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO12DarkSeaGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkSeaGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO12DarkSeaGreenyA2CmF">DarkSeaGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkSeaGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkSeaGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13DarkSlateBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkSlateBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13DarkSlateBlueyA2CmF">DarkSlateBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkSlateBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkSlateBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13DarkSlateGrayyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkSlateGray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13DarkSlateGrayyA2CmF">DarkSlateGray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkSlateGray</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkSlateGray</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13DarkSlateGreyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkSlateGrey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13DarkSlateGreyyA2CmF">DarkSlateGrey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkSlateGrey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkSlateGrey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13DarkTurquoiseyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkTurquoise" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13DarkTurquoiseyA2CmF">DarkTurquoise</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkTurquoise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkTurquoise</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10DarkVioletyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DarkViolet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10DarkVioletyA2CmF">DarkViolet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DarkViolet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DarkViolet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10DarkorangeyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Darkorange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10DarkorangeyA2CmF">Darkorange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Darkorange</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Darkorange</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8DeepPinkyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DeepPink" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8DeepPinkyA2CmF">DeepPink</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DeepPink</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DeepPink</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11DeepSkyBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DeepSkyBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11DeepSkyBlueyA2CmF">DeepSkyBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DeepSkyBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DeepSkyBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7DimGrayyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DimGray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7DimGrayyA2CmF">DimGray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DimGray</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DimGray</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7DimGreyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DimGrey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7DimGreyyA2CmF">DimGrey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DimGrey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DimGrey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10DodgerBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/DodgerBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10DodgerBlueyA2CmF">DodgerBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>DodgerBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">DodgerBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9FireBrickyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/FireBrick" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9FireBrickyA2CmF">FireBrick</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>FireBrick</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">FireBrick</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11FloralWhiteyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/FloralWhite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11FloralWhiteyA2CmF">FloralWhite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>FloralWhite</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">FloralWhite</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11ForestGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/ForestGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11ForestGreenyA2CmF">ForestGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ForestGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">ForestGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7FuchsiayA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Fuchsia" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7FuchsiayA2CmF">Fuchsia</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fuchsia</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Fuchsia</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9GainsboroyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Gainsboro" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9GainsboroyA2CmF">Gainsboro</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gainsboro</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Gainsboro</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10GhostWhiteyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/GhostWhite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10GhostWhiteyA2CmF">GhostWhite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>GhostWhite</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GhostWhite</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4GoldyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Gold" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4GoldyA2CmF">Gold</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gold</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Gold</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9GoldenRodyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/GoldenRod" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9GoldenRodyA2CmF">GoldenRod</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>GoldenRod</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GoldenRod</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4GrayyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Gray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4GrayyA2CmF">Gray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gray</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Gray</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5GreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Green" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5GreenyA2CmF">Green</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Green</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Green</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11GreenYellowyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/GreenYellow" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11GreenYellowyA2CmF">GreenYellow</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>GreenYellow</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">GreenYellow</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4GreyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Grey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4GreyyA2CmF">Grey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Grey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Grey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8HoneyDewyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/HoneyDew" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8HoneyDewyA2CmF">HoneyDew</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>HoneyDew</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">HoneyDew</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7HotPinkyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/HotPink" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7HotPinkyA2CmF">HotPink</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>HotPink</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">HotPink</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9IndianRedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/IndianRed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9IndianRedyA2CmF">IndianRed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>IndianRed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">IndianRed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6IndigoyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Indigo" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6IndigoyA2CmF">Indigo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indigo</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Indigo</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5IvoryyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Ivory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5IvoryyA2CmF">Ivory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Ivory</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Ivory</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5KhakiyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Khaki" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5KhakiyA2CmF">Khaki</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Khaki</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Khaki</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8LavenderyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Lavender" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8LavenderyA2CmF">Lavender</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Lavender</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Lavender</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13LavenderBlushyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LavenderBlush" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13LavenderBlushyA2CmF">LavenderBlush</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LavenderBlush</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LavenderBlush</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9LawnGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LawnGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9LawnGreenyA2CmF">LawnGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LawnGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LawnGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO12LemonChiffonyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LemonChiffon" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO12LemonChiffonyA2CmF">LemonChiffon</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LemonChiffon</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LemonChiffon</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9LightBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9LightBlueyA2CmF">LightBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10LightCoralyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightCoral" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10LightCoralyA2CmF">LightCoral</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightCoral</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightCoral</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9LightCyanyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightCyan" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9LightCyanyA2CmF">LightCyan</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightCyan</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightCyan</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO20LightGoldenRodYellowyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightGoldenRodYellow" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO20LightGoldenRodYellowyA2CmF">LightGoldenRodYellow</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightGoldenRodYellow</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightGoldenRodYellow</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9LightGrayyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightGray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9LightGrayyA2CmF">LightGray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightGray</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightGray</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10LightGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10LightGreenyA2CmF">LightGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9LightGreyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightGrey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9LightGreyyA2CmF">LightGrey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightGrey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightGrey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9LightPinkyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightPink" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9LightPinkyA2CmF">LightPink</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightPink</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightPink</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11LightSalmonyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightSalmon" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11LightSalmonyA2CmF">LightSalmon</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightSalmon</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightSalmon</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13LightSeaGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightSeaGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13LightSeaGreenyA2CmF">LightSeaGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightSeaGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightSeaGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO12LightSkyBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightSkyBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO12LightSkyBlueyA2CmF">LightSkyBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightSkyBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightSkyBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO14LightSlateGrayyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightSlateGray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO14LightSlateGrayyA2CmF">LightSlateGray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightSlateGray</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightSlateGray</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO14LightSlateGreyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightSlateGrey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO14LightSlateGreyyA2CmF">LightSlateGrey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightSlateGrey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightSlateGrey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO14LightSteelBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightSteelBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO14LightSteelBlueyA2CmF">LightSteelBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightSteelBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightSteelBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11LightYellowyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LightYellow" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11LightYellowyA2CmF">LightYellow</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LightYellow</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LightYellow</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4LimeyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Lime" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4LimeyA2CmF">Lime</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Lime</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Lime</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9LimeGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/LimeGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9LimeGreenyA2CmF">LimeGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>LimeGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">LimeGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5LinenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Linen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5LinenyA2CmF">Linen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Linen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Linen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7MagentayA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Magenta" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7MagentayA2CmF">Magenta</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Magenta</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Magenta</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6MaroonyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Maroon" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6MaroonyA2CmF">Maroon</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Maroon</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Maroon</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO16MediumAquaMarineyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumAquaMarine" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO16MediumAquaMarineyA2CmF">MediumAquaMarine</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumAquaMarine</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumAquaMarine</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10MediumBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10MediumBlueyA2CmF">MediumBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO12MediumOrchidyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumOrchid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO12MediumOrchidyA2CmF">MediumOrchid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumOrchid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumOrchid</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO12MediumPurpleyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumPurple" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO12MediumPurpleyA2CmF">MediumPurple</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumPurple</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumPurple</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO14MediumSeaGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumSeaGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO14MediumSeaGreenyA2CmF">MediumSeaGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumSeaGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumSeaGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO15MediumSlateBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumSlateBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO15MediumSlateBlueyA2CmF">MediumSlateBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumSlateBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumSlateBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO17MediumSpringGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumSpringGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO17MediumSpringGreenyA2CmF">MediumSpringGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumSpringGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumSpringGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO15MediumTurquoiseyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumTurquoise" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO15MediumTurquoiseyA2CmF">MediumTurquoise</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumTurquoise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumTurquoise</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO15MediumVioletRedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MediumVioletRed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO15MediumVioletRedyA2CmF">MediumVioletRed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MediumVioletRed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MediumVioletRed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO12MidnightBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MidnightBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO12MidnightBlueyA2CmF">MidnightBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MidnightBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MidnightBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9MintCreamyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MintCream" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9MintCreamyA2CmF">MintCream</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MintCream</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MintCream</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9MistyRoseyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/MistyRose" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9MistyRoseyA2CmF">MistyRose</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>MistyRose</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">MistyRose</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8MoccasinyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Moccasin" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8MoccasinyA2CmF">Moccasin</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Moccasin</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Moccasin</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11NavajoWhiteyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/NavajoWhite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11NavajoWhiteyA2CmF">NavajoWhite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>NavajoWhite</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">NavajoWhite</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4NavyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Navy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4NavyyA2CmF">Navy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Navy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Navy</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7OldLaceyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/OldLace" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7OldLaceyA2CmF">OldLace</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>OldLace</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">OldLace</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5OliveyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Olive" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5OliveyA2CmF">Olive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Olive</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Olive</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9OliveDrabyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/OliveDrab" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9OliveDrabyA2CmF">OliveDrab</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>OliveDrab</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">OliveDrab</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6OrangeyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Orange" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6OrangeyA2CmF">Orange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Orange</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Orange</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9OrangeRedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/OrangeRed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9OrangeRedyA2CmF">OrangeRed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>OrangeRed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">OrangeRed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6OrchidyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Orchid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6OrchidyA2CmF">Orchid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Orchid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Orchid</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13PaleGoldenRodyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/PaleGoldenRod" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13PaleGoldenRodyA2CmF">PaleGoldenRod</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PaleGoldenRod</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PaleGoldenRod</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9PaleGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/PaleGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9PaleGreenyA2CmF">PaleGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PaleGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PaleGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13PaleTurquoiseyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/PaleTurquoise" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13PaleTurquoiseyA2CmF">PaleTurquoise</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PaleTurquoise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PaleTurquoise</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO13PaleVioletRedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/PaleVioletRed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO13PaleVioletRedyA2CmF">PaleVioletRed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PaleVioletRed</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PaleVioletRed</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10PapayaWhipyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/PapayaWhip" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10PapayaWhipyA2CmF">PapayaWhip</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PapayaWhip</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PapayaWhip</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9PeachPuffyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/PeachPuff" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9PeachPuffyA2CmF">PeachPuff</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PeachPuff</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PeachPuff</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4PeruyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Peru" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4PeruyA2CmF">Peru</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Peru</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Peru</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4PinkyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Pink" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4PinkyA2CmF">Pink</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pink</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Pink</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4PlumyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Plum" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4PlumyA2CmF">Plum</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Plum</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Plum</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10PowderBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/PowderBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10PowderBlueyA2CmF">PowderBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>PowderBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">PowderBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6PurpleyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Purple" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6PurpleyA2CmF">Purple</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Purple</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Purple</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO3RedyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Red" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO3RedyA2CmF">Red</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Red</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Red</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9RosyBrownyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/RosyBrown" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9RosyBrownyA2CmF">RosyBrown</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>RosyBrown</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">RosyBrown</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9RoyalBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/RoyalBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9RoyalBlueyA2CmF">RoyalBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>RoyalBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">RoyalBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11SaddleBrownyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SaddleBrown" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11SaddleBrownyA2CmF">SaddleBrown</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SaddleBrown</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SaddleBrown</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6SalmonyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Salmon" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6SalmonyA2CmF">Salmon</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Salmon</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Salmon</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10SandyBrownyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SandyBrown" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10SandyBrownyA2CmF">SandyBrown</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SandyBrown</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SandyBrown</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8SeaGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SeaGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8SeaGreenyA2CmF">SeaGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SeaGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SeaGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO8SeaShellyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SeaShell" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO8SeaShellyA2CmF">SeaShell</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SeaShell</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SeaShell</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6SiennayA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Sienna" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6SiennayA2CmF">Sienna</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sienna</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Sienna</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6SilveryA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Silver" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6SilveryA2CmF">Silver</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Silver</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Silver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7SkyBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SkyBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7SkyBlueyA2CmF">SkyBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SkyBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SkyBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9SlateBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SlateBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9SlateBlueyA2CmF">SlateBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SlateBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SlateBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9SlateGrayyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SlateGray" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9SlateGrayyA2CmF">SlateGray</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SlateGray</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SlateGray</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9SlateGreyyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SlateGrey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9SlateGreyyA2CmF">SlateGrey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SlateGrey</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SlateGrey</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4SnowyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Snow" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4SnowyA2CmF">Snow</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Snow</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Snow</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11SpringGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SpringGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11SpringGreenyA2CmF">SpringGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SpringGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SpringGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9SteelBlueyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/SteelBlue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9SteelBlueyA2CmF">SteelBlue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>SteelBlue</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">SteelBlue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO3TanyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Tan" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO3TanyA2CmF">Tan</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tan</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Tan</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO4TealyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Teal" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO4TealyA2CmF">Teal</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Teal</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Teal</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO7ThistleyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Thistle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO7ThistleyA2CmF">Thistle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Thistle</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Thistle</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6TomatoyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Tomato" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6TomatoyA2CmF">Tomato</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tomato</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Tomato</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO9TurquoiseyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Turquoise" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO9TurquoiseyA2CmF">Turquoise</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Turquoise</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Turquoise</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6VioletyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Violet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6VioletyA2CmF">Violet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Violet</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Violet</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5WheatyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Wheat" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5WheatyA2CmF">Wheat</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wheat</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Wheat</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO5WhiteyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/White" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO5WhiteyA2CmF">White</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>White</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">White</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO10WhiteSmokeyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/WhiteSmoke" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO10WhiteSmokeyA2CmF">WhiteSmoke</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>WhiteSmoke</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">WhiteSmoke</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO6YellowyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/Yellow" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO6YellowyA2CmF">Yellow</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Yellow</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">Yellow</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO11YellowGreenyA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/YellowGreen" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO11YellowGreenyA2CmF">YellowGreen</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>YellowGreen</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="kt">YellowGreen</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

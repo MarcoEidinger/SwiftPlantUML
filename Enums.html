@@ -17,7 +17,7 @@
     <a title="Enumerations  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (96% documented)</p>
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
         <p class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -39,13 +39,34 @@
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Enums/AccessLevel.html">AccessLevel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/BrowserPresentationFormat.html">BrowserPresentationFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ClassDiagramOutput.html">ClassDiagramOutput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/PumlThemes.html">PumlThemes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Logging.html">Logging</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Protocols/PlantUMLPresenting.html">PlantUMLPresenting</a>
               </li>
@@ -58,6 +79,24 @@
                 <a href="Structs/ClassDiagramGenerator.html">ClassDiagramGenerator</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/Configuration.html">Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ConfigurationProvider.html">ConfigurationProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ConsoleLogger.html">ConsoleLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ElementOptions.html">ElementOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/FileCollector.html">FileCollector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/FileOptions.html">FileOptions</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/PlantUMLBrowserPresenter.html">PlantUMLBrowserPresenter</a>
               </li>
               <li class="nav-group-task">
@@ -65,6 +104,24 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PlantUMLScript.html">PlantUMLScript</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Relationship.html">Relationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RelationshipOptions.html">RelationshipOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RelationshipStyle.html">RelationshipStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Spot.html">Spot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Stereotype.html">Stereotype</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Stereotypes.html">Stereotypes</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Version.html">Version</a>
@@ -83,6 +140,174 @@
           <section class="section task-group-section">
             <div class="task-group">
               <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework18ClassDiagramOutputO"></a>
+                    <a name="//apple_ref/swift/Enum/ClassDiagramOutput" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework18ClassDiagramOutputO">ClassDiagramOutput</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Defines how to output the generated diagram</p>
+
+                        <a href="Enums/ClassDiagramOutput.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ClassDiagramOutput</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework5ColorO"></a>
+                    <a name="//apple_ref/swift/Enum/Color" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ColorO">Color</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Colors supported by PlantUML, see <a href="https://github.com/qywx/PlantUML-colors/blob/master/plantuml-colors-table.puml">https://github.com/qywx/PlantUML-colors/blob/master/plantuml-colors-table.puml</a></p>
+
+                        <a href="Enums/Color.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Color</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework11AccessLevelO"></a>
+                    <a name="//apple_ref/swift/Enum/AccessLevel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework11AccessLevelO">AccessLevel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Access Level for Swift variables and methods, see <a href="https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html">https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html</a></p>
+
+                        <a href="Enums/AccessLevel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">AccessLevel</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework23RelationshipInlineStyleO"></a>
+                    <a name="//apple_ref/swift/Enum/RelationshipInlineStyle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework23RelationshipInlineStyleO">RelationshipInlineStyle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inline style for relation (linking or arrow)</p>
+
+                        <a href="Enums/RelationshipInlineStyle.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">RelationshipInlineStyle</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework10PumlThemesO"></a>
+                    <a name="//apple_ref/swift/Enum/PumlThemes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework10PumlThemesO">PumlThemes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Open-source themes for PlantUML diagrams, see <a href="https://bschwarz.github.io/puml-themes/gallery.html">https://bschwarz.github.io/puml-themes/gallery.html</a></p>
+
+                        <a href="Enums/PumlThemes.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PumlThemes</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Theme</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework8LogLevelO"></a>
+                    <a name="//apple_ref/swift/Enum/LogLevel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework8LogLevelO">LogLevel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A log level can be used to make logging conditional, e.g. only errors with log level <code>error</code> but log infos, warning and errors with log level <code>info</code></p>
+
+                        <a href="Enums/LogLevel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LogLevel</span> <span class="p">:</span> <span class="kt">Comparable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
                 <li class="item">
                   <div>
                     <code>
@@ -116,7 +341,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-02-18)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-01)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

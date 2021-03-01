@@ -16,7 +16,7 @@
     <a title="  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (96% documented)</p>
+        <p><a href="index.html"> Docs</a> (100% documented)</p>
         <p class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -38,13 +38,34 @@
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Enums/AccessLevel.html">AccessLevel</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/BrowserPresentationFormat.html">BrowserPresentationFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/ClassDiagramOutput.html">ClassDiagramOutput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/PumlThemes.html">PumlThemes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Logging.html">Logging</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Protocols/PlantUMLPresenting.html">PlantUMLPresenting</a>
               </li>
@@ -57,6 +78,24 @@
                 <a href="Structs/ClassDiagramGenerator.html">ClassDiagramGenerator</a>
               </li>
               <li class="nav-group-task">
+                <a href="Structs/Configuration.html">Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ConfigurationProvider.html">ConfigurationProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ConsoleLogger.html">ConsoleLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ElementOptions.html">ElementOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/FileCollector.html">FileCollector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/FileOptions.html">FileOptions</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Structs/PlantUMLBrowserPresenter.html">PlantUMLBrowserPresenter</a>
               </li>
               <li class="nav-group-task">
@@ -64,6 +103,24 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/PlantUMLScript.html">PlantUMLScript</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Relationship.html">Relationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RelationshipOptions.html">RelationshipOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RelationshipStyle.html">RelationshipStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Spot.html">Spot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Stereotype.html">Stereotype</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Stereotypes.html">Stereotypes</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Version.html">Version</a>
@@ -81,7 +138,8 @@
 <p>Generate UML class diagrams from swift code with this Command Line Interface (CLI) and Swift Package.</p>
 
 <p><a href="https://github.com/MarcoEidinger/SwiftPlantUML/workflows/Swift"><img src="https://github.com/MarcoEidinger/SwiftPlantUML/workflows/Swift/badge.svg" alt="Build Status"></a>
-<a href="https://codecov.io/gh/MarcoEidinger/SwiftPlantUML"><img src="https://codecov.io/gh/MarcoEidinger/SwiftPlantUML/branch/main/graph/badge.svg?token=JOE7UL41JA" alt="codecov"></a>
+<a href="https://codecov.io/gh/MarcoEidinger/SwiftPlantUML"><img src="https://codecov.io/gh/MarcoEidinger/SwiftPlantUML/branch/main/graph/badge.svg" alt="codecov"></a>
+<a href="https://codebeat.co/projects/github-com-marcoeidinger-swiftplantuml-main"><img src="https://codebeat.co/badges/ef555787-2240-40be-9433-f3fa141d43a9" alt="codebeat badge"></a>
 <a href="https://marcoeidinger.github.io/SwiftPlantUML/"><img src="https://marcoeidinger.github.io/SwiftPlantUML/badge.svg" alt="docs"></a>
 <a href="https://github.com/MarcoEidinger/SwiftPlantUML-Xcode-Extension"><img src="https://img.shields.io/badge/Xcode%20extension-available-brightgreen" alt="Xcode Extension"></a>
 <a href="http://twitter.com/MarcoEidinger"><img src="https://img.shields.io/badge/twitter-@MarcoEidinger-blue.svg" alt="Twitter"></a></p>
@@ -90,6 +148,32 @@
 with their instance and static members as well as their inheritance and implementation relationships</p>
 
 <p><img src="https://github.com/MarcoEidinger/SwiftPlantUML/raw/main/.assets/exampleDiagram.png" alt="Example Diagram"></p>
+
+<details>
+  <summary><strong>Table of Contents</strong> (click to expand)</summary>
+
+<!-- toc -->
+
+- [SwiftPlantUML](#swiftplantuml)
+    - [Usage](#usage)
+        - [Command Line](#command-line)
+        - [Swift package](#swift-package)
+        - [Xcode source editor extension](#xcode-source-editor-extension)
+    - [Installation](#installation)
+        - [Using Homebrew](#using-homebrew)
+        - [Using Mint](#using-mint)
+        - [Installing from source](#installing-from-source)
+    - [Configuration](#configuration)
+        - [Options](#options)
+        - [Examples](#examples)
+        - [Code Completion during Editing](#code-completion-during-editing)
+    - [Planned improvements](#planned-improvements)
+    - [Known limitations](#known-limitations)
+    - [Acknowledgements](#acknowledgements)
+
+<!-- tocstop -->
+
+</details>
 <h2 id='usage' class='heading'>Usage</h2>
 <h3 id='command-line' class='heading'>Command Line</h3>
 
@@ -102,20 +186,30 @@ will be searched recursively.</p>
 <pre class="highlight plaintext"><code>$ swiftplantuml classdiagram --help
 OVERVIEW: Generate PlantUML script and view it and diagram in browser
 
-USAGE: swift-plant-uml classdiagram [&lt;paths&gt; ...] [--output &lt;format&gt;]
+USAGE: swift-plant-uml classdiagram [--config &lt;config&gt;] [--exclude &lt;exclude&gt; ...] [--output &lt;format&gt;] [--sdk &lt;sdk&gt;] [--verbose] [&lt;paths&gt; ...]
 
 ARGUMENTS:
   &lt;paths&gt;                 List of paths to the files or directories containing
                           swift sources
 
 OPTIONS:
+  --config &lt;config&gt;       Path to custom configuration filed (otherwise will
+                          search for `.swiftplantuml.yml` in current directory)
+  --exclude &lt;exclude&gt;     paths to ignore source files. Takes precedence over
+                          arguments
   --output &lt;format&gt;       Defines output format. Options: browser,
-                          browserImageOnly, consoleOnly (default: browser)
+                          browserImageOnly, consoleOnly
+  --sdk &lt;sdk&gt;             MacOSX SDK path used to handle type inference
+                          resolution, usually `$(xcrun --show-sdk-path -sdk
+                          macosx)`
+  --verbose               Verbose
   --version               Show the version.
   -h, --help              Show help information.
 </code></pre>
 
 <p>As <code>classdiagram</code> is the default subcommand you can omit it.</p>
+
+<p>Note: unknown type in diagrams for variables declared with type inference (e.g. <code>var count = 0</code>) <em>unless</em> you specify <code>sdk</code> argument</p>
 <h3 id='swift-package' class='heading'>Swift package</h3>
 <pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
     <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/MarcoEidinger/SwiftPlantUML.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.2.0"</span><span class="p">))</span>
@@ -130,10 +224,10 @@ OPTIONS:
 <h3 id='using-a-href-https-brew-sh-homebrew-a' class='heading'>Using <a href="https://brew.sh/">Homebrew</a></h3>
 <pre class="highlight plaintext"><code>brew install MarcoEidinger/formulae/swiftplantuml
 </code></pre>
-<h3 id='using-a-href-https-github-com-yonaskolb-mint-mint-a' class='heading'>Using <a href="https://github.com/yonaskolb/mint">Mint</a>:</h3>
+<h3 id='using-a-href-https-github-com-yonaskolb-mint-mint-a' class='heading'>Using <a href="https://github.com/yonaskolb/mint">Mint</a></h3>
 <pre class="highlight plaintext"><code>$ mint install MarcoEidinger/SwiftPlantUML
 </code></pre>
-<h3 id='installing-from-source' class='heading'>Installing from source:</h3>
+<h3 id='installing-from-source' class='heading'>Installing from source</h3>
 
 <p>You can also build and install from source by cloning this project and running
 <code>make install</code> (Xcode 12 or later).</p>
@@ -144,22 +238,74 @@ Run the following commands to build and install manually:</p>
 $ cd SwiftPlantUML
 $ make install
 </code></pre>
+<h2 id='configuration' class='heading'>Configuration</h2>
+
+<p>Configure SwiftPlantUML by adding a <code>.swiftplantuml.yml</code> file from the directory you&rsquo;ll run SwiftPlantUML from. Note: the same configuration options can be set programmatically with <code><a href="Structs/Configuration.html">Configuration</a></code>.</p>
+<h3 id='options' class='heading'>Options</h3>
+
+<p>You are able to</p>
+
+<ul>
+<li>include/exclude files (wildcards supported)</li>
+<li>include/exclude elements by name (wildcards supported)</li>
+<li>limit elements and members bases on their access level, e.g. show only <code>public</code> types</li>
+<li>hide extensions</li>
+<li>hide member access level attribute</li>
+<li>configure styles, use <a href="https://plantuml.com/skinparam">skin parameters</a> and even include external files for theming (e.g. <a href="https://bschwarz.github.io/puml-themes/">PUML Themes</a>)</li>
+<li>exclude inheritance relationships based on parent (wildcards supported), e.g. do not show inheritance to <code>Codable</code></li>
+</ul>
+<h3 id='examples' class='heading'>Examples</h3>
+
+<p>Simple Example:</p>
+<pre class="highlight yaml"><code><span class="na">files</span><span class="pi">:</span>
+    <span class="na">exclude</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">Tests/**/*.swift"</span> <span class="c1"># paths to ignore for diagram. Takes precedence over `included`.</span>
+<span class="na">elements</span><span class="pi">:</span>
+  <span class="na">havingAccessLevel</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">public</span>
+  <span class="na">showMembersWithAccessLevel</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">public</span>
+  <span class="na">showExtensions</span><span class="pi">:</span> <span class="s">false</span>
+<span class="na">skinparamCommands</span><span class="pi">:</span> <span class="c1"># see https://plantuml.com/skinparam</span>
+<span class="pi">-</span> <span class="s">skinparam classBackgroundColor PaleGreen</span>
+<span class="pi">-</span> <span class="s">skinparam classArrowColor SeaGreen</span>
+<span class="pi">-</span> <span class="s">skinparam classBorderColor SpringGreen</span>
+<span class="pi">-</span> <span class="s">skinparam stereotypeCBackgroundColor YellowGreen</span>
+<span class="pi">-</span> <span class="s">skinparam stereotypeCBackgroundColor&lt;&lt; Foo &gt;&gt; DimGray</span>
+<span class="na">relationships</span><span class="pi">:</span>
+  <span class="na">inheritance</span><span class="pi">:</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">inherits</span><span class="nv"> </span><span class="s">from"</span>
+    <span class="na">style</span><span class="pi">:</span>
+      <span class="na">lineStyle</span><span class="pi">:</span> <span class="s">dotted</span>
+      <span class="na">lineColor</span><span class="pi">:</span> <span class="s">DarkViolet</span>
+      <span class="na">textColor</span><span class="pi">:</span> <span class="s">DarkViolet</span>
+    <span class="na">exclude</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">Codable"</span>
+</code></pre>
+
+<p>Rich example: <a href="./Configuration/Examples/Rich/.swiftplantuml.yml">here</a></p>
+<h3 id='code-completion-during-editing' class='heading'>Code Completion during Editing</h3>
+
+<p><img src="https://user-images.githubusercontent.com/4176826/109438147-6f7b0a80-79dd-11eb-9002-adc584438159.gif" alt="codeCompletion"></p>
+
+<p>To get code completiong during editing use Visual Studio Code, the <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML extension created by Red Hat</a> and the <a href="./Configuration/Schema/json-schema-swiftplantuml.json">JSON schema for SwiftPlantUML</a>.</p>
+
+<p>In Visual Studio Code:  <code>Code</code> -&gt; <code>Preferences</code> -&gt; <code>Settings</code> -&gt; search for yaml</p>
+
+<p><img width="503" alt="Screen Shot 2021-02-27 at 5 57 49 AM" src="https://user-images.githubusercontent.com/4176826/109389381-1b7b0380-78c1-11eb-9ba2-0b553aa4dd14.png"></p>
+
+<p>Click on <code>Edit in settings.json</code> and add the respective entry:</p>
+<pre class="highlight json"><code><span class="s2">"yaml.schemas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"https://raw.githubusercontent.com/MarcoEidinger/SwiftPlantUML/main/Configuration/Schema/json-schema-swiftplantuml.json"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/.swiftplantuml.yml"</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h2 id='planned-improvements' class='heading'>Planned improvements</h2>
 
 <ul>
 <li>being able to render associations between elements</li>
-<li>being able to limit elements and members bases on their access level</li>
 <li>being able to merge extensions with their known type</li>
-<li>being able to configure styles and skin parameters</li>
 </ul>
 <h2 id='known-limitations' class='heading'>Known limitations</h2>
 
 <ul>
-<li>unknown type for variables declared with type inference (e.g. <code>var count = 0</code>)
-
-<ul>
-<li>this is a limitation of SourceKitten :(</li>
-</ul></li>
 <li>huge diagrams in browser
 
 <ul>
@@ -175,7 +321,7 @@ $ make install
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-02-18)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-01)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

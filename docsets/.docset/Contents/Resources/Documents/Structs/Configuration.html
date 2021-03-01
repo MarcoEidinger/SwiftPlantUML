@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Configuration Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Configuration" class="dashAnchor"></a>
+    <a title="Configuration Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Configuration Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/AccessLevel.html">AccessLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BrowserPresentationFormat.html">BrowserPresentationFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ClassDiagramOutput.html">ClassDiagramOutput</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Color.html">Color</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PumlThemes.html">PumlThemes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Logging.html">Logging</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PlantUMLPresenting.html">PlantUMLPresenting</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ClassDiagramGenerator.html">ClassDiagramGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Configuration.html">Configuration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConfigurationProvider.html">ConfigurationProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ConsoleLogger.html">ConsoleLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ElementOptions.html">ElementOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FileCollector.html">FileCollector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FileOptions.html">FileOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlantUMLBrowserPresenter.html">PlantUMLBrowserPresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlantUMLConsolePresenter.html">PlantUMLConsolePresenter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PlantUMLScript.html">PlantUMLScript</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Relationship.html">Relationship</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RelationshipOptions.html">RelationshipOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RelationshipStyle.html">RelationshipStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Spot.html">Spot</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stereotype.html">Stereotype</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stereotypes.html">Stereotypes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Version.html">Version</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Configuration</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Configuration</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Configuration options to influence the generation and visual representation of the class diagram</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Se4fromxs7Decoder_p_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Se4fromxs7Decoder_p_tKcfc">init(from:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV7defaultACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/default" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV7defaultACvpZ">default</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>default configuration used if no configuration file was found</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">let</span> <span class="err">`</span><span class="k">default</span><span class="err">`</span><span class="p">:</span> <span class="kt">Configuration</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV5filesAA11FileOptionsVvp"></a>
+                    <a name="//apple_ref/swift/Property/files" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV5filesAA11FileOptionsVvp">files</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>options which files shall be considered for class diagram generation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">files</span><span class="p">:</span> <span class="kt"><a href="../Structs/FileOptions.html">FileOptions</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV8elementsAA14ElementOptionsVvp"></a>
+                    <a name="//apple_ref/swift/Property/elements" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV8elementsAA14ElementOptionsVvp">elements</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>options which and how elements shall be considered for class diagram generation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">elements</span><span class="p">:</span> <span class="kt"><a href="../Structs/ElementOptions.html">ElementOptions</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV16hideShowCommandsSaySSGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/hideShowCommands" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV16hideShowCommandsSaySSGSgvp">hideShowCommands</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>parameterize the display of entities using the hide/show command.<a href="https://plantuml.com/class-diagram#6a8ec84e53ede3ae">https://plantuml.com/class-diagram#6a8ec84e53ede3ae</a></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">hideShowCommands</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV17skinparamCommandsSaySSGSgvp"></a>
+                    <a name="//apple_ref/swift/Property/skinparamCommands" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV17skinparamCommandsSaySSGSgvp">skinparamCommands</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>add skinparam values to change colors and font of the drawing. See <a href="https://plantuml.com/skinparam">https://plantuml.com/skinparam</a> for more details</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">skinparamCommands</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV16includeRemoteURLSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/includeRemoteURL" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV16includeRemoteURLSSSgvp">includeRemoteURL</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>wil be added to PlantUMLScript as <code>!include</code> directive to include a file (from Internet/Intranet) in your diagram</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">includeRemoteURL</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV13relationshipsAA19RelationshipOptionsVvp"></a>
+                    <a name="//apple_ref/swift/Property/relationships" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV13relationshipsAA19RelationshipOptionsVvp">relationships</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>options which relationships to show and how to style them</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">relationships</span><span class="p">:</span> <span class="kt"><a href="../Structs/RelationshipOptions.html">RelationshipOptions</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationV11stereotypesAA11StereotypesVvp"></a>
+                    <a name="//apple_ref/swift/Property/stereotypes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationV11stereotypesAA11StereotypesVvp">stereotypes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>sterotypes (spotted character with background color and optional name) to be shown for an entity type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">stereotypes</span><span class="p">:</span> <span class="kt"><a href="../Structs/Stereotypes.html">Stereotypes</a></span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework13ConfigurationVACycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework13ConfigurationVACycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>default initializer</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-01)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
