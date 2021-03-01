@@ -1,0 +1,18 @@
+
+disabled_rules:
+  - opening_brace
+  - line_length
+
+included:
+  - Sources
+excluded:
+  - Sources/SwiftPlantUMLFramework/FileManagement/Glob.swift # 3rd party
+  - Sources/SwiftPlantUMLFramework/Configuration/Color.swift # acceptable violations of identifier_name (to match official PlantUML color naming)
+
+cyclomatic_complexity:
+  warning: 13
+  ignores_case_statements: true
+
+identifier_name:
+  excluded:
+    - _path
