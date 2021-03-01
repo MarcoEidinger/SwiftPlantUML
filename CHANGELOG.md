@@ -1,3 +1,14 @@
+## [0.3.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.2.1...0.2.2) (2021-02-28)
+
+### Features
+
+* 🎸 show inferred type (if SDK path was provided) ([107f8b6](https://github.com/MarcoEidinger/SwiftPlantUML/commit/107f8b6a6d7597ea9bcff61af2cb6f1136ac8270)), closes [#14](https://github.com/MarcoEidinger/SwiftPlantUML/issues/14)
+* 🎸 various configuration options with .swiftplantuml.yml ([6bb08f3](https://github.com/MarcoEidinger/SwiftPlantUML/commit/6bb08f349e9ec0a6cd8a9c8b9386ded2378ac8b7)), closes [#9](https://github.com/MarcoEidinger/SwiftPlantUML/issues/9) and [#10](https://github.com/MarcoEidinger/SwiftPlantUML/issues/10)
+
+### Bug Fixes
+
+* 🐛 multiple file paths handled incorrectly [#12](https://github.com/MarcoEidinger/SwiftPlantUML/issues/12)
+
 ## [0.2.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.2.0...0.2.1) (2021-02-18)
 ### Bug Fixes
 
