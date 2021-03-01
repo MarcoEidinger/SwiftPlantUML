@@ -10,9 +10,11 @@ public struct ClassDiagramGenerator {
     /// generate diagram from Swift file(s)
     /// - Parameters:
     ///   - paths: representing paths to Swift source code files on the file system
+    ///   - configuration:  options to influence the generation and visual representation of the class diagram
     ///   - presenter: outputs the PlantUMLScript / Digram e.g. `PlantUMLBrowserPresenter` or `PlantUMLConsolePresenter`
-    public func generate(for paths: [String], with configuration: Configuration = .default, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
-        outputDiagram(for: generateScript(for: fileCollector.getFiles(for: paths), with: configuration), with: presenter)
+    ///   - sdkPath: MacOSX SDK path used to handle type inference resolution
+    public func generate(for paths: [String], with configuration: Configuration = .default, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter(), sdkPath: String? = nil) {
+        outputDiagram(for: generateScript(for: fileCollector.getFiles(for: paths), with: configuration, sdkPath: sdkPath), with: presenter)
     }
 
     /// generate diagram from a String containing Swift code
@@ -32,11 +34,11 @@ public struct ClassDiagramGenerator {
         return PlantUMLScript(items: allValidItems, configuration: configuration)
     }
 
-    func generateScript(for files: [URL], with configuration: Configuration = .default) -> PlantUMLScript {
+    func generateScript(for files: [URL], with configuration: Configuration = .default, sdkPath: String? = nil) -> PlantUMLScript {
         var allValidItems: [SyntaxStructure] = []
 
         for aFile in files {
-            if let validItems = SyntaxStructure.create(from: aFile)?.substructure {
+            if let validItems = SyntaxStructure.create(from: aFile, sdkPath: sdkPath)?.substructure {
                 allValidItems.append(contentsOf: validItems)
             }
         }

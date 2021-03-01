@@ -23,6 +23,9 @@ extension SwiftPlantUML {
         ))
         var output: ClassDiagramOutput?
 
+        @Option(help: "MacOSX SDK path used to handle type inference resolution, usually `$(xcrun --show-sdk-path -sdk macosx)`")
+        var sdk: String?
+
         @Flag(help: "Verbose")
         var verbose: Bool = false
 
@@ -45,6 +48,8 @@ extension SwiftPlantUML {
                 config.files.exclude = exclude
             }
 
+            Logger.shared.info("SDK: \(sdk ?? "no SDK path provided")")
+
             let directory = FileManager.default.currentDirectoryPath // "/Users/d041771/git/__Private/SwiftPlantUML"
             let files = FileCollector().getFiles(for: allPaths, in: directory, honoring: config.files)
 
@@ -52,11 +57,11 @@ extension SwiftPlantUML {
 
             switch output {
             case .browserImageOnly:
-                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .imagePng))
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .imagePng),sdkPath: sdk)
             case .consoleOnly:
-                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLConsolePresenter())
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLConsolePresenter(),sdkPath: sdk)
             default:
-                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .default))
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .default), sdkPath: sdk)
             }
         }
     }

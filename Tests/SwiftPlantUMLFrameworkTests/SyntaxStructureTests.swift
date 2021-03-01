@@ -96,6 +96,18 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertFalse(plantUMLElement!.contains("<Title: View>"))
     }
 
+    func testStructureNoTypeInference() {
+        let cut = try! SyntaxStructure.create(from: getTestFile(), sdkPath: "IncorrectSdkPath")
+        let plantUMLElement = cut?.find(.class, named: "Bicycle")?.plantuml(context: PlantUMLContext())
+        XCTAssertFalse(plantUMLElement!.contains("~hasBasket : Bool"))
+    }
+
+    func testStructureTypeInference() {
+        let cut = try! SyntaxStructure.create(from: getTestFile(), sdkPath: "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk")
+        let plantUMLElement = cut?.find(.class, named: "Bicycle")?.plantuml(context: PlantUMLContext())
+        XCTAssertTrue(plantUMLElement!.contains("~hasBasket : Bool"))
+    }
+
     func getTestFile() throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: "demo", ofType: "txt", inDirectory: "TestData") ?? "nonesense"

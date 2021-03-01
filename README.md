@@ -57,23 +57,30 @@ will be searched recursively.
 $ swiftplantuml classdiagram --help
 OVERVIEW: Generate PlantUML script and view it and diagram in browser
 
-USAGE: swift-plant-uml classdiagram [--config <config>] [--exclude <exclude> ...] [--output <format>] [--verbose] [<paths> ...]
+USAGE: swift-plant-uml classdiagram [--config <config>] [--exclude <exclude> ...] [--output <format>] [--sdk <sdk>] [--verbose] [<paths> ...]
 
 ARGUMENTS:
-  <paths>                 List of paths to the files or directories containing swift sources
+  <paths>                 List of paths to the files or directories containing
+                          swift sources
 
 OPTIONS:
-  --config <config>       Path to custom configuration filed (otherwise will search for
-                          `.swiftplantuml.yml` in current directory)
-  --exclude <exclude>     paths to ignore source files. Takes precedence over arguments
-  --output <format>       Defines output format. Options: browser, browserImageOnly,
-                          consoleOnly
+  --config <config>       Path to custom configuration filed (otherwise will
+                          search for `.swiftplantuml.yml` in current directory)
+  --exclude <exclude>     paths to ignore source files. Takes precedence over
+                          arguments
+  --output <format>       Defines output format. Options: browser,
+                          browserImageOnly, consoleOnly
+  --sdk <sdk>             MacOSX SDK path used to handle type inference
+                          resolution, usually `$(xcrun --show-sdk-path -sdk
+                          macosx)`
   --verbose               Verbose
   --version               Show the version.
   -h, --help              Show help information.
 ```
 
 As `classdiagram` is the default subcommand you can omit it.
+
+Note: unknown type in diagrams for variables declared with type inference (e.g. `var count = 0`) *unless* you specify `sdk` argument
 
 ### Swift package
 
@@ -184,8 +191,6 @@ Click on `Edit in settings.json` and add the respective entry:
 - being able to merge extensions with their known type
 
 ## Known limitations
-- unknown type for variables declared with type inference (e.g. `var count = 0`)
-  - this is a limitation of SourceKitten :(
 - huge diagrams in browser
   - PlantUML limits image width and height to 4096 with the option to override this limit when using PlantUML.jar. locally so your option is to use the `--textonly`option and adjust/use it with PlantUML tools directly
 
