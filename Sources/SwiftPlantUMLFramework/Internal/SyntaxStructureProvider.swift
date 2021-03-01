@@ -2,18 +2,30 @@ import Foundation
 import SourceKittenFramework
 
 internal extension SyntaxStructure {
-    private static func create(from file: File) -> SyntaxStructure? {
+    private static func create(from file: File, sdkPath: String? = nil) -> SyntaxStructure? {
+        guard let sdkPath = sdkPath else { return self.createStructure(from: file) }
+        guard let docs = SwiftDocs(file: file, arguments: ["-j4", "-sdk", sdkPath, file.path ?? ""]) else {
+            Logger.shared.warning("cannot parse source code with type inference! Is Applications/Xcode.app available?")
+            return self.createStructure(from: file)
+        }
+        let structure = Structure.init(sourceKitResponse: docs.docsDictionary)
+        let jsonData = structure.description.data(using: .utf8)!
+        return try! JSONDecoder().decode(SyntaxStructure.self, from: jsonData) // swiftlint:disable:this force_try
+    }
+
+    private static func createStructure(from file: File) -> SyntaxStructure? {
+        Logger.shared.info("no type-inference")
         let structure = try! Structure(file: file) // swiftlint:disable:this force_try
         let jsonData = structure.description.data(using: .utf8)!
         return try! JSONDecoder().decode(SyntaxStructure.self, from: jsonData) // swiftlint:disable:this force_try
     }
 
-    static func create(from fileOnDisk: URL) -> SyntaxStructure? {
+    static func create(from fileOnDisk: URL, sdkPath: String? = nil) -> SyntaxStructure? {
         guard let file = File(path: fileOnDisk.path) else {
             Logger.shared.error("not able to read contents of file \(fileOnDisk)")
             return nil
         }
-        return create(from: file)
+        return create(from: file, sdkPath: sdkPath)
     }
 
     static func create(from contents: String) -> SyntaxStructure? {
