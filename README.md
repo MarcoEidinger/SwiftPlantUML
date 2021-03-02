@@ -106,9 +106,11 @@ SwiftPlantUML requires the macosx SDK in order to properly recognize the inferre
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/MarcoEidinger/SwiftPlantUML.git", .upToNextMajor(from: "0.2.0"))
+    .package(url: "https://github.com/MarcoEidinger/SwiftPlantUML.git", .upToNextMajor(from: "0.3.0"))
 ]
 ```
+
+This project is still in initial development. Generally this anything may change at any time and the public API should not be considered stable). However, I'll try to reserve breaking changes for new minor versions. You might feel more comfortable to pin the version to `.upToNextMinor` or even to an `.exact` version.
 
 [API documentation](https://marcoeidinger.github.io/SwiftPlantUML/)
 
