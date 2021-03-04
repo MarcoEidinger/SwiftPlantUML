@@ -33,6 +33,7 @@ with their instance and static members as well as their inheritance and implemen
 		- [Options](#options)
 		- [Examples](#examples)
 		- [Code Completion during Editing](#code-completion-during-editing)
+	- [Large Diagrams](#large-diagrams)
 	- [Planned improvements](#planned-improvements)
 	- [Known limitations](#known-limitations)
 	- [Acknowledgements](#acknowledgements)
@@ -233,14 +234,37 @@ Click on `Edit in settings.json` and add the respective entry:
 "yaml.schemas": {"https://raw.githubusercontent.com/MarcoEidinger/SwiftPlantUML/main/Configuration/Schema/json-schema-swiftplantuml.json": "/.swiftplantuml.yml" }
 ```
 
+## Large Diagrams
+
+Online tools like [PlantText](https://www.planttext.com/) do not support large diagrams. If your diagram image is incompletely rendered (or not visible at all) by PlantText in the browser then 
+- [download PlantUML](https://plantuml.com/download) Java archive to your machine
+- use `swiftplantuml` to generate the script and
+- generate the actual image with `plantuml` locally
+
+Here is the respective command (which assumes that `plantuml.jar` was downloaded in the current directory from which `swifptlantuml` runs)
+
+```bash
+swiftplantuml ./Sources/ --output consoleOnly > sources.txt | java -DPLANTUML_LIMIT_SIZE=8192 -jar plantuml.jar $1
+```
+
+This will result in the creation of `sources.png` file containing the class diagram up to the size limit.
+
+PlantUML limits image width and height to 4096 with the option to override this limit (`-DPLANTUML_LIMIT_SIZE`) of which I made use in the command above.
+
+In the table below you see the difference of class diagram output based on the same script. FYI: this script/diagram has 63 entities.
+
+|PlantText Output|PlantUML Output (Default Size Limit)|PlantUML Output (Custom Size Limit)|
+|---|---|---|
+|![sources_planttext](https://user-images.githubusercontent.com/4176826/109912328-ae6cc280-7c60-11eb-9761-fab6c2fc6e4e.png)|![sources_plantumljar](https://user-images.githubusercontent.com/4176826/109912309-a2810080-7c60-11eb-8baf-85585b12984b.png)|![sources_plantumljar_increasedlimit](https://user-images.githubusercontent.com/4176826/109913177-51720c00-7c62-11eb-9757-9d312712c6b5.png)|
+
+
+
 ## Planned improvements
 - being able to render associations between elements
 - being able to merge extensions with their known type
 
 ## Known limitations
-- huge diagrams in browser
-  - PlantUML limits image width and height to 4096 with the option to override this limit when using PlantUML.jar. locally so your option is to use the `--textonly`option and adjust/use it with PlantUML tools directly
-
+See [Large Diagrams](#large-diagrams)
 ## Acknowledgements
 
 This project was inspired by https://github.com/palaniraja and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. 
