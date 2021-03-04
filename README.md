@@ -28,6 +28,7 @@ with their instance and static members as well as their inheritance and implemen
 		- [Using Homebrew](#using-homebrew)
 		- [Using Mint](#using-mint)
 		- [Installing from source](#installing-from-source)
+		- [Note: Working with Multiple Swift Versions](#note-working-with-multiple-swift-versions)
 	- [Configuration](#configuration)
 		- [Options](#options)
 		- [Examples](#examples)
@@ -144,6 +145,30 @@ $ git clone https://github.com/MarcoEidinger/SwiftPlantUML.git
 $ cd SwiftPlantUML
 $ make install
 ```
+
+### Note: Working with Multiple Swift Versions
+
+SwiftPlantUML hooks into SourceKit and therefore needs a Swift toolschain.
+
+You should always run SwiftPlantUML with the same toolchain you use to compile your code.
+
+You may want to override SwiftPlantUML's default Swift toolchain if you have multiple toolchains or Xcodes installed.
+
+Here's the order in which SwiftPlantUML determines which Swift toolchain to use:
+
+- `$XCODE_DEFAULT_TOOLCHAIN_OVERRIDE`
+- `$TOOLCHAIN_DIR or $TOOLCHAINS`
+- `xcrun -find swift`
+- `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain`
+- `/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain`
+- `~/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain`
+- `~/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain`
+
+`sourcekitd.framework` is expected to be found in the usr/lib/ subdirectory of the value passed in the paths above.
+
+So if you encounter **Fatal error: Loading sourcekitd.framework/Versions/A/sourcekitd failed** then please check result of `xcode-select -p` to see if that directory subsequently contains a Swift toolschain. You can use `sudo xcode-select -s <pathToYourXcodeInstallation>` to rectify the situation, e.g. 
+
+`sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
 
 ## Configuration
 Configure SwiftPlantUML by adding a `.swiftplantuml.yml` file from the directory you'll run SwiftPlantUML from. Note: the same configuration options can be set programmatically with `Configuration`.
