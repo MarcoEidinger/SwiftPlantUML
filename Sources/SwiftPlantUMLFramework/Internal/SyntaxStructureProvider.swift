@@ -3,12 +3,12 @@ import SourceKittenFramework
 
 internal extension SyntaxStructure {
     private static func create(from file: File, sdkPath: String? = nil) -> SyntaxStructure? {
-        guard let sdkPath = sdkPath else { return self.createStructure(from: file) }
+        guard let sdkPath = sdkPath else { return createStructure(from: file) }
         guard let docs = SwiftDocs(file: file, arguments: ["-j4", "-sdk", sdkPath, file.path ?? ""]) else {
             Logger.shared.warning("cannot parse source code with type inference! Is Applications/Xcode.app available?")
-            return self.createStructure(from: file)
+            return createStructure(from: file)
         }
-        let structure = Structure.init(sourceKitResponse: docs.docsDictionary)
+        let structure = Structure(sourceKitResponse: docs.docsDictionary)
         let jsonData = structure.description.data(using: .utf8)!
         return try! JSONDecoder().decode(SyntaxStructure.self, from: jsonData) // swiftlint:disable:this force_try
     }

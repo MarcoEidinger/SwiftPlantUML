@@ -57,9 +57,9 @@ extension SwiftPlantUML {
 
             switch output {
             case .browserImageOnly:
-                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .imagePng),sdkPath: sdk)
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .imagePng), sdkPath: sdk)
             case .consoleOnly:
-                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLConsolePresenter(),sdkPath: sdk)
+                generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLConsolePresenter(), sdkPath: sdk)
             default:
                 generator.generate(for: files.map(\.path), with: config, presentedBy: PlantUMLBrowserPresenter(format: .default), sdkPath: sdk)
             }
