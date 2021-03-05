@@ -13,7 +13,7 @@ class GlobsTests: XCTestCase {
     // MARK: glob matching
 
     func testExpandWildcardPathWithExactName() {
-        let path = "Level0.swift"
+        let path = "Level 0.swift"
         let directory = TestResources.path.stringByAppendingPathComponent("ProjectMock")
         XCTAssertEqual(matchGlobs(expandGlobs(path, in: directory), in: directory).count, 1)
     }
@@ -25,7 +25,7 @@ class GlobsTests: XCTestCase {
     }
 
     func testExpandPathWithSingleCharacterWildcardInMiddle() {
-        let path = "Level?.swift"
+        let path = "Level?0.swift"
         let directory = TestResources.path.stringByAppendingPathComponent("ProjectMock")
         XCTAssertEqual(matchGlobs(expandGlobs(path, in: directory), in: directory).count, 1)
     }
@@ -55,7 +55,7 @@ class GlobsTests: XCTestCase {
     }
 
     func testExpandPathWithSubdirectoryAndWildcard() {
-        let path = "Level1/*File.swift"
+        let path = "Level 1/*File.swift"
         let directory = TestResources.path.stringByAppendingPathComponent("ProjectMock")
         XCTAssertEqual(matchGlobs(expandGlobs(path, in: directory), in: directory).count, 1)
     }
