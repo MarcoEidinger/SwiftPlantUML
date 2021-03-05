@@ -9,8 +9,8 @@ class PlantUMLContext {
     private(set) var connections: [String] = []
     private(set) var extnConnections: [String] = []
 
-    private let linkTypeInheritance = "--|>"
-    private let linkTypeRealize = "..|>"
+    private let linkTypeInheritance = "<|--"
+    private let linkTypeRealize = "<|.."
     private let linkTypeDependency = "<.."
 //    private let linkTypeAssociation = "-->"
 //    private let linkTypeAggregation = "--o"
@@ -33,7 +33,7 @@ class PlantUMLContext {
             linkTypeKey = linkTo + "LinkType"
         }
 
-        var connect = "\(item.name!) \(uniqElementAndTypes[linkTypeKey] ?? "--ERROR--") \(linkTo)"
+        var connect = "\(linkTo) \(uniqElementAndTypes[linkTypeKey] ?? "--ERROR--") \(item.name!)"
         if let relStyle = relationshipStyle(for: namedConnection)?.plantuml {
             connect += " \(relStyle)"
         }
