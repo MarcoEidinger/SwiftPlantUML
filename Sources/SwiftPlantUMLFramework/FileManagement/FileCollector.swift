@@ -64,7 +64,7 @@ public struct FileCollector {
                 if path.hasPrefix("/") { // absolute
                     return URL(fileURLWithPath: path)
                 } else {
-                    return URL(string: path, relativeTo: URL(fileURLWithPath: directory))!
+                    return URL(fileURLWithPath: directory).appendingPathComponent(path)
                 }
             })
         }

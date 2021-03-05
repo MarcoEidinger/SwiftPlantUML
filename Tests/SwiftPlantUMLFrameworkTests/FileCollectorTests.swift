@@ -34,19 +34,19 @@ final class FileCollectorTests: XCTestCase {
 
     func testFilesStartingFromDirectoryExcludingPrefixInSubdirectory() {
         let testDir = TestResources.path.stringByAppendingPathComponent("ProjectMock")
-        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: nil, exclude: ["Level1/Level2/Mock*.swift"]))
+        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: nil, exclude: ["Level 1/Level2/Mock*.swift"]))
         XCTAssertEqual(files.count, 7)
     }
 
     func testFilesStartingFromDirectoryExcludingFilesInSubdirectory() {
         let testDir = TestResources.path.stringByAppendingPathComponent("ProjectMock")
-        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: nil, exclude: ["Level1/Level1.swift"]))
+        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: nil, exclude: ["Level 1/Level1.swift"]))
         XCTAssertEqual(files.count, 7)
     }
 
     func testFilesStartingFromDirectoryExcludingFiles() {
         let testDir = TestResources.path.stringByAppendingPathComponent("ProjectMock")
-        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: nil, exclude: ["Level0.swift"]))
+        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: nil, exclude: ["Level 0.swift"]))
         XCTAssertEqual(files.count, 7)
     }
 
@@ -58,13 +58,13 @@ final class FileCollectorTests: XCTestCase {
 
     func testFilesStartingFromDirectoryIncludingFiles() {
         let testDir = TestResources.path.stringByAppendingPathComponent("ProjectMock")
-        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: ["Level0.swift"], exclude: nil))
+        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: ["Level 0.swift"], exclude: nil))
         XCTAssertEqual(files.count, 1)
     }
 
     func testFilesStartingFromDirectoryIncludingAndExcludingFiles() {
         let testDir = TestResources.path.stringByAppendingPathComponent("ProjectMock")
-        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: ["Level0.swift"], exclude: ["Level0.swift"]))
+        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: ["Level 0.swift"], exclude: ["Level 0.swift"]))
         XCTAssertEqual(files.count, 0)
     }
 }
