@@ -1,3 +1,13 @@
+## [0.4.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.3.0...0.4.0) (2021-03-05)
+
+Enums are getting rendered with members (case elements, variables, functions) 🥳 technically it's a bug fix BUT also a significant visual change to the previous version. That's the reason for the version jump from 0.3.0 to 0.4.0
+
+### Bug Fixes
+
+* 🐛 illegal instruction for folder name with whitespace ([9c5b13e](https://github.com/MarcoEidinger/SwiftPlantUML/commit/9c5b13e934c1cf114e7f3080121323600ffae239)), closes [#20](https://github.com/MarcoEidinger/SwiftPlantUML/issues/20)
+* 🐛 render Enum with members ([ffb88a6](https://github.com/MarcoEidinger/SwiftPlantUML/commit/ffb88a6c2e64f5af5b4a719e7a5172b9a4aaee80)), closes [#19](https://github.com/MarcoEidinger/SwiftPlantUML/issues/19)
+---
+
 ## [0.3.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.2.1...0.2.2) (2021-02-28)
 
 ### Features
