@@ -61,6 +61,14 @@ class "anInternalStruct" as anInternalStruct << (S, SkyBlue) struct >> {
 class "anInternalStruct" as anInternalStruct2 << (X, Orchid) extension >> {
   anExtensionComputedInstanceVar : String
 }
+class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
+  +simpleCase
+  +caseWithRaw(_:)
+  +caseWithRaw(_:_:)
+  ~anInternalInstanceMethod()
+  ~{static} aStaticInternalMethod()
+  ~anInternalComputedVar : AnEnum
+}
 anInternalSubClass --|> aClass : inherits
 aPrivateGenericSubClass --|> aPrivateGenericClass : inherits
 aPublicStruct ..|> aProtocol : confirms to

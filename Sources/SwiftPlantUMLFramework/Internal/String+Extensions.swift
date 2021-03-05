@@ -43,3 +43,20 @@ internal extension String {
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: utf16.count)) != nil
     }
 }
+
+internal extension String {
+    mutating func addOrSkipMemberAccessLevelAttribute(for element: SyntaxStructure, basedOn configuration: Configuration) {
+        guard configuration.elements.showMemberAccessLevelAttribute == true else { return }
+
+        switch element.accessibility {
+        case .public:
+            self += "+"
+        case .internal:
+            self += "~"
+        case .private:
+            self += "-"
+        default:
+            ()
+        }
+    }
+}

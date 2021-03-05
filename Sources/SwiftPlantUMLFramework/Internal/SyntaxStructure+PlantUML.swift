@@ -43,61 +43,74 @@ extension SyntaxStructure {
     }
 
     private func members(context: PlantUMLContext) -> String {
-        var methods = ""
+        var members = ""
 
-        guard substructure != nil, substructure!.count > 0 else { return methods }
+        guard let substructure = self.substructure, substructure.count > 0 else { return members }
 
-        for sub in substructure! {
-            guard sub.kind == ElementKind.functionMethodInstance || sub.kind == ElementKind.functionMethodStatic || sub.kind == ElementKind.varInstance ||
-                sub.kind == ElementKind.varStatic else { continue }
-
-            if kind! != .extension {
-                let generateMembersWithAccessLevel: [ElementAccessibility] = context.configuration.elements.showMembersWithAccessLevel.map { ElementAccessibility(orig: $0)! }
-                if generateMembersWithAccessLevel.contains(sub.accessibility ?? ElementAccessibility.other) == false {
-                    continue
-                }
+        for sub in substructure {
+            if let msig = member(element: sub, context: context) {
+                members.appendAsNewLine(msig)
             }
-
-            var msig = "  "
-
-            if context.configuration.elements.showMemberAccessLevelAttribute {
-                switch sub.accessibility {
-                case .public:
-                    msig += "+"
-                case .internal:
-                    msig += "~"
-                case .private:
-                    msig += "-"
-                default:
-                    ()
-                }
-            }
-
-            if sub.kind == ElementKind.functionMethodInstance {
-                msig += "\(sub.name!)"
-            }
-            if sub.kind == ElementKind.functionMethodStatic {
-                msig += "{static} \(sub.name!)"
-            }
-            if sub.kind == ElementKind.varInstance {
-                if sub.typename != nil {
-                    msig += "\(sub.name!) : \(sub.typename!)"
-                } else {
-                    msig += "\(sub.name!)"
-                }
-            }
-            if sub.kind == ElementKind.varStatic {
-                if sub.typename != nil {
-                    msig += "{static} \(sub.name!) : \(sub.typename!)"
-                } else {
-                    msig += "{static} \(sub.name!)"
-                }
-            }
-
-            methods.appendAsNewLine(msig)
         }
 
-        return methods
+        return members
+    }
+
+    private func member(element: SyntaxStructure, context: PlantUMLContext) -> String? {
+        guard
+            element.kind == ElementKind.functionMethodInstance ||
+            element.kind == ElementKind.functionMethodStatic ||
+            element.kind == ElementKind.varInstance ||
+            element.kind == ElementKind.varStatic ||
+            element.kind == ElementKind.enumcase else { return nil }
+
+        let actualElement: SyntaxStructure!
+        if element.kind == ElementKind.enumcase {
+            actualElement = element.substructure?.first!
+        } else {
+            actualElement = element
+        }
+
+        if kind! != .extension {
+            let generateMembersWithAccessLevel: [ElementAccessibility] = context.configuration.elements.showMembersWithAccessLevel.map { ElementAccessibility(orig: $0)! }
+            if generateMembersWithAccessLevel.contains(actualElement.accessibility ?? ElementAccessibility.other) == false {
+                return nil
+            }
+        }
+
+        var msig = "  "
+
+        msig.addOrSkipMemberAccessLevelAttribute(for: actualElement, basedOn: context.configuration)
+
+        msig += memberName(of: actualElement)
+
+        return msig
+    }
+
+    private func memberName(of element: SyntaxStructure) -> String {
+        let kind = element.kind!
+        switch kind {
+        case .functionMethodInstance:
+            return "\(element.name!)"
+        case .functionMethodStatic:
+            return "{static} \(element.name!)"
+        case .varInstance:
+            if element.typename != nil {
+                return "\(element.name!) : \(element.typename!)"
+            } else {
+                return "\(element.name!)"
+            }
+        case .varStatic:
+            if element.typename != nil {
+                return "{static} \(element.name!) : \(element.typename!)"
+            } else {
+                return "{static} \(element.name!)"
+            }
+        case .enumelement:
+            return "\(element.name!)"
+        default:
+            return ""
+        }
     }
 
     private func skip(element: SyntaxStructure, basedOn configuration: Configuration) -> Bool {
