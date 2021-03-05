@@ -92,3 +92,23 @@ extension anInternalStruct {
         "aString"
     }
 }
+
+/// ignore comments :)
+public enum AnEnum {
+
+    case simpleCase
+    case caseWithRaw(String)
+    case caseWithRaw(String, Int)
+
+    func anInternalInstanceMethod() -> String {
+        return ""
+    }
+
+    static func aStaticInternalMethod() -> String {
+        return ""
+    }
+
+    var anInternalComputedVar: AnEnum {
+        .simpleCase
+    }
+}
