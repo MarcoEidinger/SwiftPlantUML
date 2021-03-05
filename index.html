@@ -163,10 +163,12 @@ with their instance and static members as well as their inheritance and implemen
         - [Using Homebrew](#using-homebrew)
         - [Using Mint](#using-mint)
         - [Installing from source](#installing-from-source)
+        - [Note: Working with Multiple Swift Versions](#note-working-with-multiple-swift-versions)
     - [Configuration](#configuration)
         - [Options](#options)
         - [Examples](#examples)
         - [Code Completion during Editing](#code-completion-during-editing)
+    - [Large Diagrams](#large-diagrams)
     - [Planned improvements](#planned-improvements)
     - [Known limitations](#known-limitations)
     - [Acknowledgements](#acknowledgements)
@@ -209,12 +211,34 @@ OPTIONS:
 
 <p>As <code>classdiagram</code> is the default subcommand you can omit it.</p>
 
-<p>Note: unknown type in diagrams for variables declared with type inference (e.g. <code>var count = 0</code>) <em>unless</em> you specify <code>sdk</code> argument</p>
+<p>Note: unknown type in diagrams for variables declared with type inference (e.g. <code>var hasBasket = false</code>) <em>unless</em> you specify <code>sdk</code> argument</p>
+
+<details>
+  <summary><strong>Type inference details</strong> (click to expand)</summary>
+
+In the following example the property `hasBasket` is of type `Bool` but the type is inferred and not explicitly declared.
+
+&ldquo;`swift
+class Bicycle: Vehicle {
+    var hasBasket = false
+}
+&rdquo;`
+
+SwiftPlantUML requires the macosx SDK in order to properly recognize the inferred type. If you have Xcode installed (which includes the macosx SDK) then use `&ndash;sdk $(xcrun &ndash;show-sdk-path -sdk macosx)`.
+
+|                    | No inferred type (*default*) | inferred type |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| Generated PlantUML |  `~hasBasket`                 |  `~hasBasket : Bool` 
+| Command            | `swiftplantuml classdiagram Tests/SwiftPlantUMLFrameworkTests/TestData/demo.txt`                  | `swiftplantuml classdiagram Tests/SwiftPlantUMLFrameworkTests/TestData/demo.txt &ndash;sdk $(xcrun &ndash;show-sdk-path -sdk macosx)`                      |                     |
+
+</details>
 <h3 id='swift-package' class='heading'>Swift package</h3>
 <pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/MarcoEidinger/SwiftPlantUML.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.2.0"</span><span class="p">))</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/MarcoEidinger/SwiftPlantUML.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.3.0"</span><span class="p">))</span>
 <span class="p">]</span>
 </code></pre>
+
+<p>This project is still in initial development. Generally this anything may change at any time and the public API should not be considered stable). However, I&rsquo;ll try to reserve breaking changes for new minor versions. You might feel more comfortable to pin the version to <code>.upToNextMinor</code> or even to an <code>.exact</code> version.</p>
 
 <p><a href="https://marcoeidinger.github.io/SwiftPlantUML/">API documentation</a></p>
 <h3 id='xcode-source-editor-extension' class='heading'>Xcode source editor extension</h3>
@@ -238,6 +262,31 @@ Run the following commands to build and install manually:</p>
 $ cd SwiftPlantUML
 $ make install
 </code></pre>
+<h3 id='note-working-with-multiple-swift-versions' class='heading'>Note: Working with Multiple Swift Versions</h3>
+
+<p>SwiftPlantUML hooks into SourceKit and therefore needs a Swift toolschain.</p>
+
+<p>You should always run SwiftPlantUML with the same toolchain you use to compile your code.</p>
+
+<p>You may want to override SwiftPlantUML&rsquo;s default Swift toolchain if you have multiple toolchains or Xcodes installed.</p>
+
+<p>Here&rsquo;s the order in which SwiftPlantUML determines which Swift toolchain to use:</p>
+
+<ul>
+<li><code>$XCODE_DEFAULT_TOOLCHAIN_OVERRIDE</code></li>
+<li><code>$TOOLCHAIN_DIR or $TOOLCHAINS</code></li>
+<li><code>xcrun -find swift</code></li>
+<li><code>/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</code></li>
+<li><code>/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</code></li>
+<li><code>~/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</code></li>
+<li><code>~/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain</code></li>
+</ul>
+
+<p><code>sourcekitd.framework</code> is expected to be found in the usr/lib/ subdirectory of the value passed in the paths above.</p>
+
+<p>So if you encounter <strong>Fatal error: Loading sourcekitd.framework/Versions/A/sourcekitd failed</strong> then please check result of <code>xcode-select -p</code> to see if that directory subsequently contains a Swift toolschain. You can use <code>sudo xcode-select -s &lt;pathToYourXcodeInstallation&gt;</code> to rectify the situation, e.g. </p>
+
+<p><code>sudo xcode-select -s /Applications/Xcode.app/Contents/Developer</code></p>
 <h2 id='configuration' class='heading'>Configuration</h2>
 
 <p>Configure SwiftPlantUML by adding a <code>.swiftplantuml.yml</code> file from the directory you&rsquo;ll run SwiftPlantUML from. Note: the same configuration options can be set programmatically with <code><a href="Structs/Configuration.html">Configuration</a></code>.</p>
@@ -286,7 +335,7 @@ $ make install
 <p>Rich example: <a href="./Configuration/Examples/Rich/.swiftplantuml.yml">here</a></p>
 <h3 id='code-completion-during-editing' class='heading'>Code Completion during Editing</h3>
 
-<p><img src="https://user-images.githubusercontent.com/4176826/109438147-6f7b0a80-79dd-11eb-9002-adc584438159.gif" alt="codeCompletion"></p>
+<p><img src="https://user-images.githubusercontent.com/4176826/109524456-66358080-7a65-11eb-8cb8-02452c1b3732.gif" alt="codeCompletion"></p>
 
 <p>To get code completiong during editing use Visual Studio Code, the <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML extension created by Red Hat</a> and the <a href="./Configuration/Schema/json-schema-swiftplantuml.json">JSON schema for SwiftPlantUML</a>.</p>
 
@@ -297,6 +346,39 @@ $ make install
 <p>Click on <code>Edit in settings.json</code> and add the respective entry:</p>
 <pre class="highlight json"><code><span class="s2">"yaml.schemas"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"https://raw.githubusercontent.com/MarcoEidinger/SwiftPlantUML/main/Configuration/Schema/json-schema-swiftplantuml.json"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/.swiftplantuml.yml"</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h2 id='large-diagrams' class='heading'>Large Diagrams</h2>
+
+<p>Online tools like <a href="https://www.planttext.com/">PlantText</a> do not support large diagrams. If your diagram image is incompletely rendered (or not visible at all) by PlantText in the browser then </p>
+
+<ul>
+<li><a href="https://plantuml.com/download">download PlantUML</a> Java archive to your machine</li>
+<li>use <code>swiftplantuml</code> to generate the script and</li>
+<li>generate the actual image with <code>plantuml</code> locally</li>
+</ul>
+
+<p>Here is the respective command (which assumes that <code>plantuml.jar</code> was downloaded in the current directory from which <code>swifptlantuml</code> runs)</p>
+<pre class="highlight shell"><code>swiftplantuml ./Sources/ --output consoleOnly &gt; sources.txt | java -DPLANTUML_LIMIT_SIZE<span class="o">=</span>8192 -jar plantuml.jar <span class="nv">$1</span>
+</code></pre>
+
+<p>This will result in the creation of <code>sources.png</code> file containing the class diagram up to the size limit.</p>
+
+<p>PlantUML limits image width and height to 4096 with the option to override this limit (<code>-DPLANTUML_LIMIT_SIZE</code>) of which I made use in the command above.</p>
+
+<p>In the table below you see the difference of class diagram output based on the same script. FYI: this script/diagram has 63 entities.</p>
+
+<table><thead>
+<tr>
+<th>PlantText Output</th>
+<th>PlantUML Output (Default Size Limit)</th>
+<th>PlantUML Output (Custom Size Limit)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/4176826/109912328-ae6cc280-7c60-11eb-9761-fab6c2fc6e4e.png" alt="sources_planttext"></td>
+<td><img src="https://user-images.githubusercontent.com/4176826/109912309-a2810080-7c60-11eb-8baf-85585b12984b.png" alt="sources_plantumljar"></td>
+<td><img src="https://user-images.githubusercontent.com/4176826/109913177-51720c00-7c62-11eb-9757-9d312712c6b5.png" alt="sources_plantumljar_increasedlimit"></td>
+</tr>
+</tbody></table>
 <h2 id='planned-improvements' class='heading'>Planned improvements</h2>
 
 <ul>
@@ -305,13 +387,7 @@ $ make install
 </ul>
 <h2 id='known-limitations' class='heading'>Known limitations</h2>
 
-<ul>
-<li>huge diagrams in browser
-
-<ul>
-<li>PlantUML limits image width and height to 4096 with the option to override this limit when using PlantUML.jar. locally so your option is to use the <code>--textonly</code>option and adjust/use it with PlantUML tools directly</li>
-</ul></li>
-</ul>
+<p>See <a href="#large-diagrams">Large Diagrams</a></p>
 <h2 id='acknowledgements' class='heading'>Acknowledgements</h2>
 
 <p>This project was inspired by <a href="https://github.com/palaniraja">https://github.com/palaniraja</a> and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. </p>
@@ -321,7 +397,7 @@ $ make install
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-01)</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-05)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
