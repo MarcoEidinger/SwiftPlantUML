@@ -69,9 +69,9 @@ class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
   ~{static} aStaticInternalMethod()
   ~anInternalComputedVar : AnEnum
 }
-anInternalSubClass --|> aClass : inherits
-aPrivateGenericSubClass --|> aPrivateGenericClass : inherits
-aPublicStruct ..|> aProtocol : confirms to
+aClass <|-- anInternalSubClass : inherits
+aPrivateGenericClass <|-- aPrivateGenericSubClass  : inherits
+aProtocol <|.. aPublicStruct : confirms to
 aPublicStruct <.. aPublicStruct0 : ext
 aPublicStruct <.. aPublicStruct1 : ext
 anInternalStruct <.. anInternalStruct2 : ext

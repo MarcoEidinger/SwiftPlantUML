@@ -25,7 +25,7 @@ final class PlantUMLContextTests: XCTestCase {
         _ = context.uniqName(item: subclass, relationship: "inherits")
         context.addLinking(item: subclass, parent: superclass)
 
-        XCTAssertEqual(context.connections.first, "SubOfaPublicStruct --|> aPublicStruct : inherits")
+        XCTAssertEqual(context.connections.first, "aPublicStruct <|-- SubOfaPublicStruct : inherits")
     }
 
     func testAddLinkingInheritanceWithCustomLabel() {
@@ -36,7 +36,7 @@ final class PlantUMLContextTests: XCTestCase {
         _ = context.uniqName(item: subclass, relationship: "inherits")
         context.addLinking(item: subclass, parent: superclass)
 
-        XCTAssertEqual(context.connections.first, "SubOfaPublicStruct --|> aPublicStruct : inherits from")
+        XCTAssertEqual(context.connections.first, "aPublicStruct <|-- SubOfaPublicStruct : inherits from")
     }
 
     func testAddLinkingInheritanceSkip() {
