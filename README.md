@@ -37,6 +37,7 @@ with their instance and static members as well as their inheritance and implemen
 	- [Large Diagrams](#large-diagrams)
 	- [Planned improvements](#planned-improvements)
 	- [Known limitations](#known-limitations)
+	- [Logging](#logging)
 	- [Acknowledgements](#acknowledgements)
 
 <!-- tocstop -->
@@ -266,6 +267,15 @@ In the table below you see the difference of class diagram output based on the s
 
 ## Known limitations
 See [Large Diagrams](#large-diagrams)
+
+## Logging
+
+CLI will log only error messages per default.
+
+To log messages with lower priority (warning, info, debug) use the `--verbose` option.
+
+Note: using `--outut consoleOnly`, to print the PlantUML script in the consle, will log any messages into a log file. This has the advantage that you can pipe the PlantUML script into a file without problems. You can tail the log file with `tail -f /tmp/swiftplantuml.log`
+
 ## Acknowledgements
 
 This project was inspired by https://github.com/palaniraja and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. 
