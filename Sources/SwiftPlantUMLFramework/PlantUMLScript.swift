@@ -17,6 +17,8 @@ public struct PlantUMLScript {
     internal init(items: [SyntaxStructure], configuration: Configuration = .default) {
         context = PlantUMLContext(configuration: configuration)
 
+        let methodStart = Date()
+
         let STR2REPLACE = "STR2REPLACE"
 
 //        let plantumlTemplate = """
@@ -49,6 +51,8 @@ public struct PlantUMLScript {
         let neep = replacingText + "\n" + context.connections.joined(separator: "\n") + "\n" + context.extnConnections.joined(separator: "\n")
 
         text = plantumlTemplate.replacingOccurrences(of: STR2REPLACE, with: neep)
+
+        Logger.shared.debug("PlantUML script created in \(Date().timeIntervalSince(methodStart)) seconds")
     }
 
     func encodedText(completionHandler: @escaping (Result<String, NetworkError>) -> Void) {

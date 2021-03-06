@@ -14,7 +14,8 @@ public struct ClassDiagramGenerator {
     ///   - presenter: outputs the PlantUMLScript / Digram e.g. `PlantUMLBrowserPresenter` or `PlantUMLConsolePresenter`
     ///   - sdkPath: MacOSX SDK path used to handle type inference resolution
     public func generate(for paths: [String], with configuration: Configuration = .default, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter(), sdkPath: String? = nil) {
-        outputDiagram(for: generateScript(for: fileCollector.getFiles(for: paths), with: configuration, sdkPath: sdkPath), with: presenter)
+        let startDate = Date()
+        outputDiagram(for: generateScript(for: fileCollector.getFiles(for: paths), with: configuration, sdkPath: sdkPath), with: presenter, processingStartDate: startDate)
     }
 
     /// generate diagram from a String containing Swift code
@@ -22,7 +23,8 @@ public struct ClassDiagramGenerator {
     ///   - content: representing a string containing Swift code
     ///   - presenter: outputs the PlantUMLScript / Digram e.g. `PlantUMLBrowserPresenter` or `PlantUMLConsolePresenter`
     public func generate(from content: String, with configuration: Configuration = .default, presentedBy presenter: PlantUMLPresenting = PlantUMLBrowserPresenter()) {
-        outputDiagram(for: generateScript(for: content, with: configuration), with: presenter)
+        let startDate = Date()
+        outputDiagram(for: generateScript(for: content, with: configuration), with: presenter, processingStartDate: startDate)
     }
 
     func generateScript(for content: String, with configuration: Configuration = .default) -> PlantUMLScript {
@@ -46,11 +48,16 @@ public struct ClassDiagramGenerator {
         return PlantUMLScript(items: allValidItems, configuration: configuration)
     }
 
-    func outputDiagram(for script: PlantUMLScript, with presenter: PlantUMLPresenting) {
+    func outputDiagram(for script: PlantUMLScript, with presenter: PlantUMLPresenting, processingStartDate date: Date) {
+        logProcessingDuration(started: date)
         let semaphore = DispatchSemaphore(value: 0)
         presenter.present(script: script) {
             semaphore.signal()
         }
         semaphore.wait()
+    }
+
+    func logProcessingDuration(started processingStartDate: Date) {
+        Logger.shared.info("Class diagram generated in \(Date().timeIntervalSince(processingStartDate)) seconds and will be presented now")
     }
 }
