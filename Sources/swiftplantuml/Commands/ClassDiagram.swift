@@ -33,7 +33,7 @@ extension SwiftPlantUML {
         var paths = [String]()
 
         mutating func run() {
-            Logger.shared = ConsoleLogger(verbose: verbose)
+            Logger.shared = BeaverLogger.create(verbose: verbose, classDiagramOutput: output)
 
             var allPaths: [String]
             if !paths.isEmpty {

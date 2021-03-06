@@ -10,37 +10,65 @@ public enum LogLevel: Comparable {
     case info
     /// debug
     case debug
-
-    internal var coloredLevelWord: String {
-        let debug = "DEBUG   "
-        let info = "INFO    "
-        let warning = "WARNING "
-        let error = "ERROR   "
-
-        switch self {
-        case .debug:
-            return "\u{1B}[92m\(debug)\u{1B}[0m"
-        case .info:
-            return "\u{1B}[94m\(info)\u{1B}[0m"
-        case .warning:
-            return "\u{1B}[93m\(warning)\u{1B}[0m"
-        case .error:
-            return "\u{1B}[91m\(error)\u{1B}[0m"
-        }
-    }
 }
 
 /// common interface for Loggers
 public protocol Logging {
     /// log an error
+    /// - Parameters:
+    ///   - message: to be logged
+    ///   - file: in which the message occurred
+    ///   - function: in wich the message occurred
+    ///   - line: line number in which the message occurred
     /// - Parameter message: to be logged
-    func error(_ message: String)
+    func error(_ message: String, _ file: String, _ function: String, _ line: Int)
+
     /// log a warning
-    /// - Parameter message: to be logged
-    func warning(_ message: String)
+    /// - Parameters:
+    ///   - message: to be logged
+    ///   - file: in which the message occurred
+    ///   - function: in wich the message occurred
+    ///   - line: line number in which the message occurred
+    func warning(_ message: String, _ file: String, _ function: String, _ line: Int)
+
     /// log an info
-    /// - Parameter message: to be logged
-    func info(_ message: String)
+    /// - Parameters:
+    ///   - message: to be logged
+    ///   - file: in which the message occurred
+    ///   - function: in wich the message occurred
+    ///   - line: line number in which the message occurred
+    func info(_ message: String, _ file: String, _ function: String, _ line: Int)
+
+    /// log debugging-related info
+    /// - Parameters:
+    ///   - message: to be logged
+    ///   - file: in which the message occurred
+    ///   - function: in wich the message occurred
+    ///   - line: line number in which the message occurred
+    func debug(_ message: String, _ file: String, _ function: String, _ line: Int)
+}
+
+/// :nodoc:
+public extension Logging {
+    /// :nodoc:
+    func error(_ message: String, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        error(message, file, function, line)
+    }
+
+    /// :nodoc:
+    func warning(_ message: String, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        warning(message, file, function, line)
+    }
+
+    /// :nodoc:
+    func info(_ message: String, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        info(message, file, function, line)
+    }
+
+    /// :nodoc:
+    func debug(_ message: String, _ file: String = #file, _ function: String = #function, _ line: Int = #line) {
+        debug(message, file, function, line)
+    }
 }
 
 /// :nodoc:

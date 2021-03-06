@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "SwiftyBeaver",
+        "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
+        "state": {
+          "branch": null,
+          "revision": "2c513a2e8fbfbd6495afc4a05941d8e3fdba68e9",
+          "version": "1.9.3"
+        }
+      },
+      {
         "package": "SWXMLHash",
         "repositoryURL": "https://github.com/drmohundro/SWXMLHash.git",
         "state": {
