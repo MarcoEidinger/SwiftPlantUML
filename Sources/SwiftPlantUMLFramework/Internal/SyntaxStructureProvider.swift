@@ -14,18 +14,22 @@ internal extension SyntaxStructure {
     }
 
     private static func createStructure(from file: File) -> SyntaxStructure? {
-        Logger.shared.info("no type-inference")
         let structure = try! Structure(file: file) // swiftlint:disable:this force_try
         let jsonData = structure.description.data(using: .utf8)!
         return try! JSONDecoder().decode(SyntaxStructure.self, from: jsonData) // swiftlint:disable:this force_try
     }
 
     static func create(from fileOnDisk: URL, sdkPath: String? = nil) -> SyntaxStructure? {
+        let methodStart = Date()
         guard let file = File(path: fileOnDisk.path) else {
             Logger.shared.error("not able to read contents of file \(fileOnDisk)")
             return nil
         }
-        return create(from: file, sdkPath: sdkPath)
+        let structure = create(from: file, sdkPath: sdkPath)
+        let methodFinish = Date()
+        let executionTime = methodFinish.timeIntervalSince(methodStart)
+        Logger.shared.debug("read \(fileOnDisk) \((sdkPath != nil && !sdkPath!.isEmpty) ? "parsing with SDK" : "") in \(executionTime)")
+        return structure
     }
 
     static func create(from contents: String) -> SyntaxStructure? {
