@@ -8,6 +8,7 @@ Generate UML class diagrams from swift code with this Command Line Interface (CL
 [![docs](https://marcoeidinger.github.io/SwiftPlantUML/badge.svg)](https://marcoeidinger.github.io/SwiftPlantUML/)
 [![Xcode Extension](https://img.shields.io/badge/Xcode%20extension-available-brightgreen)](https://github.com/MarcoEidinger/SwiftPlantUML-Xcode-Extension)
 [![Twitter](https://img.shields.io/badge/twitter-@MarcoEidinger-blue.svg)](http://twitter.com/MarcoEidinger)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5206/badge)](https://bestpractices.coreinfrastructure.org/projects/5206)
 
 Use one or more Swift files as input for a diagram to visualize `class`, `struct`, `protocol`, `enum` and `extension` types
 with their instance and static members as well as their inheritance and implementation relationships
