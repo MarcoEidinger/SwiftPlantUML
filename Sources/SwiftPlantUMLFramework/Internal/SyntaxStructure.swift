@@ -79,6 +79,8 @@ internal enum ElementAccessibility: String, RawRepresentable, Comparable {
         lhs.value < rhs.value
     }
 
+    /// `open`
+    case open = "source.lang.swift.accessibility.open"
     /// `public`
     case `public` = "source.lang.swift.accessibility.public"
     /// `internal`
@@ -90,6 +92,8 @@ internal enum ElementAccessibility: String, RawRepresentable, Comparable {
 
     private var value: Int {
         switch self {
+        case .open:
+            return 5
         case .public:
             return 4
         case .internal:
@@ -103,6 +107,8 @@ internal enum ElementAccessibility: String, RawRepresentable, Comparable {
 
     internal init?(orig: AccessLevel) {
         switch orig {
+        case .open:
+            self.init(rawValue: "source.lang.swift.accessibility.open")
         case .public:
             self.init(rawValue: "source.lang.swift.accessibility.public")
         case .internal:

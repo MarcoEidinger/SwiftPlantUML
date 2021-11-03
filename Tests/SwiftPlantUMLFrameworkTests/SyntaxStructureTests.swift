@@ -72,6 +72,22 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertNil(plantUMLElement)
     }
 
+    func testStructureOpenElementIncludedAutomatically() {
+        let cut = SyntaxStructure.create(from: "open class anOpenClass {}")
+        let found = cut?.find(.class, named: "anOpenClass")
+        XCTAssertNotNil(found)
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext())
+        XCTAssertNotNil(plantUMLElement)
+    }
+
+    func testStructureOpenElementExcludedByNotSpecifyingAccessLevelInConfig() {
+        let cut = SyntaxStructure.create(from: "open class anOpenClass {}")
+        let found = cut?.find(.class, named: "anOpenClass")
+        XCTAssertNotNil(found)
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(havingAccessLevel: [.public]))))
+        XCTAssertNil(plantUMLElement)
+    }
+
     func testStructureShowAccessLevelAttribute() {
         let cut = SyntaxStructure.create(from: "struct aStruct { public var computedVariable: String { return \"Hello World\" }}")
         let plantUMLElement = cut?.find(.struct, named: "aStruct")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showMemberAccessLevelAttribute: true))))
