@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/jpsim/SourceKitten",
         "state": {
           "branch": null,
-          "revision": "7f4be006fe73211b0fd9666c73dc2f2303ffa756",
-          "version": "0.31.0"
+          "revision": "558628392eb31d37cb251cfe626c53eafd330df6",
+          "version": "0.31.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
         "state": {
           "branch": null,
-          "revision": "9564d61b08a5335ae0a36f789a7d71493eacadfc",
-          "version": "0.3.2"
+          "revision": "d2930e8fcf9c33162b9fcc1d522bc975e2d4179b",
+          "version": "1.0.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/SwiftyBeaver/SwiftyBeaver.git",
         "state": {
           "branch": null,
-          "revision": "2c513a2e8fbfbd6495afc4a05941d8e3fdba68e9",
-          "version": "1.9.3"
+          "revision": "2c039501d6eeb4d4cd4aec4a8d884ad28862e044",
+          "version": "1.9.5"
         }
       },
       {
