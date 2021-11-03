@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build and run Tests
-      run: xcodebuild -enableCodeCoverage YES -scheme SwiftPlantUML-Package -sdk macosx clean build test
+      run: xcodebuild -enableCodeCoverage YES -scheme SwiftPlantUML-Package -sdk macosx -destination 'platform=macOS' clean build test
     - name: Upload code coverage results
       run: bash <(curl -s https://codecov.io/bash) -t f913eaee-1802-4688-8b85-bbb28316592f
 

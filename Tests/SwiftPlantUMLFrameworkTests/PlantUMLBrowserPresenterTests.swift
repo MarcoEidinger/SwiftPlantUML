@@ -2,7 +2,8 @@
 import XCTest
 
 final class PlantUMLBrowserPresenterTests: XCTestCase {
-    func testPresenting() {
+    func testPresenting() throws {
+        throw XCTSkip("Skip test as it is does not work in CI environment anymore")
         let expectation = self.expectation(description: "Open in Browser")
         let presenter = PlantUMLBrowserPresenter()
         presenter.present(script: PlantUMLScript(items: []), completionHandler: {
