@@ -17,17 +17,17 @@
     <header>
       <div class="content-wrapper">
         <p><a href="index.html"> Docs</a> (100% documented)</p>
-        <p class="header-right">
+        <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
-        </p>
+        </div>
       </div>
     </header>
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
-        <img id="carat" src="img/carat.png" />
+        <img id="carat" src="img/carat.png" alt=""/>
           Reference
       </p>
     </div>
@@ -82,9 +82,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ConfigurationProvider.html">ConfigurationProvider</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/ConsoleLogger.html">ConsoleLogger</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ElementOptions.html">ElementOptions</a>
@@ -142,7 +139,8 @@
 <a href="https://codebeat.co/projects/github-com-marcoeidinger-swiftplantuml-main"><img src="https://codebeat.co/badges/ef555787-2240-40be-9433-f3fa141d43a9" alt="codebeat badge"></a>
 <a href="https://marcoeidinger.github.io/SwiftPlantUML/"><img src="https://marcoeidinger.github.io/SwiftPlantUML/badge.svg" alt="docs"></a>
 <a href="https://github.com/MarcoEidinger/SwiftPlantUML-Xcode-Extension"><img src="https://img.shields.io/badge/Xcode%20extension-available-brightgreen" alt="Xcode Extension"></a>
-<a href="http://twitter.com/MarcoEidinger"><img src="https://img.shields.io/badge/twitter-@MarcoEidinger-blue.svg" alt="Twitter"></a></p>
+<a href="http://twitter.com/MarcoEidinger"><img src="https://img.shields.io/badge/twitter-@MarcoEidinger-blue.svg" alt="Twitter"></a>
+<a href="https://bestpractices.coreinfrastructure.org/projects/5206"><img src="https://bestpractices.coreinfrastructure.org/projects/5206/badge" alt="CII Best Practices"></a></p>
 
 <p>Use one or more Swift files as input for a diagram to visualize <code>class</code>, <code>struct</code>, <code>protocol</code>, <code>enum</code> and <code>extension</code> types
 with their instance and static members as well as their inheritance and implementation relationships</p>
@@ -171,6 +169,7 @@ with their instance and static members as well as their inheritance and implemen
     - [Large Diagrams](#large-diagrams)
     - [Planned improvements](#planned-improvements)
     - [Known limitations](#known-limitations)
+    - [Logging](#logging)
     - [Acknowledgements](#acknowledgements)
 
 <!-- tocstop -->
@@ -234,7 +233,7 @@ SwiftPlantUML requires the macosx SDK in order to properly recognize the inferre
 </details>
 <h3 id='swift-package' class='heading'>Swift package</h3>
 <pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/MarcoEidinger/SwiftPlantUML.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.3.0"</span><span class="p">))</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/MarcoEidinger/SwiftPlantUML.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"0.5.0"</span><span class="p">))</span>
 <span class="p">]</span>
 </code></pre>
 
@@ -312,8 +311,10 @@ $ make install
 <span class="na">elements</span><span class="pi">:</span>
   <span class="na">havingAccessLevel</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">public</span>
+  <span class="pi">-</span> <span class="s">open</span>
   <span class="na">showMembersWithAccessLevel</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">public</span>
+  <span class="pi">-</span> <span class="s">open</span>
   <span class="na">showExtensions</span><span class="pi">:</span> <span class="s">false</span>
 <span class="na">skinparamCommands</span><span class="pi">:</span> <span class="c1"># see https://plantuml.com/skinparam</span>
 <span class="pi">-</span> <span class="s">skinparam classBackgroundColor PaleGreen</span>
@@ -388,6 +389,13 @@ $ make install
 <h2 id='known-limitations' class='heading'>Known limitations</h2>
 
 <p>See <a href="#large-diagrams">Large Diagrams</a></p>
+<h2 id='logging' class='heading'>Logging</h2>
+
+<p>CLI will log only error messages per default.</p>
+
+<p>To log messages with lower priority (warning, info, debug) use the <code>--verbose</code> option.</p>
+
+<p>Note: using <code>--output consoleOnly</code>, to print the PlantUML script in the console, will log any messages into a log file. This has the advantage that you can pipe the PlantUML script into a file without problems. You can tail the log file with <code>tail -f /tmp/swiftplantuml.log</code></p>
 <h2 id='acknowledgements' class='heading'>Acknowledgements</h2>
 
 <p>This project was inspired by <a href="https://github.com/palaniraja">https://github.com/palaniraja</a> and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. </p>
@@ -397,11 +405,10 @@ $ make install
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2021-03-05)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2021 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2021-11-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
   </body>
-</div>
 </html>
