@@ -1,3 +1,19 @@
+## [0.5.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.4.0...0.5.0) (2021-11-03)
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 `Open` elements and members will now be rendered while this was
+previously not the case.
+* 🧨 Change of order for elements and their inheritance/extensions relationships.
+  * before: subclass points down to superclass
+  * now: superclass on top and subclass points up to superclass
+* 🧨 SwiftPlantUMLFramework drops its `ConsoleLogger` implementation. CLI is using `SwiftyBeaver` for logging.
+
+### Features
+
+* 🎸 support access level `open`
+ ([a7597fc](https://github.com/MarcoEidinger/SwiftPlantUML/commit/a7597fc78695e08beb1da98bab61d67bedefb6c9)), closes [#23](https://github.com/MarcoEidinger/SwiftPlantUML/issues/23) 
+
 ## [0.4.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.3.0...0.4.0) (2021-03-05)
 
 Enums are getting rendered with members (case elements, variables, functions) 🥳 technically it's a bug fix BUT also a significant visual change to the previous version. That's the reason for the version jump from 0.3.0 to 0.4.0
