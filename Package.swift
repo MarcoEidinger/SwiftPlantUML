@@ -13,9 +13,9 @@ let package = Package(
         .executable(name: "swiftplantuml", targets: ["swiftplantuml"]),
     ],
     dependencies: [
-        .package(name: "SourceKitten", url: "https://github.com/jpsim/SourceKitten", from: "0.31.0"),
-        .package(name: "swift-argument-parser", url: "https://github.com/apple/swift-argument-parser.git", .upToNextMinor(from: "0.3.1")),
-        .package(name: "SwiftyBeaver", url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", .exact("1.9.3")),
+        .package(name: "SourceKitten", url: "https://github.com/jpsim/SourceKitten", from: "0.31.1"),
+        .package(name: "swift-argument-parser", url: "https://github.com/apple/swift-argument-parser.git", .upToNextMinor(from: "1.0.1")),
+        .package(name: "SwiftyBeaver", url: "https://github.com/SwiftyBeaver/SwiftyBeaver.git", .exact("1.9.5")),
     ],
     targets: [
         .target(
