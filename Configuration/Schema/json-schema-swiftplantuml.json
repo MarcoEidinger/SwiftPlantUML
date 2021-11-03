@@ -16,11 +16,13 @@
 		},
 		"elements": {
 			"havingAccessLevel": [
+                "open",
 				"public",
 				"internal",
 				"private"
 			],
 			"showMembersWithAccessLevel": [
+                "open",
 				"public",
 				"internal",
 				"private"
@@ -106,7 +108,7 @@
 	"definitions": {
 		"AccessLevel": {
 			"oneOf": [{
-					"enum": ["public", "internal", "private"]
+					"enum": ["open", "public", "internal", "private"]
 				},
 				{
 					"type": "object",
@@ -225,11 +227,13 @@
 			"default": {},
 			"examples": [{
 				"havingAccessLevel": [
+                    "open",
 					"public",
 					"internal",
 					"private"
 				],
 				"showMembersWithAccessLevel": [
+                    "open",
 					"public",
 					"internal",
 					"private"
@@ -249,7 +253,7 @@
 					"type": "array",
 					"title": "The havingAccessLevel schema",
 					"description": "Only elements (classes, structs, ...) with the specified access level will be processed and rendered in the class diagram",
-					"default": ["public"],
+					"default": ["public", "open"],
 					"examples": [
 						[
 							"public",
@@ -272,7 +276,7 @@
 					"type": "array",
 					"title": "The showMembersWithAccessLevel schema",
 					"description": "Only members (properties and functions) with the specified access level will be processed and renderd in the class diagram",
-					"default": [],
+					"default": ["public", "open"],
 					"examples": [
 						[
 							"public",

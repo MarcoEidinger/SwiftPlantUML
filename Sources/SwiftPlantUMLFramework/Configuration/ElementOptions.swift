@@ -3,9 +3,9 @@ import Foundation
 /// Options which and how elements shall be considered for class diagram generation
 public struct ElementOptions: Codable {
     /// only elements (classes, structs, ...) with the specified access level will be processed and rendered in the class diagram
-    public private(set) var havingAccessLevel: [AccessLevel] = [.public, .internal, .private]
+    public private(set) var havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private]
     /// only members (properties and functions) with the specified access level will be processed and renderd in the class diagram
-    public private(set) var showMembersWithAccessLevel: [AccessLevel] = [.public, .internal, .private]
+    public private(set) var showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private]
 
     /// show generic type and type constraint information for a struct/class (default: true)
     public private(set) var showGenerics: Bool = true
@@ -41,7 +41,7 @@ public struct ElementOptions: Codable {
         }
     }
 
-    internal init(havingAccessLevel: [AccessLevel] = [.public, .internal, .private], showMembersWithAccessLevel: [AccessLevel] = [.public, .internal, .private], showGenerics: Bool = true, showExtensions: Bool = true, showMemberAccessLevelAttribute: Bool = true, exclude: [String]? = nil) {
+    internal init(havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showGenerics: Bool = true, showExtensions: Bool = true, showMemberAccessLevelAttribute: Bool = true, exclude: [String]? = nil) {
         self.havingAccessLevel = havingAccessLevel
         self.showMembersWithAccessLevel = showMembersWithAccessLevel
         self.showGenerics = showGenerics

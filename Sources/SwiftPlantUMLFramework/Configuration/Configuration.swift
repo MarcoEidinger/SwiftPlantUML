@@ -2,6 +2,8 @@ import Foundation
 
 /// Access Level for Swift variables and methods, see https://docs.swift.org/swift-book/LanguageGuide/AccessControl.html
 public enum AccessLevel: String, Codable {
+    /// `open`
+    case open
     /// `public`
     case `public`
     /// `internal`

@@ -49,7 +49,7 @@ internal extension String {
         guard configuration.elements.showMemberAccessLevelAttribute == true else { return }
 
         switch element.accessibility {
-        case .public:
+        case .public, .open:
             self += "+"
         case .internal:
             self += "~"

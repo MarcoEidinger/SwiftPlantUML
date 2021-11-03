@@ -198,8 +198,10 @@ files:
 elements:
   havingAccessLevel:
   - public
+  - open
   showMembersWithAccessLevel:
   - public
+  - open
   showExtensions: false
 skinparamCommands: # see https://plantuml.com/skinparam
 - skinparam classBackgroundColor PaleGreen
