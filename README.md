@@ -276,7 +276,7 @@ CLI will log only error messages per default.
 
 To log messages with lower priority (warning, info, debug) use the `--verbose` option.
 
-Note: using `--outut consoleOnly`, to print the PlantUML script in the consle, will log any messages into a log file. This has the advantage that you can pipe the PlantUML script into a file without problems. You can tail the log file with `tail -f /tmp/swiftplantuml.log`
+Note: using `--output consoleOnly`, to print the PlantUML script in the console, will log any messages into a log file. This has the advantage that you can pipe the PlantUML script into a file without problems. You can tail the log file with `tail -f /tmp/swiftplantuml.log`
 
 ## Acknowledgements
 
