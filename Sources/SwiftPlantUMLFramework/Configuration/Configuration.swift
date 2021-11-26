@@ -15,7 +15,8 @@ public enum AccessLevel: String, Codable {
 // https://plantuml.com/class-diagram
 /// Configuration options to influence the generation and visual representation of the class diagram
 public struct Configuration: Codable {
-    internal init(files: FileOptions = FileOptions(), elements: ElementOptions = ElementOptions(), hideShowCommands: [String]? = ["hide empty members"], skinparamCommands: [String]? = ["skinparam shadowing false"], includeRemoteURL: String? = nil, relationships: RelationshipOptions = RelationshipOptions(), stereotypes: Stereotypes = Stereotypes(class: Stereotype.class, struct: Stereotype.struct, extension: Stereotype.extension, enum: Stereotype.enum, protocol: Stereotype.protocol), relationshipExclude _: [String]? = nil) {
+    /// memberwise initializer
+    public init(files: FileOptions = FileOptions(), elements: ElementOptions = ElementOptions(), hideShowCommands: [String]? = ["hide empty members"], skinparamCommands: [String]? = ["skinparam shadowing false"], includeRemoteURL: String? = nil, relationships: RelationshipOptions = RelationshipOptions(), stereotypes: Stereotypes = Stereotypes.default, relationshipExclude _: [String]? = nil) {
         self.files = files
         self.elements = elements
         self.hideShowCommands = hideShowCommands
@@ -71,7 +72,7 @@ public struct Configuration: Codable {
     public var relationships = RelationshipOptions()
 
     /// sterotypes (spotted character with background color and optional name) to be shown for an entity type
-    public private(set) var stereotypes = Stereotypes(class: Stereotype.class, struct: Stereotype.struct, extension: Stereotype.extension, enum: Stereotype.enum, protocol: Stereotype.protocol)
+    public private(set) var stereotypes = Stereotypes(classStereotype: Stereotype.class, structStereotype: Stereotype.struct, extensionStereotype: Stereotype.extension, enumStereotype: Stereotype.enum, protocolStereotype: Stereotype.protocol)
 
     /// default initializer
     public init() {}

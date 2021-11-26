@@ -2,6 +2,20 @@ import Foundation
 
 /// Stereotypes for entity types
 public struct Stereotypes: Codable {
+    /// create a new `Stereotypes` struct with default values
+    public static var `default`: Stereotypes {
+        return Stereotypes(classStereotype: Stereotype.class, structStereotype: Stereotype.struct, extensionStereotype: Stereotype.extension, enumStereotype: Stereotype.enum, protocolStereotype: Stereotype.protocol)
+    }
+
+    /// memberwise initializer
+    public init(classStereotype: Stereotype? = nil, structStereotype: Stereotype? = nil, extensionStereotype: Stereotype? = nil, enumStereotype: Stereotype? = nil, protocolStereotype: Stereotype? = nil) {
+        self.class = classStereotype
+        self.struct = structStereotype
+        self.extension = extensionStereotype
+        self.enum = enumStereotype
+        self.protocol = protocolStereotype
+    }
+
     /// stereotype to be applied for all classes
     public var `class`: Stereotype?
     /// stereotype to be applied for all structs

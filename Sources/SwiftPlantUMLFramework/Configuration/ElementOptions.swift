@@ -41,7 +41,8 @@ public struct ElementOptions: Codable {
         }
     }
 
-    internal init(havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showGenerics: Bool = true, showExtensions: Bool = true, showMemberAccessLevelAttribute: Bool = true, exclude: [String]? = nil) {
+    /// memberwise initializer
+    public init(havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showGenerics: Bool = true, showExtensions: Bool = true, showMemberAccessLevelAttribute: Bool = true, exclude: [String]? = nil) {
         self.havingAccessLevel = havingAccessLevel
         self.showMembersWithAccessLevel = showMembersWithAccessLevel
         self.showGenerics = showGenerics
