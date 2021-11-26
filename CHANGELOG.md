@@ -1,3 +1,9 @@
+## [0.5.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.5.0...0.5.1) (2021-11-26)
+
+### Features
+
+* 🎸 public memberwise initializer for Configuration ([14db736](https://github.com/MarcoEidinger/SwiftPlantUML/commit/14db7369a3a6040794ea58befd52974f3e8f18a7))
+
 ## [0.5.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.4.0...0.5.0) (2021-11-03)
 
 ### ⚠ BREAKING CHANGES
