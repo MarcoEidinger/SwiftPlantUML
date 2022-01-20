@@ -1,3 +1,9 @@
+## [0.5.2](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.5.1...0.5.2) (2022-01-20)
+
+### Bug Fixes
+
+* 🐛 diagram in browser not shown ([b64f3df](https://github.com/MarcoEidinger/SwiftPlantUML/commit/b64f3df6354fd51e5f73ddb42e7ca64a78cbfa7b))
+
 ## [0.5.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.5.0...0.5.1) (2021-11-26)
 
 ### Features
