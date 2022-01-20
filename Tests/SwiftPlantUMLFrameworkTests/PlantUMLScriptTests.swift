@@ -15,6 +15,11 @@ final class PlantUMLScriptTests: XCTestCase {
         XCTAssertFalse(script.text.contains("!include"))
     }
 
+    func testEncodedScript() {
+        let script = PlantUMLScript(items: [])
+        XCTAssertEqual(script.encodeText(), "SoWkIImgAStDuL9N20w9z745aev18LmPcIcf2gcv1IML2hcfkKcfHSLSnTcPUGM9HOcv2iKPYIdvvPbvwGffYJd5gN2jhdukN23Wa9gN0ZGI00==")
+    }
+
     func testScriptWithInclude() {
         let script = PlantUMLScript(items: [], configuration: Configuration(includeRemoteURL: "https://anyInternetUrlToFile.com/example.txt"))
         XCTAssertTrue(script.text.contains("!include https://anyInternetUrlToFile.com/example.txt"))

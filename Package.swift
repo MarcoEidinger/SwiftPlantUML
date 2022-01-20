@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "SwiftPlantUML",
+    platforms: [.macOS(.v10_11)],
     products: [
         .library(
             name: "SwiftPlantUMLFramework",

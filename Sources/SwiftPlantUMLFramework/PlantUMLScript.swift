@@ -55,39 +55,17 @@ public struct PlantUMLScript {
         Logger.shared.debug("PlantUML script created in \(Date().timeIntervalSince(methodStart)) seconds")
     }
 
-    func encodedText(completionHandler: @escaping (Result<String, NetworkError>) -> Void) {
-        let escapedScript = text.stringByAddingPercentEncodingForFormData(plusForSpace: true) ?? ""
-        // server expectation for parameters changed early 2022
-        let parameters = "\(escapedScript)"
-        let postData = parameters.data(using: .utf8)
+    /**
+      encodes diagram text description according to PlantUML.  See https://plantuml.com/en/text-encoding for more information.
 
-        var request = URLRequest(url: URL(string: "https://www.planttext.com/api/scripting")!, timeoutInterval: Double.infinity)
-        request.addValue("keep-alive", forHTTPHeaderField: "Connection")
-        request.addValue("no-cache", forHTTPHeaderField: "Pragma")
-        request.addValue("no-cache", forHTTPHeaderField: "Cache-Control")
-        request.addValue("*/*", forHTTPHeaderField: "Accept")
-        request.addValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
-        request.addValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 11_1_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36", forHTTPHeaderField: "User-Agent")
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.addValue("https://www.planttext.com", forHTTPHeaderField: "Origin")
-        request.addValue("same-origin", forHTTPHeaderField: "Sec-Fetch-Site")
-        request.addValue("cors", forHTTPHeaderField: "Sec-Fetch-Mode")
-        request.addValue("empty", forHTTPHeaderField: "Sec-Fetch-Dest")
-        request.addValue("https://www.planttext.com/", forHTTPHeaderField: "Referer")
-        request.addValue("en-US,en;q=0.9,de;q=0.8", forHTTPHeaderField: "Accept-Language")
+       1. Encoded in UTF-8
+       2. Compressed using Deflate algorithm
+       3. Reencoded in ASCII using a transformation *close* to base64
 
-        request.httpMethod = "POST"
-        request.httpBody = postData
-
-        let task = URLSession.shared.dataTask(with: request) { data, _, _ in
-            guard let data = data else {
-                completionHandler(.failure(.badURL))
-                return
-            }
-            let encodedText = String(data: data, encoding: .utf8)!
-            completionHandler(.success(encodedText))
-        }
-        task.resume()
+     - Returns: encoded diagram text description
+     */
+    public func encodeText() -> String {
+        PlantUMLText(rawValue: text).encodedValue
     }
 
     /// default styling block to hide empty members and disable shadowing
