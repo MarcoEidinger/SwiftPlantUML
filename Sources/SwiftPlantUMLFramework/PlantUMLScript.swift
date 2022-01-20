@@ -57,7 +57,8 @@ public struct PlantUMLScript {
 
     func encodedText(completionHandler: @escaping (Result<String, NetworkError>) -> Void) {
         let escapedScript = text.stringByAddingPercentEncodingForFormData(plusForSpace: true) ?? ""
-        let parameters = "type=png&plantuml=\(escapedScript)"
+        // server expectation for parameters changed early 2022
+        let parameters = "\(escapedScript)"
         let postData = parameters.data(using: .utf8)
 
         var request = URLRequest(url: URL(string: "https://www.planttext.com/api/scripting")!, timeoutInterval: Double.infinity)
