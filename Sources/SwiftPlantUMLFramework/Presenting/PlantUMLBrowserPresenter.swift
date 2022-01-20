@@ -25,21 +25,15 @@ public struct PlantUMLBrowserPresenter: PlantUMLPresenting {
     ///   - script: in PlantUML notation
     ///   - completionHandler: will be called when presentation was triggered
     public func present(script: PlantUMLScript, completionHandler: @escaping () -> Void) {
-        script.encodedText { result in
-            switch result {
-            case let .success(encodedText):
-                let url: URL!
-                switch format {
-                case .imagePng:
-                    url = URL(string: "https://www.planttext.com/api/plantuml/png/\(encodedText)")
-                default:
-                    url = URL(string: "https://www.planttext.com/?text=\(encodedText)")!
-                }
-                NSWorkspace.shared.open(url)
-                completionHandler()
-            case .failure:
-                completionHandler()
-            }
+        let encodedText = script.encodeText()
+        let url: URL!
+        switch format {
+        case .imagePng:
+            url = URL(string: "https://www.planttext.com/api/plantuml/png/\(encodedText)")
+        default:
+            url = URL(string: "https://www.planttext.com/?text=\(encodedText)")!
         }
+        NSWorkspace.shared.open(url)
+        completionHandler()
     }
 }
