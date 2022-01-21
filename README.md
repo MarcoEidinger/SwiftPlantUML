@@ -127,8 +127,11 @@ See [MarcoEidinger/SwiftPlantUML-Xcode-Extension](https://github.com/MarcoEiding
 ### Using [Homebrew](https://brew.sh/)
 
 ```
-brew install MarcoEidinger/formulae/swiftplantuml
+brew install swiftplantuml
 ```
+
+> previously you were able to use `brew install MarcoEidinger/formulae/swiftplantuml` (and you still can)
+
 ### Using [Mint](https://github.com/yonaskolb/mint)
 
 ```
