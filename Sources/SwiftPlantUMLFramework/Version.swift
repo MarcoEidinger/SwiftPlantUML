@@ -4,5 +4,5 @@ public struct Version {
     public let value: String
 
     /// The current SwiftPlantUML version.
-    public static let current = Version(value: "0.5.2")
+    public static let current = Version(value: "0.6.0")
 }

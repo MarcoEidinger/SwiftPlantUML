@@ -3,6 +3,6 @@ import XCTest
 
 final class VersionTests: XCTestCase {
     func testCurrentVersion() {
-        XCTAssertEqual(SwiftPlantUMLFramework.Version.current.value, "0.5.2")
+        XCTAssertEqual(SwiftPlantUMLFramework.Version.current.value, "0.6.0")
     }
 }

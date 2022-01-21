@@ -1,3 +1,14 @@
+## [0.6.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.5.2...0.6.0) (2022-01-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 macOS 10.11 (El Capitan) required
+
+### Features
+
+* 🎸 native encoding of PlantUML diagram text description ([de286d4](https://github.com/MarcoEidinger/SwiftPlantUML/commit/de286d4236c9826d89f73dbe7705b0c169eef9f5))
+
 ## [0.5.2](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.5.1...0.5.2) (2022-01-20)
 
 ### Bug Fixes
