@@ -39,6 +39,7 @@ with their instance and static members as well as their inheritance and implemen
   - [Planned improvements](#planned-improvements)
   - [Known limitations](#known-limitations)
   - [Logging](#logging)
+  - [Manual page](#manual-page)
   - [Acknowledgements](#acknowledgements)
 
 <!-- tocstop -->
@@ -283,6 +284,14 @@ CLI will log only error messages per default.
 To log messages with lower priority (warning, info, debug) use the `--verbose` option.
 
 Note: using `--output consoleOnly`, to print the PlantUML script in the console, will log any messages into a log file. This has the advantage that you can pipe the PlantUML script into a file without problems. You can tail the log file with `tail -f /tmp/swiftplantuml.log`
+
+## Manual page
+
+Installing `swiftplantuml` with Homebrew or from source (`make install`) will also install a man page which you can view with:
+
+```man swiftplantuml```
+
+![manual page for swiftplantuml](https://user-images.githubusercontent.com/4176826/187481252-d6100a7c-1f6e-4589-9361-c4ab3cca4e42.png)
 
 ## Acknowledgements
 
