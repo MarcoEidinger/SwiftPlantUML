@@ -31,6 +31,7 @@ jobs:
       run: |
         make install
         swiftplantuml --help
+        man swiftplantuml | col -b # this will remove formatting and control characters as here needed for text output
         make uninstall
     - name: Install with Homebrew
       run: |

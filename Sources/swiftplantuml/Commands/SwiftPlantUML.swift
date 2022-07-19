@@ -7,6 +7,7 @@ struct SwiftPlantUML: ParsableCommand {
     // `configuration` property.
     static var configuration = CommandConfiguration(
         // Optional abstracts and discussions are used for help output.
+        commandName: "swiftplantuml",
         abstract: "A utility for generating PlantUML script(s) and resulting diagram(s) from Swift code",
 
         // Commands can define a version for automatic '--version' support.
