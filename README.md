@@ -21,24 +21,25 @@ with their instance and static members as well as their inheritance and implemen
 <!-- toc -->
 
 - [SwiftPlantUML](#swiftplantuml)
-	- [Usage](#usage)
-		- [Command Line](#command-line)
-		- [Swift package](#swift-package)
-		- [Xcode source editor extension](#xcode-source-editor-extension)
-	- [Installation](#installation)
-		- [Using Homebrew](#using-homebrew)
-		- [Using Mint](#using-mint)
-		- [Installing from source](#installing-from-source)
-		- [Note: Working with Multiple Swift Versions](#note-working-with-multiple-swift-versions)
-	- [Configuration](#configuration)
-		- [Options](#options)
-		- [Examples](#examples)
-		- [Code Completion during Editing](#code-completion-during-editing)
-	- [Large Diagrams](#large-diagrams)
-	- [Planned improvements](#planned-improvements)
-	- [Known limitations](#known-limitations)
-	- [Logging](#logging)
-	- [Acknowledgements](#acknowledgements)
+  - [Usage](#usage)
+    - [Command Line](#command-line)
+    - [Swift package](#swift-package)
+    - [Xcode source editor extension](#xcode-source-editor-extension)
+  - [Installation](#installation)
+    - [Using Homebrew](#using-homebrew)
+    - [Using Mint](#using-mint)
+    - [Installing from source](#installing-from-source)
+    - [Note: Working with Multiple Swift Versions](#note-working-with-multiple-swift-versions)
+  - [Configuration](#configuration)
+    - [Options](#options)
+    - [Examples](#examples)
+    - [Code Completion during Editing](#code-completion-during-editing)
+  - [Large Diagrams](#large-diagrams)
+  - [Generate UML documentation from a binary framework](#generate-uml-documentation-from-a-binary-framework)
+  - [Planned improvements](#planned-improvements)
+  - [Known limitations](#known-limitations)
+  - [Logging](#logging)
+  - [Acknowledgements](#acknowledgements)
 
 <!-- tocstop -->
 
@@ -264,7 +265,9 @@ In the table below you see the difference of class diagram output based on the s
 |---|---|---|
 |![sources_planttext](https://user-images.githubusercontent.com/4176826/109912328-ae6cc280-7c60-11eb-9761-fab6c2fc6e4e.png)|![sources_plantumljar](https://user-images.githubusercontent.com/4176826/109912309-a2810080-7c60-11eb-8baf-85585b12984b.png)|![sources_plantumljar_increasedlimit](https://user-images.githubusercontent.com/4176826/109913177-51720c00-7c62-11eb-9757-9d312712c6b5.png)|
 
+## Generate UML documentation from a binary framework
 
+You can use `swifplantuml` to parse the `.swiftmodule` file of a binary framework, for details and a concrete example please read my article [Generate UML documentation from a binary framework (xcframework)](https://blog.eidinger.info/generate-uml-documentation-from-a-binary-framework-xcframework).
 
 ## Planned improvements
 - being able to render associations between elements
