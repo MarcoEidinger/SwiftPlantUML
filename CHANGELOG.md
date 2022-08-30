@@ -1,3 +1,9 @@
+## [0.6.2](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.6.1...0.6.2) (2022-08-30)
+
+### Bug Fixes
+
+* 🐛 revert ArgumentParser version ([b355a9f](https://github.com/MarcoEidinger/SwiftPlantUML/commit/b355a9f44f3dfbbf407d80944934e8fb1af6c656))
+
 ## [0.6.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.6.0...0.6.1) (2022-08-30)
 
 ### Features
