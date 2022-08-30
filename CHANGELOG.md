@@ -1,5 +1,10 @@
-## [0.6.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.5.2...0.6.0) (2022-01-21)
+## [0.6.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.6.0...0.6.1) (2022-08-30)
 
+### Features
+
+* 🎸 man page for swiftplantuml ([4f2543c](https://github.com/MarcoEidinger/SwiftPlantUML/commit/4f2543cb34c1d46e5e781d18c99eea6f9d4c3187))
+
+## [0.6.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.5.2...0.6.0) (2022-01-21)
 
 ### ⚠ BREAKING CHANGES
 
