@@ -2,7 +2,7 @@ import Foundation
 
 /// Swift type representationg an AST element (analogue to SourceKitten's Structure)
 internal struct SyntaxStructure: Codable {
-    internal init(accessibility: ElementAccessibility?, attribute: String?, attributes: [SyntaxStructure]?, elements: [SyntaxStructure]?, inheritedTypes: [SyntaxStructure]?, kind: ElementKind?, name: String?, runtimename: String?, substructure: [SyntaxStructure]?, typename: String?) {
+    internal init(accessibility: ElementAccessibility? = nil, attribute: String? = nil, attributes: [SyntaxStructure]? = nil, elements: [SyntaxStructure]? = nil, inheritedTypes: [SyntaxStructure]? = nil, kind: ElementKind? = nil, name: String? = nil, runtimename: String? = nil, substructure: [SyntaxStructure]? = nil, typename: String? = nil) {
         self.accessibility = accessibility
         self.attribute = attribute
         self.attributes = attributes

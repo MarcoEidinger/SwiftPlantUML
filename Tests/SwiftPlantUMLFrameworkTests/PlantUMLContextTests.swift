@@ -5,20 +5,20 @@ final class PlantUMLContextTests: XCTestCase {
     func testUniqNameExtensionWithDefaultLabel() {
         let context = PlantUMLContext()
         context.uniqElementNames.append("aPublicStruct")
-        _ = context.uniqName(item: SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .extension, name: "aPublicStruct", runtimename: nil, substructure: nil, typename: nil), relationship: "ext")
+        _ = context.uniqName(item: SyntaxStructure(kind: .extension, name: "aPublicStruct"), relationship: "ext")
         XCTAssertEqual(context.extnConnections.first, "aPublicStruct <.. aPublicStruct0 : ext")
     }
 
     func testUniqNameExtensionWithCustomLabel() {
         let context = PlantUMLContext(configuration: Configuration(relationships: RelationshipOptions(dependency: Relationship(label: "extends"))))
         context.uniqElementNames.append("aPublicStruct")
-        _ = context.uniqName(item: SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .extension, name: "aPublicStruct", runtimename: nil, substructure: nil, typename: nil), relationship: "ext")
+        _ = context.uniqName(item: SyntaxStructure(kind: .extension, name: "aPublicStruct"), relationship: "ext")
         XCTAssertEqual(context.extnConnections.first, "aPublicStruct <.. aPublicStruct0 : extends")
     }
 
     func testAddLinkingInheritanceDefault() {
-        let superclass = SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .extension, name: "aPublicStruct", runtimename: nil, substructure: nil, typename: nil)
-        let subclass = SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .struct, name: "SubOfaPublicStruct", runtimename: nil, substructure: nil, typename: nil)
+        let superclass = SyntaxStructure(kind: .extension, name: "aPublicStruct")
+        let subclass = SyntaxStructure(kind: .struct, name: "SubOfaPublicStruct")
 
         let context = PlantUMLContext()
 
@@ -29,8 +29,8 @@ final class PlantUMLContextTests: XCTestCase {
     }
 
     func testAddLinkingInheritanceWithCustomLabel() {
-        let superclass = SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .extension, name: "aPublicStruct", runtimename: nil, substructure: nil, typename: nil)
-        let subclass = SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .struct, name: "SubOfaPublicStruct", runtimename: nil, substructure: nil, typename: nil)
+        let superclass = SyntaxStructure(kind: .extension, name: "aPublicStruct")
+        let subclass = SyntaxStructure(kind: .struct, name: "SubOfaPublicStruct")
         let context = PlantUMLContext(configuration: Configuration(relationships: RelationshipOptions(inheritance: Relationship(label: "inherits from"))))
 
         _ = context.uniqName(item: subclass, relationship: "inherits")
@@ -40,8 +40,8 @@ final class PlantUMLContextTests: XCTestCase {
     }
 
     func testAddLinkingInheritanceSkip() {
-        let superclass = SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .extension, name: "Codable", runtimename: nil, substructure: nil, typename: nil)
-        let subclass = SyntaxStructure(accessibility: nil, attribute: nil, attributes: nil, elements: nil, inheritedTypes: nil, kind: .struct, name: "SubOfCodable", runtimename: nil, substructure: nil, typename: nil)
+        let superclass = SyntaxStructure(kind: .extension, name: "Codable")
+        let subclass = SyntaxStructure(kind: .struct, name: "SubOfCodable")
 
         let context = PlantUMLContext(configuration: Configuration(relationships: RelationshipOptions(inheritance: Relationship(exclude: ["Codable"]))))
 
