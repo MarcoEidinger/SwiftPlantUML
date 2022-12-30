@@ -1,3 +1,6 @@
+ignore:
+  - "Sources/SwiftPlantUMLFramework/Presenting/PlantUMLBrowserPresenter.swift"
+  - "Tests"
 coverage:
   precision: 2
   round: down
