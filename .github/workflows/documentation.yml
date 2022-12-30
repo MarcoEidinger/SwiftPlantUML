@@ -10,14 +10,14 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Install
         run: |
           gem install jazzy
       - name: Generate Documentation (Jazzy)
         run: jazzy
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: API Docs
           path: docs
