@@ -93,6 +93,12 @@ extension anInternalStruct {
     }
 }
 
+fileprivate extension anInternalStruct {
+    var anFileprivateExtensionComputedInstanceVar: String {
+        "aString"
+    }
+}
+
 /// ignore comments :)
 public enum AnEnum {
 
