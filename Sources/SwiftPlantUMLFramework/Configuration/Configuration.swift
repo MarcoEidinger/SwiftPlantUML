@@ -10,6 +10,8 @@ public enum AccessLevel: String, Codable {
     case `internal`
     /// `private`
     case `private`
+    /// `fileprivate`
+    case `fileprivate`
 }
 
 // https://plantuml.com/class-diagram

@@ -61,6 +61,9 @@ class "anInternalStruct" as anInternalStruct << (S, SkyBlue) struct >> {
 class "anInternalStruct" as anInternalStruct2 << (X, Orchid) extension >> {
   ~anExtensionComputedInstanceVar : String
 }
+class "anInternalStruct" as anInternalStruct3 << (X, Orchid) extension >> {
+  -anFileprivateExtensionComputedInstanceVar : String
+}
 class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
   +simpleCase
   +caseWithRaw(_:)
@@ -75,4 +78,5 @@ aProtocol <|.. aPublicStruct : confirms to
 aPublicStruct <.. aPublicStruct0 : ext
 aPublicStruct <.. aPublicStruct1 : ext
 anInternalStruct <.. anInternalStruct2 : ext
+anInternalStruct <.. anInternalStruct3 : ext
 @enduml

@@ -7,7 +7,7 @@ extension ElementAccessibility {
             return "+"
         case .internal:
             return "~"
-        case .private:
+        case .private, .fileprivate:
             return "-"
         default:
             return nil
