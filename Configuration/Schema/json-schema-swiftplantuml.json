@@ -42,6 +42,7 @@
 			"skinparam sequenceMessageAlign center"
 		],
 		"includeRemoteURL": "https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml",
+		"theme": "hacker",
 		"relationships": {
 			"inheritance": {
 				"label": "inherits from",
@@ -412,6 +413,16 @@
 			"default": "",
 			"examples": [
 				"https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml"
+			]
+		},
+		"theme": {
+			"$id": "#/properties/theme",
+			"type": "string",
+			"title": "The theme schema",
+			"description": "Wil be added to PlantUMLScript as `!theme` directive to include a theme (built-in, local or Internet/Intranet) in your diagram",
+			"default": "",
+			"examples": [
+				"hacker"
 			]
 		},
 		"relationships": {

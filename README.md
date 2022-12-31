@@ -189,7 +189,7 @@ You are able to
 - limit elements and members bases on their access level, e.g. show only `public` types
 - hide extensions
 - hide member access level attribute
-- configure styles, use [skin parameters](https://plantuml.com/skinparam) and even include external files for theming (e.g. [PUML Themes](https://bschwarz.github.io/puml-themes/))
+- configure styles, use [skin parameters](https://plantuml.com/skinparam) and even include external files or [themes](https://plantuml.com/theme)
 - exclude inheritance relationships based on parent (wildcards supported), e.g. do not show inheritance to `Codable`
 
 ### Examples
@@ -208,6 +208,7 @@ elements:
   - public
   - open
   showExtensions: false
+theme: plain # see https://plantuml.com/theme
 skinparamCommands: # see https://plantuml.com/skinparam
 - skinparam classBackgroundColor PaleGreen
 - skinparam classArrowColor SeaGreen

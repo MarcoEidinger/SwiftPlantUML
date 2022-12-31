@@ -33,6 +33,9 @@ public struct PlantUMLScript {
 //        """
 
         var plantumlTemplate = "@startuml"
+        if let theme = configuration.theme {
+            plantumlTemplate.appendAsNewLine("!theme \(theme.rawValue)")
+        }
         if let includeRemoteURL = configuration.includeRemoteURL {
             plantumlTemplate.appendAsNewLine("!include \(includeRemoteURL)")
         }
