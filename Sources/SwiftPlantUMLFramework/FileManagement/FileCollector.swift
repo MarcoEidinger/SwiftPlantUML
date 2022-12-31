@@ -60,7 +60,7 @@ public struct FileCollector {
         } else if paths.count == 1, paths[0] == "." {
             sanitizedPaths.append(URL(fileURLWithPath: directory))
         } else {
-            sanitizedPaths.append(contentsOf: paths.map { (path) -> URL in
+            sanitizedPaths.append(contentsOf: paths.map { path -> URL in
                 if path.hasPrefix("/") { // absolute
                     return URL(fileURLWithPath: path)
                 } else {

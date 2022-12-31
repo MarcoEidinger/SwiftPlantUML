@@ -12,7 +12,7 @@ extension SyntaxStructure {
             generics = genericsStatement()
         }
 
-        var textualRepresentation: String = ""
+        var textualRepresentation = ""
         // swiftlint:disable line_length
         switch kind {
         case ElementKind.class:
@@ -45,7 +45,7 @@ extension SyntaxStructure {
     private func members(context: PlantUMLContext) -> String {
         var members = ""
 
-        guard let substructure = self.substructure, substructure.count > 0 else { return members }
+        guard let substructure = substructure, substructure.count > 0 else { return members }
 
         for sub in substructure {
             if let msig = member(element: sub, context: context) {

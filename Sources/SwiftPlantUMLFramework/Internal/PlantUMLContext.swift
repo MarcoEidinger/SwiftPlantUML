@@ -37,7 +37,7 @@ class PlantUMLContext {
         if let relStyle = relationshipStyle(for: namedConnection)?.plantuml {
             connect += " \(relStyle)"
         }
-        if let relationshipLabel = self.relationshipLabel(for: namedConnection) {
+        if let relationshipLabel = relationshipLabel(for: namedConnection) {
             connect += " : \(relationshipLabel)"
         }
         connections.append(connect)

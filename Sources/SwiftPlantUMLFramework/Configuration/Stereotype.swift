@@ -4,7 +4,7 @@ import Foundation
 public struct Stereotypes: Codable {
     /// create a new `Stereotypes` struct with default values
     public static var `default`: Stereotypes {
-        return Stereotypes(classStereotype: Stereotype.class, structStereotype: Stereotype.struct, extensionStereotype: Stereotype.extension, enumStereotype: Stereotype.enum, protocolStereotype: Stereotype.protocol)
+        Stereotypes(classStereotype: Stereotype.class, structStereotype: Stereotype.struct, extensionStereotype: Stereotype.extension, enumStereotype: Stereotype.enum, protocolStereotype: Stereotype.protocol)
     }
 
     /// memberwise initializer

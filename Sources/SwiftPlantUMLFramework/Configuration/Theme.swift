@@ -2,7 +2,7 @@ import Foundation
 
 /**
  Built-in themes for PlantUML diagrams, see https://plantuml.com/theme
- 
+
  View class diagram examples on https://the-lum.github.io/puml-themes-gallery by appending `/gallery/img/Class-<themeName>.svg`, e.g. https://the-lum.github.io/puml-themes-gallery/gallery/img/Class-crt-amber.svg
  */
 public enum Theme: Codable {
