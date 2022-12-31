@@ -162,12 +162,10 @@ internal enum ElementKind: String, RawRepresentable {
     /// `function.accessor.getter`.
     case functionAccessorGetter = "source.lang.swift.decl.function.accessor.getter"
     /// `function.accessor.modify`
-    //    @available(swift, introduced: 5.0)
     case functionAccessorModify = "source.lang.swift.decl.function.accessor.modify"
     /// `function.accessor.mutableaddress`.
     case functionAccessorMutableaddress = "source.lang.swift.decl.function.accessor.mutableaddress"
     /// `function.accessor.read`
-    //    @available(swift, introduced: 5.0)
     case functionAccessorRead = "source.lang.swift.decl.function.accessor.read"
     /// `function.accessor.setter`.
     case functionAccessorSetter = "source.lang.swift.decl.function.accessor.setter"
@@ -186,7 +184,6 @@ internal enum ElementKind: String, RawRepresentable {
     /// `function.method.static`.
     case functionMethodStatic = "source.lang.swift.decl.function.method.static"
     /// `function.operator`.
-    //    @available(swift, obsoleted: 2.2)
     case functionOperator = "source.lang.swift.decl.function.operator"
     /// `function.operator.infix`.
     case functionOperatorInfix = "source.lang.swift.decl.function.operator.infix"

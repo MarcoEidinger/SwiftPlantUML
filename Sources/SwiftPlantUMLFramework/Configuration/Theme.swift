@@ -92,7 +92,7 @@ public enum Theme: Codable {
     /// to load themes from local or from external files
     /// local example: `foo from /path/to/themes/folder`
     /// remote example: `amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes`
-    case __directive__(String)
+    case __directive__(String) // swiftlint:disable:this identifier_name
 
     var rawValue: String {
         switch self {

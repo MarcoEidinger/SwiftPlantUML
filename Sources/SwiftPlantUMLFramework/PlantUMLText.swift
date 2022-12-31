@@ -117,7 +117,7 @@ internal extension PlantUMLText {
             45, // 62=-
             95, // 63=_
             // PADDING FOLLOWS, not used during lookups
-            61, // 64==
+            61 // 64==
         ]
 
         var encodedBytes: [UInt8] = []
