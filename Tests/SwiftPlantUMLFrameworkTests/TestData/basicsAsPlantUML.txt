@@ -50,8 +50,8 @@ class "aPublicStruct" as aPublicStruct0 << (X, Orchid) extension >> {
   +anExtensionInstanceMethod(param1:param2:)
 }
 class "aPublicStruct" as aPublicStruct1 << (X, Orchid) extension >> {
-  aProtocolInstanceVar : String
-  aProtocolInstanceMethod(param1:param2:)
+  ~aProtocolInstanceVar : String
+  ~aProtocolInstanceMethod(param1:param2:)
 }
 class "anInternalStruct" as anInternalStruct << (S, SkyBlue) struct >> {
   ~anInternalInstanceVar : Double
@@ -59,7 +59,7 @@ class "anInternalStruct" as anInternalStruct << (S, SkyBlue) struct >> {
   -aPublicInstanceVarTypeInference
 }
 class "anInternalStruct" as anInternalStruct2 << (X, Orchid) extension >> {
-  anExtensionComputedInstanceVar : String
+  ~anExtensionComputedInstanceVar : String
 }
 class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
   +simpleCase

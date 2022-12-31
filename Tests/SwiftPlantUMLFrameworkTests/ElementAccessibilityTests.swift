@@ -9,4 +9,13 @@ final class ElementAccessibilityTests: XCTestCase {
         XCTAssertTrue(ElementAccessibility.internal > ElementAccessibility.private)
         XCTAssertTrue(ElementAccessibility.private > ElementAccessibility.other)
     }
+
+    func testIndicator() {
+        XCTAssertEqual(ElementAccessibility.open.indicator, "+")
+        XCTAssertEqual(ElementAccessibility.public.indicator, "+")
+        XCTAssertEqual(ElementAccessibility.internal.indicator, "~")
+        XCTAssertEqual(ElementAccessibility(orig: .internal)?.indicator, "~")
+        XCTAssertEqual(ElementAccessibility.private.indicator, "-")
+        XCTAssertEqual(ElementAccessibility(rawValue: "invalid").indicator, nil)
+    }
 }
