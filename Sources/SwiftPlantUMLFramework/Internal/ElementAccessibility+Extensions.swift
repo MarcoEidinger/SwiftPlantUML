@@ -15,7 +15,7 @@ extension ElementAccessibility {
     }
 }
 
-extension ElementAccessibility? {
+extension Optional where Wrapped == ElementAccessibility {
     var indicator: String? {
         switch self {
         case let .some(accessLevel):
