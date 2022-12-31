@@ -20,7 +20,8 @@ hideShowCommands:
 - hide empty members
 skinparamCommands:
 - skinparam sequenceMessageAlign center ## just an example; this will have no impact to a class diagram
-includeRemoteURL: https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml
+#includeRemoteURL: https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml
+theme: hacker
 relationships:
   inheritance:
     label: "inherits from"

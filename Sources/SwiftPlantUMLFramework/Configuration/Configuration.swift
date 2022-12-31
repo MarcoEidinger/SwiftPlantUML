@@ -16,12 +16,13 @@ public enum AccessLevel: String, Codable {
 /// Configuration options to influence the generation and visual representation of the class diagram
 public struct Configuration: Codable {
     /// memberwise initializer
-    public init(files: FileOptions = FileOptions(), elements: ElementOptions = ElementOptions(), hideShowCommands: [String]? = ["hide empty members"], skinparamCommands: [String]? = ["skinparam shadowing false"], includeRemoteURL: String? = nil, relationships: RelationshipOptions = RelationshipOptions(), stereotypes: Stereotypes = Stereotypes.default, relationshipExclude _: [String]? = nil) {
+    public init(files: FileOptions = FileOptions(), elements: ElementOptions = ElementOptions(), hideShowCommands: [String]? = ["hide empty members"], skinparamCommands: [String]? = ["skinparam shadowing false"], includeRemoteURL: String? = nil, theme: Theme? = nil, relationships: RelationshipOptions = RelationshipOptions(), stereotypes: Stereotypes = Stereotypes.default, relationshipExclude _: [String]? = nil) {
         self.files = files
         self.elements = elements
         self.hideShowCommands = hideShowCommands
         self.skinparamCommands = skinparamCommands
         self.includeRemoteURL = includeRemoteURL
+        self.theme = theme
         self.relationships = relationships
         self.stereotypes = stereotypes
     }
@@ -42,6 +43,9 @@ public struct Configuration: Codable {
         }
         if let includeRemoteURL = try container.decodeIfPresent(String.self, forKey: .includeRemoteURL) {
             self.includeRemoteURL = includeRemoteURL
+        }
+        if let theme = try container.decodeIfPresent(String.self, forKey: .theme) {
+            self.theme = Theme.__directive__(theme)
         }
         if let relationships = try container.decodeIfPresent(RelationshipOptions.self, forKey: .relationships) {
             self.relationships = relationships
@@ -67,6 +71,9 @@ public struct Configuration: Codable {
 
     /// wil be added to PlantUMLScript as `!include` directive to include a file (from Internet/Intranet) in your diagram
     public private(set) var includeRemoteURL: String?
+
+    /// wil be added to PlantUMLScript as `!theme` directive to include a theme (built-in, local or from Internet/Intranet) in your diagram
+    public private(set) var theme: Theme?
 
     /// options which relationships to show and how to style them
     public var relationships = RelationshipOptions()

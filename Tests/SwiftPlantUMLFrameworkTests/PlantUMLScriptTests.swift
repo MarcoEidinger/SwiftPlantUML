@@ -21,8 +21,13 @@ final class PlantUMLScriptTests: XCTestCase {
     }
 
     func testScriptWithInclude() {
-        let script = PlantUMLScript(items: [], configuration: Configuration(includeRemoteURL: PumlThemes.cyborg.includeRemoteURL))
-        XCTAssertTrue(script.text.contains("!include https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/cyborg/puml-theme-cyborg.puml"))
+        let script = PlantUMLScript(items: [], configuration: Configuration(includeRemoteURL: "https://anyInternetUrlToFile.com/example.txt"))
+        XCTAssertTrue(script.text.contains("!include https://anyInternetUrlToFile.com/example.txt"))
+    }
+
+    func testScriptWithTheme() {
+        let script = PlantUMLScript(items: [], configuration: Configuration(theme: Theme.cyborg))
+        XCTAssertTrue(script.text.contains("!theme cyborg"))
     }
 
     func testScriptWithEmptyHideAndSkinCommands() {
