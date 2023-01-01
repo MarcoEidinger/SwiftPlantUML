@@ -81,12 +81,6 @@ extension aPublicStruct: aProtocol {
     }
 }
 
-struct anInternalStruct {
-    var anInternalInstanceVar: Double
-    private var aPrivateInstanceVar: Int
-    private var aPublicInstanceVarTypeInference = "aString"
-}
-
 extension anInternalStruct {
     var anExtensionComputedInstanceVar: String {
         "aString"
@@ -97,6 +91,12 @@ fileprivate extension anInternalStruct {
     var anFileprivateExtensionComputedInstanceVar: String {
         "aString"
     }
+}
+
+struct anInternalStruct {
+    var anInternalInstanceVar: Double
+    private var aPrivateInstanceVar: Int
+    private var aPublicInstanceVarTypeInference = "aString"
 }
 
 /// ignore comments :)
