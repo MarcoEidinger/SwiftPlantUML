@@ -124,6 +124,18 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertTrue(plantUMLElement!.contains("~hasBasket : Bool"))
     }
 
+    func testOrderedByExtensionsLast() {
+        let ext1 = SyntaxStructure(kind: .extension, name: "Ext1")
+        let p1 = SyntaxStructure(kind: .protocol, name: "Protocol1")
+        let c1 = SyntaxStructure(kind: .class, name: "Class1")
+        let ext2 = SyntaxStructure(kind: .extension, name: "Ext2")
+        let c2 = SyntaxStructure(kind: .class, name: "Class2")
+
+        let unordered = [ext1, p1, c1, ext2, c2]
+        let ordered = unordered.orderedByExtensionsLast()
+        XCTAssertEqual(ordered, [p1, c1, c2, ext1, ext2])
+    }
+
     func getTestFile() throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: "demo", ofType: "txt", inDirectory: "TestData") ?? "nonesense"

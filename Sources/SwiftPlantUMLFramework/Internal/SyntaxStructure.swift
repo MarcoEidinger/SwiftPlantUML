@@ -229,3 +229,5 @@ extension ElementKind: UnknownCaseRepresentable {
     /// `unknownCase` (abnormal situation)
     static let unknownCase: ElementKind = .other
 }
+
+extension SyntaxStructure: Hashable {}

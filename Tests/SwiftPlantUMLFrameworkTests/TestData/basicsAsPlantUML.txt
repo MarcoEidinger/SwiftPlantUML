@@ -45,24 +45,10 @@ class "aPublicStruct" as aPublicStruct << (S, SkyBlue) struct >> {
   +aPublicInstanceMethod(param1:param2:)
   +{static} aStaticPublicInstanceMethod(param1:param2:)
 }
-class "aPublicStruct" as aPublicStruct0 << (X, Orchid) extension >> {
-  +anExtensionComputedInstanceVar : String
-  +anExtensionInstanceMethod(param1:param2:)
-}
-class "aPublicStruct" as aPublicStruct1 << (X, Orchid) extension >> {
-  ~aProtocolInstanceVar : String
-  ~aProtocolInstanceMethod(param1:param2:)
-}
 class "anInternalStruct" as anInternalStruct << (S, SkyBlue) struct >> {
   ~anInternalInstanceVar : Double
   -aPrivateInstanceVar : Int
   -aPublicInstanceVarTypeInference
-}
-class "anInternalStruct" as anInternalStruct2 << (X, Orchid) extension >> {
-  ~anExtensionComputedInstanceVar : String
-}
-class "anInternalStruct" as anInternalStruct3 << (X, Orchid) extension >> {
-  -anFileprivateExtensionComputedInstanceVar : String
 }
 class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
   +simpleCase
@@ -72,8 +58,22 @@ class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
   ~{static} aStaticInternalMethod()
   ~anInternalComputedVar : AnEnum
 }
+class "aPublicStruct" as aPublicStruct0 << (X, Orchid) extension >> {
+  +anExtensionComputedInstanceVar : String
+  +anExtensionInstanceMethod(param1:param2:)
+}
+class "aPublicStruct" as aPublicStruct1 << (X, Orchid) extension >> {
+  ~aProtocolInstanceVar : String
+  ~aProtocolInstanceMethod(param1:param2:)
+}
+class "anInternalStruct" as anInternalStruct2 << (X, Orchid) extension >> {
+  ~anExtensionComputedInstanceVar : String
+}
+class "anInternalStruct" as anInternalStruct3 << (X, Orchid) extension >> {
+  -anFileprivateExtensionComputedInstanceVar : String
+}
 aClass <|-- anInternalSubClass : inherits
-aPrivateGenericClass <|-- aPrivateGenericSubClass  : inherits
+aPrivateGenericClass <|-- aPrivateGenericSubClass : inherits
 aProtocol <|.. aPublicStruct : confirms to
 aPublicStruct <.. aPublicStruct0 : ext
 aPublicStruct <.. aPublicStruct1 : ext

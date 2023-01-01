@@ -45,7 +45,8 @@ public struct PlantUMLScript {
 
         var replacingText = "\n"
 
-        for (index, element) in items.enumerated() {
+        let orderedItems = items.orderedByExtensionsLast()
+        for (index, element) in orderedItems.enumerated() {
             if let text = processStructureItem(item: element, index: index) {
                 replacingText.appendAsNewLine(text)
             }
@@ -93,5 +94,24 @@ public struct PlantUMLScript {
         guard let elementKind = item.kind else { return nil }
         guard processableKinds.contains(elementKind) else { return nil }
         return item.plantuml(context: context) ?? nil
+    }
+}
+
+extension Array where Element == SyntaxStructure {
+    /// order: non-extensions (i.e protocols, structs, classes, enums) first. Extensions last
+    /// this ensures that linking is correct
+    /// see https://github.com/MarcoEidinger/SwiftPlantUML/issues/47
+    func orderedByExtensionsLast() -> [SyntaxStructure] {
+        var ordered: [SyntaxStructure] = []
+        var nonExtInsertPoint = 0
+        forEach {
+            if $0.kind == .extension {
+                ordered.append($0)
+            } else {
+                ordered.insert($0, at: nonExtInsertPoint)
+                nonExtInsertPoint += 1
+            }
+        }
+        return ordered
     }
 }
