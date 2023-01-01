@@ -12,6 +12,10 @@ elements:
   showExtensions: true
   exclude:
     - UIViewController
+  extensions:
+    showExtensions: true
+    mergeExtensions: true
+    mergeExtensionMemberSuffixIndicator: "--!"
 hideShowCommands:
 - hide empty members
 skinparamCommands:

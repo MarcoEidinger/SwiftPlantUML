@@ -1,0 +1,69 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+
+
+class "aProtocol" as aProtocol << (P, GoldenRod) protocol >> {
+  ~aProtocolInstanceVar : String
+  ~aProtocolInstanceMethod(param1:param2:)
+}
+class "aClass" as aClass << (C, DarkSeaGreen) >> {
+  +init()
+  +aPublicInstanceVar : String
+  +{static} aStaticPublicInstanceVar : String
+  ~anInternalInstanceVar : Double
+  -aPrivateInstanceVar : Int
+  -aPublicInstanceVarTypeInference
+  +aPublicInstanceMethod(param1:param2:)
+  +{static} aStaticPublicInstanceMethod(param1:param2:)
+}
+class "anInternalSubClass" as anInternalSubClass << (C, DarkSeaGreen) >> {
+  +init()
+  +aSubInstanceVar : String
+  +aSubInstanceMethod(param1:param2:)
+  +linkToStruct : aPublicStruct?
+}
+class "anInternalClass" as anInternalClass << (C, DarkSeaGreen) >> {
+  ~anInternalInstanceVar : Double
+}
+class "aPrivateClass" as aPrivateClass << (C, DarkSeaGreen) >> {
+  ~anInternalInstanceVar : Double
+}
+class "aPrivateGenericClass" as aPrivateGenericClass<Element> << (C, DarkSeaGreen) >> {
+  ~elements : [Element]
+}
+class "aPrivateGenericSubClass" as aPrivateGenericSubClass<Element> << (C, DarkSeaGreen) >> {
+  -otherProp : String
+}
+class "aPublicStruct" as aPublicStruct << (S, SkyBlue) struct >> {
+  +aPublicInstanceVar : String
+  ~anInternalInstanceVar : Double
+  -aPrivateInstanceVar : Int
+  -aPublicInstanceVarTypeInference
+  +aPublicInstanceMethod(param1:param2:)
+  +{static} aStaticPublicInstanceMethod(param1:param2:)
+  +anExtensionComputedInstanceVar : String<&bolt>
+  +anExtensionInstanceMethod(param1:param2:)<&bolt>
+  ~aProtocolInstanceVar : String<&bolt>
+  ~aProtocolInstanceMethod(param1:param2:)<&bolt>
+}
+class "anInternalStruct" as anInternalStruct << (S, SkyBlue) struct >> {
+  ~anInternalInstanceVar : Double
+  -aPrivateInstanceVar : Int
+  -aPublicInstanceVarTypeInference
+  ~anExtensionComputedInstanceVar : String<&bolt>
+}
+class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
+  +simpleCase
+  +caseWithRaw(_:)
+  +caseWithRaw(_:_:)
+  ~anInternalInstanceMethod()
+  ~{static} aStaticInternalMethod()
+  ~anInternalComputedVar : AnEnum
+}
+aClass <|-- anInternalSubClass : inherits
+aPrivateGenericClass <|-- aPrivateGenericSubClass : inherits
+
+@enduml

@@ -45,7 +45,12 @@ public struct PlantUMLScript {
 
         var replacingText = "\n"
 
-        let orderedItems = items.orderedByProtocolsFirstExtensionsLast()
+        var orderedItems = items.orderedByProtocolsFirstExtensionsLast()
+
+        if context.configuration.shallExtensionsBeMerged {
+            orderedItems = orderedItems.mergeExtensions(mergedMemberIndicator: context.configuration.elements.extensions.mergeExtensionMemberSuffixIndicator)
+        }
+
         for (index, element) in orderedItems.enumerated() {
             if let text = processStructureItem(item: element, index: index) {
                 replacingText.appendAsNewLine(text)

@@ -25,6 +25,9 @@ extension SwiftPlantUML {
 
         @Option(help: "MacOSX SDK path used to handle type inference resolution, usually `$(xcrun --show-sdk-path -sdk macosx)`")
         var sdk: String?
+        
+        @Flag(help: "Decide if/how Swift extensions shall be considered for class diagram generation")
+        var extensionVisualization: ExtensionVisualization = .hideExtensions
 
         @Flag(help: "Verbose")
         var verbose: Bool = false
@@ -47,6 +50,16 @@ extension SwiftPlantUML {
             if !exclude.isEmpty {
                 config.files.exclude = exclude
             }
+            
+            switch extensionVisualization {
+            case .hideExtensions:
+                config.elements.extensions.showExtensions = false
+            case .mergeExtensions:
+                config.elements.extensions.showExtensions = true
+                config.elements.extensions.mergeExtensions = false
+            case .showExtensions:
+                config.elements.extensions.showExtensions = true
+            }
 
             Logger.shared.info("SDK: \(sdk ?? "no SDK path provided")")
 
@@ -68,3 +81,9 @@ extension SwiftPlantUML {
 }
 
 extension ClassDiagramOutput: ExpressibleByArgument {}
+
+enum ExtensionVisualization: EnumerableFlag  {
+    case hideExtensions
+    case mergeExtensions
+    case showExtensions
+}

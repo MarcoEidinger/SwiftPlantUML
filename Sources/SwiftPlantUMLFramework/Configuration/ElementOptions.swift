@@ -19,6 +19,9 @@ public struct ElementOptions: Codable {
     /// exclude elements for given names (wildcard support with `*`), e.g. use `*Test*`to hide classes/structs/... who contain `Test` in their name
     public private(set) var exclude: [String]?
 
+    /// options which and how extensions shall be considered for class diagram generation
+    public var extensions: ExtensionOptions = .init()
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         if let havingAccessLevel = try container.decodeIfPresent([AccessLevel].self, forKey: .havingAccessLevel) {
@@ -39,15 +42,21 @@ public struct ElementOptions: Codable {
         if let exclude = try container.decodeIfPresent([String].self, forKey: .exclude) {
             self.exclude = exclude
         }
+        if let extensions = try container.decodeIfPresent(ExtensionOptions.self, forKey: .extensions) {
+            self.extensions = extensions
+        } else {
+            extensions = ExtensionOptions(showExtensions: showExtensions)
+        }
     }
 
     /// memberwise initializer
-    public init(havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showGenerics: Bool = true, showExtensions: Bool = true, showMemberAccessLevelAttribute: Bool = true, exclude: [String]? = nil) {
+    public init(havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private], showGenerics: Bool = true, showExtensions: Bool = true, showMemberAccessLevelAttribute: Bool = true, exclude: [String]? = nil, extensions: ExtensionOptions = ExtensionOptions()) {
         self.havingAccessLevel = havingAccessLevel
         self.showMembersWithAccessLevel = showMembersWithAccessLevel
         self.showGenerics = showGenerics
         self.showExtensions = showExtensions
         self.showMemberAccessLevelAttribute = showMemberAccessLevelAttribute
         self.exclude = exclude
+        self.extensions = extensions
     }
 }

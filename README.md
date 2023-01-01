@@ -80,6 +80,9 @@ OPTIONS:
   --sdk <sdk>             MacOSX SDK path used to handle type inference
                           resolution, usually `$(xcrun --show-sdk-path -sdk
                           macosx)`
+  --hide-extensions/--merge-extensions/--show-extensions
+                          Decide if/how Swift extensions shall be considered for class diagram generation (default:
+                          hideExtensions)
   --verbose               Verbose
   --version               Show the version.
   -h, --help              Show help information.
@@ -187,8 +190,14 @@ Configure SwiftPlantUML by adding a `.swiftplantuml.yml` file from the directory
 You are able to
 - include/exclude files (wildcards supported)
 - include/exclude elements by name (wildcards supported)
-- limit elements and members bases on their access level, e.g. show only `public` types
-- hide extensions
+- limit elements and members based on their access level, e.g. show only `public` types
+- hide extensions or merge extensions (with their known type)
+
+| Show Extensions                                              | Merge Extensions                                             | Hide Extensions                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![Show Extensions](.assets/extensionExamples/ShowExtensions.svg) | ![Merge Extensions](.assets/extensionExamples/MergeExtensions.svg) | ![Hide Extensions](.assets/extensionExamples/HideExtensions.svg) |
+| Clutter but represents codebase accurately                   | Reduced clutter. No loss of information                      | No clutter but loss of information                           |
+
 - hide member access level attribute
 - configure styles, use [skin parameters](https://plantuml.com/skinparam) and even include external files or [themes](./THEMING.md)
 - exclude inheritance relationships based on parent (wildcards supported), e.g. do not show inheritance to `Codable`
@@ -280,7 +289,6 @@ You can use `swifplantuml` to parse the `.swiftmodule` file of a binary framewor
 
 ## Planned improvements
 - being able to render associations between elements
-- being able to merge extensions with their known type
 
 ## Known limitations
 See [Large Diagrams](#large-diagrams)

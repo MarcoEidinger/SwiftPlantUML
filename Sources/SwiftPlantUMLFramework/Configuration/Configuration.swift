@@ -83,6 +83,7 @@ public struct Configuration: Codable {
     /// sterotypes (spotted character with background color and optional name) to be shown for an entity type
     public private(set) var stereotypes = Stereotypes(classStereotype: Stereotype.class, structStereotype: Stereotype.struct, extensionStereotype: Stereotype.extension, enumStereotype: Stereotype.enum, protocolStereotype: Stereotype.protocol)
 
-    /// default initializer
-    public init() {}
+    internal var shallExtensionsBeMerged: Bool {
+        elements.extensions.showExtensions && elements.extensions.mergeExtensions
+    }
 }
