@@ -1,16 +1,64 @@
 files:
     exclude:
     - "Tests/**/Mock*.swift"
-
+theme: hacker
 elements:
   havingAccessLevel:
   - public
   showMembersWithAccessLevel:
   - public
-
+  showMemberAccessLevelAttribute: true
+  showGenerics: false
+  showExtensions: true
+  exclude:
+    - UIViewController
+hideShowCommands:
+- hide empty members
+skinparamCommands:
+- skinparam sequenceMessageAlign center ## just an example; this will have no impact to a class diagram
+includeRemoteURL: https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/hacker/puml-theme-hacker.puml
+theme: hacker
+relationships:
+  inheritance:
+    label: "inherits from"
+    style:
+      lineStyle: dotted
+      lineColor: DarkViolet
+      textColor: DarkViolet
+    exclude:
+    - "Codable"
+  realize:
+    label: "confirms to"
+    style:
+      lineStyle: dashed
+      lineColor: Blue
+      textColor: Blue
+  dependency:
+    label: extends
+    style:
+      lineStyle: bold
+      lineColor: DarkGreen
+      textColor: DarkViolet
 stereotypes:
   class:
     name: class
     spot:
       character: C
       color: AliceBlue
+  struct:
+    spot:
+      character: S
+      color: AntiqueWhite
+  extension:
+    spot:
+      character: X
+      color: AntiqueWhite
+  enum:
+    spot:
+      character: E
+      color: AntiqueWhite
+  protocol:
+    spot:
+      character: P
+      color: AntiqueWhite
+
