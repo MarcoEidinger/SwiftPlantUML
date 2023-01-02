@@ -128,12 +128,14 @@ final class SyntaxStructureTests: XCTestCase {
         let ext1 = SyntaxStructure(kind: .extension, name: "Ext1")
         let p1 = SyntaxStructure(kind: .protocol, name: "Protocol1")
         let c1 = SyntaxStructure(kind: .class, name: "Class1")
+        let s1 = SyntaxStructure(kind: .struct, name: "Struct1")
         let ext2 = SyntaxStructure(kind: .extension, name: "Ext2")
         let c2 = SyntaxStructure(kind: .class, name: "Class2")
+        let s2 = SyntaxStructure(kind: .struct, name: "Struct2")
 
-        let unordered = [ext1, p1, c1, ext2, c2]
-        let ordered = unordered.orderedByExtensionsLast()
-        XCTAssertEqual(ordered, [p1, c1, c2, ext1, ext2])
+        let unordered = [ext1, c1, p1, s1, ext2, c2, s2]
+        let ordered = unordered.orderedByProtocolsFirstExtensionsLast()
+        XCTAssertEqual(ordered, [p1, c1, s1, c2, s2, ext1, ext2])
     }
 
     func getTestFile() throws -> URL {
