@@ -32,6 +32,7 @@ with their instance and static members as well as their inheritance and implemen
     - [Note: Working with Multiple Swift Versions](#note-working-with-multiple-swift-versions)
   - [Configuration](#configuration)
     - [Options](#options)
+      - [Theming](#theming)
     - [Examples](#examples)
     - [Code Completion during Editing](#code-completion-during-editing)
   - [Large Diagrams](#large-diagrams)
@@ -189,8 +190,14 @@ You are able to
 - limit elements and members bases on their access level, e.g. show only `public` types
 - hide extensions
 - hide member access level attribute
-- configure styles, use [skin parameters](https://plantuml.com/skinparam) and even include external files or [themes](https://plantuml.com/theme)
+- configure styles, use [skin parameters](https://plantuml.com/skinparam) and even include external files or [themes](./THEMING.md)
 - exclude inheritance relationships based on parent (wildcards supported), e.g. do not show inheritance to `Codable`
+
+#### Theming
+
+|                     Default                     | Amiga                                       | Reddress-darkblue                                            | Sketchy Outline                                              | Many More Available                        |
+| :---------------------------------------------: | ------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------ |
+| ![default](.assets/themingExamples/default.svg) | ![amiga](.assets/themingExamples/amiga.svg) | ![reddress-darkblue](.assets/themingExamples/reddress-darkblue.svg) | ![sketchy-outline](.assets/themingExamples/sketchy-outline.svg) | See [here](./THEMING.md) for more examples |
 
 ### Examples
 
