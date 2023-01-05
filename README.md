@@ -193,7 +193,7 @@ You are able to
 - limit elements and members based on their access level, e.g. show only `public` types
 - hide extensions or merge extensions (with their known type)
 
-| Show Extensions                                              | Merge Extensions                                             | Hide Extensions                                              |
+| Show Extensions  (Default)                                   | Merge Extensions                                             | Hide Extensions                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | ![Show Extensions](.assets/extensionExamples/ShowExtensions.svg) | ![Merge Extensions](.assets/extensionExamples/MergeExtensions.svg) | ![Hide Extensions](.assets/extensionExamples/HideExtensions.svg) |
 | Clutter but represents codebase accurately                   | Reduced clutter. No loss of information                      | No clutter but loss of information                           |

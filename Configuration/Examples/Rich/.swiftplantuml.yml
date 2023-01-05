@@ -11,7 +11,8 @@ elements:
   - internal
   - private
   showGenerics: true
-  showExtensions: false
+  extensions: merged
+  mergedExtensionMemberIndicator: "!!!"
   showMemberAccessLevelAttribute: true
   exclude:
   - Logger

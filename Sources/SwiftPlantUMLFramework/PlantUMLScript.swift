@@ -48,7 +48,7 @@ public struct PlantUMLScript {
         var orderedItems = items.orderedByProtocolsFirstExtensionsLast()
 
         if context.configuration.shallExtensionsBeMerged {
-            orderedItems = orderedItems.mergeExtensions(mergedMemberIndicator: context.configuration.elements.extensions.mergeExtensionMemberSuffixIndicator)
+            orderedItems = orderedItems.mergeExtensions(mergedMemberIndicator: context.configuration.elements.mergedExtensionMemberIndicator)
         }
 
         for (index, element) in orderedItems.enumerated() {

@@ -60,7 +60,7 @@ final class SyntaxStructureTests: XCTestCase {
         let cut = SyntaxStructure.create(from: "public extension aExtension {}")
         let found = cut?.find(.extension, named: "aExtension")
         XCTAssertNotNil(found)
-        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(extensions: ExtensionOptions(showExtensions: false)))))
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(extensions: ExtensionVisualization.none))))
         XCTAssertNil(plantUMLElement)
     }
 

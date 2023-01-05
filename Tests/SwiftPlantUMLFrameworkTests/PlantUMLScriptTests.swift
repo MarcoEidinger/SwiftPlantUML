@@ -76,7 +76,7 @@ final class PlantUMLScriptTests: XCTestCase {
     func testMergeExtensionsE2E() {
         guard let items = try! SyntaxStructure.create(from: getTestFile())?.substructure else { return XCTFail("cannot read test data") }
         var config = Configuration.default
-        config.elements = ElementOptions(extensions: ExtensionOptions(mergeExtensions: true))
+        config.elements = ElementOptions(extensions: .merged)
         let script = PlantUMLScript(items: items, configuration: config)
         let expected = try! getTestFileContent(named: "basicsAsPlantUML-mergedExtensions")
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)

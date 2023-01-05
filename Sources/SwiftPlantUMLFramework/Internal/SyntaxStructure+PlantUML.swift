@@ -85,7 +85,7 @@ extension SyntaxStructure {
         msig += memberName(of: actualElement)
 
         if let memberSuffix = actualElement.memberSuffix {
-            msig += memberSuffix
+            msig += " " + memberSuffix
         }
 
         return msig
@@ -127,7 +127,7 @@ extension SyntaxStructure {
             guard generateElementsWithAccessLevel.contains(accessibility ?? ElementAccessibility.other) else { return true }
         }
 
-        if configuration.elements.extensions.showExtensions == false, kind == .extension {
+        if configuration.elements.extensions.safelyUnwrap == .none, kind == .extension {
             return true
         }
 

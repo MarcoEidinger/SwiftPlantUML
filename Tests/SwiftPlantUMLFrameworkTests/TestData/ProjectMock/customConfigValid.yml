@@ -10,12 +10,10 @@ elements:
   showMemberAccessLevelAttribute: true
   showGenerics: false
   showExtensions: true
+  extensions: merged
+  mergedExtensionMemberIndicator: "!!!"
   exclude:
     - UIViewController
-  extensions:
-    showExtensions: true
-    mergeExtensions: true
-    mergeExtensionMemberSuffixIndicator: "--!"
 hideShowCommands:
 - hide empty members
 skinparamCommands:
