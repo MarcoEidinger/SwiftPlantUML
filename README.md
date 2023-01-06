@@ -120,7 +120,7 @@ dependencies: [
 ]
 ```
 
-This project is still in initial development. Generally this anything may change at any time and the public API should not be considered stable). However, I'll try to reserve breaking changes for new minor versions. You might feel more comfortable to pin the version to `.upToNextMinor` or even to an `.exact` version.
+This project has yet to reach a major version. Anything may change at anytime, and the public API should not be considered stable. However, I'll try to reserve breaking changes for new minor versions. You might feel more comfortable pinning the version to `.upToNextMinor` or even to an `.exact` version.
 
 [API documentation](https://marcoeidinger.github.io/SwiftPlantUML/)
 
@@ -187,7 +187,7 @@ Configure SwiftPlantUML by adding a `.swiftplantuml.yml` file from the directory
 
 ### Options
 
-You are able to
+You can
 - include/exclude files (wildcards supported)
 - include/exclude elements by name (wildcards supported)
 - limit elements and members based on their access level, e.g. show only `public` types
@@ -311,7 +311,7 @@ Installing `swiftplantuml` with Homebrew or from source (`make install`) will al
 
 ## Acknowledgements
 
-This project was inspired by https://github.com/palaniraja and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. 
+This project was inspired by https://github.com/palaniraja/swiftuml and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. 
 
 Last but not least a big shoutout to the great developers of [PlantUML](https://github.com/plantuml/plantuml) and the people who operate the related online servers / tools available on http://plantuml.com/ and https://www.planttext.com/ 
 

@@ -17,7 +17,7 @@ public struct ElementOptions: Codable {
     /// options which and how extensions shall be considered for class diagram generation
     public var extensions: ExtensionVisualization? = nil
 
-    /// A suffix added to an extension member which will be displayed as part of the main type . You can use [Emoji](https://plantuml.com/creole#68305e25f5788db0), [OpenIconic](https://plantuml.com/creole#041a1eb0031c373d), or any string
+    /// a suffix added to an extension member which will be displayed as part of the main type . You can use [Emoji](https://plantuml.com/creole#68305e25f5788db0), [OpenIconic](https://plantuml.com/creole#041a1eb0031c373d), or any string
     public private(set) var mergedExtensionMemberIndicator: String? = "<&bolt>"
 
     /// show [access level](https://plantuml.com/class-diagram#3644720244dd6c6a) for members
@@ -59,7 +59,7 @@ public struct ElementOptions: Codable {
         havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private],
         showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private],
         showGenerics: Bool = true,
-        extensions: ExtensionVisualization? = ExtensionVisualization.default,
+        extensions: ExtensionVisualization? = nil,
         mergedExtensionMemberIndicator: String? = "<&bolt>",
         showMemberAccessLevelAttribute: Bool = true,
         exclude: [String]? = nil

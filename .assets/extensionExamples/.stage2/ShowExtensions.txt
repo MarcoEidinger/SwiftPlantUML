@@ -1,0 +1,25 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+
+
+class "aProtocol" as aProtocol << (P, GoldenRod) protocol >> { 
+  ~aProtFunction() 
+}
+class "aClass" as aClass << (C, DarkSeaGreen) >> { 
+  ~computedProperty : String
+  ~aFunction() 
+}
+class "aProtocol" as aProtocol0 << (X, Orchid) extension >> { 
+  ~aProtFunction() 
+}
+class "aClass" as aClass1 << (X, Orchid) extension >> { 
+  ~anotherComputedProperty : String
+  ~anotherFunction() 
+}
+aProtocol <|.. aClass : confirms to
+aProtocol <.. aProtocol0 : ext
+aClass <.. aClass1 : ext
+@enduml

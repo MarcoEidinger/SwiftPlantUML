@@ -28,7 +28,7 @@
 				"private"
 			],
 			"showGenerics": true,
-            "extensions": "all",
+			"extensions": "all",
 			"showMemberAccessLevelAttribute": true,
 			"exclude": [
 				"Logger",
@@ -240,7 +240,7 @@
 					"private"
 				],
 				"showGenerics": true,
-                "extensions": "all",
+				"extensions": "all",
 				"showMemberAccessLevelAttribute": true,
 				"exclude": [
 					"Logger",
@@ -302,19 +302,19 @@
 						true
 					]
 				},
-                "extensions": {
-                    "type": "string",
-                    "default": "all",
-                    "title": "The extensions Schema",
-                    "description": "Options which and how extensions shall be considered for class diagram generation",
-                    "enum": ["all", "merged", "none"]
-                },
-                "mergedExtensionMemberIndicator": {
-                    "type": "string",
-                    "default": "<&bolt>",
-                    "title": "The mergedExtensionMemberIndicator Schema",
-                    "description": "A suffix added to an extension member which will be displayed as part of the main type . You can use [Emoji](https://plantuml.com/creole#68305e25f5788db0), [OpenIconic](https://plantuml.com/creole#041a1eb0031c373d), or any string"
-                },
+				"extensions": {
+					"type": "string",
+					"default": "all",
+					"title": "The extensions Schema",
+					"description": "Options which and how extensions shall be considered for class diagram generation. Choose to show all or none extensions as well as merging extensions into their parent type.",
+					"enum": ["all", "merged", "none"]
+				},
+				"mergedExtensionMemberIndicator": {
+					"type": "string",
+					"default": "<&bolt>",
+					"title": "The mergedExtensionMemberIndicator Schema",
+					"description": "A suffix added to an extension member which will be displayed as part of the main type . You can use [Emoji](https://plantuml.com/creole#68305e25f5788db0), [OpenIconic](https://plantuml.com/creole#041a1eb0031c373d), or any string"
+				},
 				"showMemberAccessLevelAttribute": {
 					"$id": "#/properties/elements/properties/showMemberAccessLevelAttribute",
 					"type": "boolean",
