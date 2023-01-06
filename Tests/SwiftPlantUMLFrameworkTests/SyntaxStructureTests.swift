@@ -60,7 +60,7 @@ final class SyntaxStructureTests: XCTestCase {
         let cut = SyntaxStructure.create(from: "public extension aExtension {}")
         let found = cut?.find(.extension, named: "aExtension")
         XCTAssertNotNil(found)
-        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showExtensions: false))))
+        let plantUMLElement = found?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(extensions: ExtensionVisualization.none))))
         XCTAssertNil(plantUMLElement)
     }
 
@@ -136,6 +136,31 @@ final class SyntaxStructureTests: XCTestCase {
         let unordered = [ext1, c1, p1, s1, ext2, c2, s2]
         let ordered = unordered.orderedByProtocolsFirstExtensionsLast()
         XCTAssertEqual(ordered, [p1, c1, s1, c2, s2, ext1, ext2])
+    }
+
+    func testMerged() {
+        let c1 = SyntaxStructure(kind: .class, name: "Class", substructure: [.init(kind: .varInstance, name: "prop")])
+        let ext1 = SyntaxStructure(kind: .extension, name: "Class", substructure: [.init(kind: .varInstance, name: "propExt1")])
+        let ext2 = SyntaxStructure(kind: .extension, name: "Class", substructure: [.init(kind: .varInstance, name: "propExt2")])
+        let merged = [c1, ext1, ext2].mergeExtensions()
+        XCTAssertEqual(merged.count, 1)
+        XCTAssertEqual(merged.first?.substructure?.count, 3)
+    }
+
+    func testMergedAndNonMergableExtension() {
+        let c1 = SyntaxStructure(kind: .class, name: "Class", substructure: [.init(kind: .varInstance, name: "prop")])
+        let ext1 = SyntaxStructure(kind: .extension, name: "String", substructure: [.init(kind: .varInstance, name: "propExt1")])
+        let merged = [c1, ext1].mergeExtensions()
+        XCTAssertEqual(merged.count, 2)
+        XCTAssertEqual(merged.first?.substructure?.count, 1)
+    }
+
+    func testMergedExt() {
+        let ext1 = SyntaxStructure(kind: .extension, name: "String", substructure: [.init(kind: .varInstance, name: "propExt1")])
+        let ext2 = SyntaxStructure(kind: .extension, name: "String", substructure: [.init(kind: .varInstance, name: "propExt2")])
+        let merged = [ext1, ext2].mergeExtensions()
+        XCTAssertEqual(merged.count, 1)
+        XCTAssertEqual(merged.first?.substructure?.count, 2)
     }
 
     func getTestFile() throws -> URL {

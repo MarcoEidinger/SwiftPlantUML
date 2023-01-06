@@ -73,6 +73,15 @@ final class PlantUMLScriptTests: XCTestCase {
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
     }
 
+    func testMergeExtensionsE2E() {
+        guard let items = try! SyntaxStructure.create(from: getTestFile())?.substructure else { return XCTFail("cannot read test data") }
+        var config = Configuration.default
+        config.elements = ElementOptions(extensions: .merged)
+        let script = PlantUMLScript(items: items, configuration: config)
+        let expected = try! getTestFileContent(named: "basicsAsPlantUML-mergedExtensions")
+        XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+    }
+
     func getTestFile(named: String = "basics") throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: named, ofType: "txt", inDirectory: "TestData") ?? "nonesense"

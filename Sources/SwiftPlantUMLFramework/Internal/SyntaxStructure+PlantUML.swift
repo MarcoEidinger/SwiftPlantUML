@@ -73,7 +73,7 @@ extension SyntaxStructure {
 
         if kind! != .extension {
             let generateMembersWithAccessLevel: [ElementAccessibility] = context.configuration.elements.showMembersWithAccessLevel.map { ElementAccessibility(orig: $0)! }
-            if generateMembersWithAccessLevel.contains(actualElement.accessibility ?? ElementAccessibility.other) == false {
+            if generateMembersWithAccessLevel.contains(actualElement.accessibility ?? ElementAccessibility.internal) == false {
                 return nil
             }
         }
@@ -83,6 +83,10 @@ extension SyntaxStructure {
         msig.addOrSkipMemberAccessLevelAttribute(for: actualElement, basedOn: context.configuration)
 
         msig += memberName(of: actualElement)
+
+        if let memberSuffix = actualElement.memberSuffix {
+            msig += " " + memberSuffix
+        }
 
         return msig
     }
@@ -123,7 +127,7 @@ extension SyntaxStructure {
             guard generateElementsWithAccessLevel.contains(accessibility ?? ElementAccessibility.other) else { return true }
         }
 
-        if configuration.elements.showExtensions == false, kind == .extension {
+        if configuration.elements.extensions.safelyUnwrap == .none, kind == .extension {
             return true
         }
 

@@ -83,7 +83,9 @@ class PlantUMLContext {
         if uniqElementNames.contains(name) {
             newName += "\(index)"
             index += 1
-            if item.kind == ElementKind.extension {
+            if item.kind == ElementKind.extension,
+               uniqueNameForElement.keys.first(where: { $0.name == name && $0.kind != .extension }) != nil
+            {
                 var connect = "\(name) \(linkTypeDependency) \(newName)"
                 if let relStyle = configuration.relationships.dependency?.style?.plantuml {
                     connect += " \(relStyle)"

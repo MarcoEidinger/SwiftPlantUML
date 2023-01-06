@@ -5,13 +5,22 @@ final class PlantUMLContextTests: XCTestCase {
     func testUniqNameExtensionWithDefaultLabel() {
         let context = PlantUMLContext()
         context.uniqElementNames.append("aPublicStruct")
+
+        let struct1 = SyntaxStructure(kind: .struct, name: "aPublicStruct")
+        context.uniqueNameForElement[struct1] = "aPublicStruct"
+
         _ = context.uniqName(item: SyntaxStructure(kind: .extension, name: "aPublicStruct"), relationship: "ext")
         XCTAssertEqual(context.extnConnections.first, "aPublicStruct <.. aPublicStruct0 : ext")
     }
 
     func testUniqNameExtensionWithCustomLabel() {
         let context = PlantUMLContext(configuration: Configuration(relationships: RelationshipOptions(dependency: Relationship(label: "extends"))))
+
         context.uniqElementNames.append("aPublicStruct")
+
+        let struct1 = SyntaxStructure(kind: .struct, name: "aPublicStruct")
+        context.uniqueNameForElement[struct1] = "aPublicStruct"
+
         _ = context.uniqName(item: SyntaxStructure(kind: .extension, name: "aPublicStruct"), relationship: "ext")
         XCTAssertEqual(context.extnConnections.first, "aPublicStruct <.. aPublicStruct0 : extends")
     }

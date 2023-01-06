@@ -1,0 +1,20 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+
+
+class "aProtocol" as aProtocol << (P, GoldenRod) protocol >> { 
+  ~aProtFunction()
+  ~aProtFunction() <&bolt> 
+}
+class "aClass" as aClass << (C, DarkSeaGreen) >> { 
+  ~computedProperty : String
+  ~aFunction()
+  ~anotherComputedProperty : String <&bolt>
+  ~anotherFunction() <&bolt> 
+}
+aProtocol <|.. aClass : confirms to
+
+@enduml

@@ -29,9 +29,11 @@ internal struct SyntaxStructure: Codable {
     /// name
     private let runtimename: String?
     /// sub elements (e.g. variables and methods of a class/struct)
-    internal let substructure: [SyntaxStructure]?
+    internal var substructure: [SyntaxStructure]?
     /// typename
     internal let typename: String?
+
+    internal var memberSuffix: String? = nil
 
     private enum CodingKeys: String, CodingKey {
         case accessibility = "key.accessibility"
