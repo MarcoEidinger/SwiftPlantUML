@@ -29,7 +29,7 @@ extension Array where Element == SyntaxStructure {
             // merge members of extension with main declaration (or: the first extension if no main declaration was found)
             guard var members = structure.substructure else { continue }
             if let memberSuffix = mergedMemberIndicator, parent.kind != .extension {
-                for (index, _) in members.enumerated() {
+                for index in members.indices {
                     guard members[index].name != nil else { continue }
                     members[index].memberSuffix = memberSuffix
                 }

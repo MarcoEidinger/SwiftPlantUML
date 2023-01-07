@@ -13,9 +13,9 @@ public struct ElementOptions: Codable {
     /// show Swift extensions  (default: true)
     /// OBSOLETE !!!
     internal private(set) var showExtensions: Bool = true
-    
+
     /// options which and how extensions shall be considered for class diagram generation
-    public var extensions: ExtensionVisualization? = nil
+    public var extensions: ExtensionVisualization?
 
     /// a suffix added to an extension member which will be displayed as part of the main type . You can use [Emoji](https://plantuml.com/creole#68305e25f5788db0), [OpenIconic](https://plantuml.com/creole#041a1eb0031c373d), or any string
     public private(set) var mergedExtensionMemberIndicator: String? = "<&bolt>"
@@ -63,8 +63,7 @@ public struct ElementOptions: Codable {
         mergedExtensionMemberIndicator: String? = "<&bolt>",
         showMemberAccessLevelAttribute: Bool = true,
         exclude: [String]? = nil
-        )
-    {
+    ) {
         self.havingAccessLevel = havingAccessLevel
         self.showMembersWithAccessLevel = showMembersWithAccessLevel
         self.showGenerics = showGenerics

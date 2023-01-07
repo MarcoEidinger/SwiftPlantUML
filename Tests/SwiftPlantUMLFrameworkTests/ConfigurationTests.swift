@@ -7,7 +7,7 @@ final class PlantUMLConfigurationTests: XCTestCase {
         XCTAssertEqual(config.elements.havingAccessLevel.count, 4)
         XCTAssertEqual(config.elements.showMembersWithAccessLevel.count, 4)
     }
-    
+
     func testDecodingObsoleteShowExtensionsBooleanProperty() {
         let config = """
         {"showExtensions":false}
@@ -16,9 +16,8 @@ final class PlantUMLConfigurationTests: XCTestCase {
         let decoder = JSONDecoder()
         let content = try? decoder.decode(ElementOptions.self, from: data)
         XCTAssertEqual(content?.extensions, ExtensionVisualization.none)
-        
     }
-    
+
     func testDecodingNewExtensionsEnumProperty() {
         let config = """
         {"extensions":"merged"}
@@ -28,7 +27,7 @@ final class PlantUMLConfigurationTests: XCTestCase {
         let content = try? decoder.decode(ElementOptions.self, from: data)
         XCTAssertEqual(content?.extensions, .merged)
     }
-    
+
     func testDecodingNewExtensionsEnumPropertyIncorrectValue() {
         let config = """
         {"extensions":"merge"}
@@ -38,7 +37,7 @@ final class PlantUMLConfigurationTests: XCTestCase {
         let content = try? decoder.decode(ElementOptions.self, from: data)
         XCTAssertEqual(content?.extensions, nil)
     }
-    
+
     func testDecodingPrecedenceForNewExtensionsEnumProperty() {
         let config = """
         {"showExtensions":false,"extensions":"merged"}

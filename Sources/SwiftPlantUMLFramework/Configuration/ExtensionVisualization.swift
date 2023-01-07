@@ -19,6 +19,6 @@ public enum ExtensionVisualization: String, Codable {
 
 extension Optional where Wrapped == ExtensionVisualization {
     var safelyUnwrap: ExtensionVisualization {
-        return self ?? ExtensionVisualization.default
+        self ?? ExtensionVisualization.default
     }
 }

@@ -92,3 +92,4 @@ iOSInjectionProject/
 # Specific to this project (SwiftPlantUML)
 
 .info.lcov
+plantuml.jar

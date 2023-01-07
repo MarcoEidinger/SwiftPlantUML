@@ -33,7 +33,7 @@ internal struct SyntaxStructure: Codable {
     /// typename
     internal let typename: String?
 
-    internal var memberSuffix: String? = nil
+    internal var memberSuffix: String?
 
     private enum CodingKeys: String, CodingKey {
         case accessibility = "key.accessibility"
