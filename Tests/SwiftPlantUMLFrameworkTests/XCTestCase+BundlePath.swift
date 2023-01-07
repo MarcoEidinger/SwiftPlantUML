@@ -11,10 +11,6 @@ enum TestResources {
     }
 }
 
-extension XCTestCase {
-    var testResourcesPath: String { TestResources.path }
-}
-
 extension String {
     func absolutePathStandardized() -> String {
         bridge().absolutePathRepresentation().bridge().standardizingPath

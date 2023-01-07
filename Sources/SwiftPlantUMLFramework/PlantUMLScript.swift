@@ -1,10 +1,6 @@
 import Foundation
 import SwiftUI
 
-internal enum NetworkError: Error {
-    case badURL
-}
-
 /// Swift type representing a PlantUML script (@startuml ... @enduml)
 public struct PlantUMLScript {
     /// textual representation of the script (@startuml ... @enduml)
@@ -19,31 +15,17 @@ public struct PlantUMLScript {
 
         let methodStart = Date()
 
-        let STR2REPLACE = "STR2REPLACE"
-
-//        let plantumlTemplate = """
-//        @startuml
-//        ' STYLE START
-//        hide empty members
-//        skinparam shadowing false
-//        ' STYLE END
-//
-//        STR2REPLACE
-//        @enduml
-//        """
-
-        var plantumlTemplate = "@startuml"
+        text = "@startuml"
         if let theme = configuration.theme {
-            plantumlTemplate.appendAsNewLine("!theme \(theme.rawValue)")
+            text.appendAsNewLine("!theme \(theme.rawValue)")
         }
         if let includeRemoteURL = configuration.includeRemoteURL {
-            plantumlTemplate.appendAsNewLine("!include \(includeRemoteURL)")
+            text.appendAsNewLine("!include \(includeRemoteURL)")
         }
-        plantumlTemplate.appendAsNewLine(defaultStyling)
-        plantumlTemplate.appendAsNewLine("STR2REPLACE")
-        plantumlTemplate.appendAsNewLine("@enduml")
+        text.appendAsNewLine(defaultStyling)
 
-        var replacingText = "\n"
+        let newLine = "\n"
+        var mainContent = newLine
 
         var orderedItems = items.orderedByProtocolsFirstExtensionsLast()
 
@@ -53,13 +35,14 @@ public struct PlantUMLScript {
 
         for (index, element) in orderedItems.enumerated() {
             if let text = processStructureItem(item: element, index: index) {
-                replacingText.appendAsNewLine(text)
+                mainContent.appendAsNewLine(text)
             }
         }
 
-        let neep = replacingText + "\n" + context.connections.joined(separator: "\n") + "\n" + context.extnConnections.joined(separator: "\n")
+        let definitions = mainContent + newLine + context.connections.joined(separator: newLine) + newLine + context.extnConnections.joined(separator: newLine)
 
-        text = plantumlTemplate.replacingOccurrences(of: STR2REPLACE, with: neep)
+        text.appendAsNewLine(definitions)
+        text.appendAsNewLine("@enduml")
 
         Logger.shared.debug("PlantUML script created in \(Date().timeIntervalSince(methodStart)) seconds")
     }
