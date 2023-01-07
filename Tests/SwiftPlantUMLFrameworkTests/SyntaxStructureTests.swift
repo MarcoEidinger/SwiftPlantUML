@@ -163,6 +163,15 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertEqual(merged.first?.substructure?.count, 2)
     }
 
+    func testPopulateNestedTypes() {
+        let p1 = SyntaxStructure(kind: .protocol, name: "aProt", substructure: [])
+        let e1 = SyntaxStructure(kind: .enum, name: "MyEnum", substructure: [p1])
+        let c2 = SyntaxStructure(kind: .class, name: "String", substructure: [e1])
+        let c1 = SyntaxStructure(kind: .class, name: "String", substructure: [p1, c2])
+        let merged = [c1].populateNestedTypes()
+        XCTAssertEqual(merged.count, 3)
+    }
+
     func getTestFile() throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: "demo", ofType: "txt", inDirectory: "TestData") ?? "nonesense"

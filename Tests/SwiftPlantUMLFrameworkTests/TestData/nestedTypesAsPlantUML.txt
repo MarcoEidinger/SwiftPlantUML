@@ -1,0 +1,19 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+
+
+class "OuterOuter" as OuterOuter << (E, LightSteelBlue) enum >> {
+  +{static} test : String
+}
+class "OuterOuter" as OuterOuter0 << (E, LightSteelBlue) enum >> {
+}
+class "Inner" as Inner << (E, LightSteelBlue) enum >> {
+  +aCase
+}
+OuterOuter+--OuterOuter0
+OuterOuter0+--Inner
+
+@enduml

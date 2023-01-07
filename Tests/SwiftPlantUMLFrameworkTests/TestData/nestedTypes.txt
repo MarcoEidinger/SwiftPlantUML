@@ -1,0 +1,10 @@
+import Foundation
+
+public enum OuterOuter {
+    public static var test: String { "" }
+    public enum OuterOuter {
+        public enum Inner {
+            case aCase
+        }
+    }
+}

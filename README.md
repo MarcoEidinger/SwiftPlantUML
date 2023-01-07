@@ -198,6 +198,7 @@ You can
 | ![Show Extensions](.assets/extensionExamples/ShowExtensions.svg) | ![Merge Extensions](.assets/extensionExamples/MergeExtensions.svg) | ![Hide Extensions](.assets/extensionExamples/HideExtensions.svg) |
 | Clutter but represents codebase accurately                   | Reduced clutter. No loss of information                      | No clutter but loss of information                           |
 
+- hide nested types
 - hide member access level attribute
 - configure styles, use [skin parameters](https://plantuml.com/skinparam) and even include external files or [themes](./THEMING.md)
 - exclude inheritance relationships based on parent (wildcards supported), e.g. do not show inheritance to `Codable`
@@ -223,7 +224,8 @@ elements:
   showMembersWithAccessLevel:
   - public
   - open
-  showExtensions: false
+  showNestedTypes: false
+  extensions: merged
 theme: plain # see https://plantuml.com/theme
 skinparamCommands: # see https://plantuml.com/skinparam
 - skinparam classBackgroundColor PaleGreen

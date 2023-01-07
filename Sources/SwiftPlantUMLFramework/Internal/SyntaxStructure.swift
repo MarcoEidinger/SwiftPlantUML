@@ -1,7 +1,7 @@
 import Foundation
 
 /// Swift type representationg an AST element (analogue to SourceKitten's Structure)
-internal struct SyntaxStructure: Codable {
+internal class SyntaxStructure: NSObject, Codable {
     internal init(accessibility: ElementAccessibility? = nil, attribute: String? = nil, attributes: [SyntaxStructure]? = nil, elements: [SyntaxStructure]? = nil, inheritedTypes: [SyntaxStructure]? = nil, kind: ElementKind? = nil, name: String? = nil, runtimename: String? = nil, substructure: [SyntaxStructure]? = nil, typename: String? = nil) {
         self.accessibility = accessibility
         self.attribute = attribute
@@ -34,6 +34,8 @@ internal struct SyntaxStructure: Codable {
     internal let typename: String?
 
     internal var memberSuffix: String?
+
+    internal var parent: SyntaxStructure?
 
     private enum CodingKeys: String, CodingKey {
         case accessibility = "key.accessibility"
@@ -231,5 +233,3 @@ extension ElementKind: UnknownCaseRepresentable {
     /// `unknownCase` (abnormal situation)
     static let unknownCase: ElementKind = .other
 }
-
-extension SyntaxStructure: Hashable {}

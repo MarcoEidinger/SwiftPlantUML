@@ -27,17 +27,25 @@ public struct PlantUMLScript {
         let newLine = "\n"
         var mainContent = newLine
 
-        var orderedItems = items.orderedByProtocolsFirstExtensionsLast()
+        var adjustedItems = items
 
-        if context.configuration.shallExtensionsBeMerged {
-            orderedItems = orderedItems.mergeExtensions(mergedMemberIndicator: context.configuration.elements.mergedExtensionMemberIndicator)
+        if context.configuration.elements.showNestedTypes {
+            adjustedItems = adjustedItems.populateNestedTypes()
         }
 
-        for (index, element) in orderedItems.enumerated() {
+        adjustedItems = adjustedItems.orderedByProtocolsFirstExtensionsLast()
+
+        if context.configuration.shallExtensionsBeMerged {
+            adjustedItems = adjustedItems.mergeExtensions(mergedMemberIndicator: context.configuration.elements.mergedExtensionMemberIndicator)
+        }
+
+        for (index, element) in adjustedItems.enumerated() {
             if let text = processStructureItem(item: element, index: index) {
                 mainContent.appendAsNewLine(text)
             }
         }
+
+        context.collectNestedTypeConnections(items: adjustedItems)
 
         let definitions = mainContent + newLine + context.connections.joined(separator: newLine) + newLine + context.extnConnections.joined(separator: newLine)
 

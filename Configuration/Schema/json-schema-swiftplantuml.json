@@ -28,6 +28,7 @@
 				"private"
 			],
 			"showGenerics": true,
+			"showNestedTypes": true,
 			"extensions": "all",
 			"showMemberAccessLevelAttribute": true,
 			"exclude": [
@@ -240,6 +241,7 @@
 					"private"
 				],
 				"showGenerics": true,
+				"showNestedTypes": false,
 				"extensions": "all",
 				"showMemberAccessLevelAttribute": true,
 				"exclude": [
@@ -297,6 +299,16 @@
 					"type": "boolean",
 					"title": "The showGenerics schema",
 					"description": "Show generic type and type constraint information for a struct/class",
+					"default": true,
+					"examples": [
+						true
+					]
+				},
+				"showNestedTypes": {
+					"$id": "#/properties/elements/properties/showNestedTypes",
+					"type": "boolean",
+					"title": "The showNestedTypes schema",
+					"description": "Show nested types",
 					"default": true,
 					"examples": [
 						true
