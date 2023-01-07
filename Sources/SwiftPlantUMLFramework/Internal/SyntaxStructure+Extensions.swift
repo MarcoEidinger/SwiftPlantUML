@@ -40,6 +40,24 @@ extension Array where Element == SyntaxStructure {
         // }
         return processedItems
     }
+
+    func populateNestedTypes(parent: SyntaxStructure? = nil) -> [SyntaxStructure] {
+        var items: [SyntaxStructure] = []
+        for structure in self where structure.kind == .class || structure.kind == .struct || structure.kind == .enum {
+            structure.parent = parent
+            items.append(structure)
+            guard let substructure = structure.substructure, substructure.count > 0 else {
+                continue
+            }
+            items.append(contentsOf: substructure.populateNestedTypes(parent: structure))
+        }
+        if parent == nil {
+            for structure in self where structure.kind != .class && structure.kind != .struct && structure.kind != .enum {
+                items.append(structure)
+            }
+        }
+        return items
+    }
 }
 
 extension ElementKind: Comparable {

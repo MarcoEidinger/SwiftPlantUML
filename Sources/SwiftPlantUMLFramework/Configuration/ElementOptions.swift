@@ -7,6 +7,9 @@ public struct ElementOptions: Codable {
     /// only members (properties and functions) with the specified access level will be processed and renderd in the class diagram
     public private(set) var showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private]
 
+    /// show nested types
+    public private(set) var showNestedTypes: Bool = true
+
     /// show generic type and type constraint information for a struct/class (default: true)
     public private(set) var showGenerics: Bool = true
 
@@ -34,6 +37,9 @@ public struct ElementOptions: Codable {
         if let showMembersWithAccessLevel = try container.decodeIfPresent([AccessLevel].self, forKey: .showMembersWithAccessLevel) {
             self.showMembersWithAccessLevel = showMembersWithAccessLevel
         }
+        if let showNestedTypes = try container.decodeIfPresent(Bool.self, forKey: .showNestedTypes) {
+            self.showNestedTypes = showNestedTypes
+        }
         if let showGenerics = try container.decodeIfPresent(Bool.self, forKey: .showGenerics) {
             self.showGenerics = showGenerics
         }
@@ -58,6 +64,7 @@ public struct ElementOptions: Codable {
     public init(
         havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private],
         showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private],
+        showNestedTypes: Bool = true,
         showGenerics: Bool = true,
         extensions: ExtensionVisualization? = nil,
         mergedExtensionMemberIndicator: String? = "<&bolt>",
@@ -66,6 +73,7 @@ public struct ElementOptions: Codable {
     ) {
         self.havingAccessLevel = havingAccessLevel
         self.showMembersWithAccessLevel = showMembersWithAccessLevel
+        self.showNestedTypes = showNestedTypes
         self.showGenerics = showGenerics
         self.extensions = extensions
         self.mergedExtensionMemberIndicator = mergedExtensionMemberIndicator

@@ -110,4 +110,15 @@ class PlantUMLContext {
         uniqueNameForElement[item] = newName
         return newName
     }
+
+    func collectNestedTypeConnections(items: [SyntaxStructure]) {
+        for item in items where item.parent != nil {
+            guard let name = uniqueNameForElement[item],
+                  let parentName = uniqueNameForElement[item.parent!]
+            else {
+                continue
+            }
+            connections.append("\(parentName)+--\(name)")
+        }
+    }
 }

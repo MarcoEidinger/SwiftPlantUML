@@ -65,9 +65,8 @@ final class PlantUMLScriptTests: XCTestCase {
 
     func testWithRootsSubSyntaxStructure() {
         guard let items = try! SyntaxStructure.create(from: getTestFile())?.substructure else { return XCTFail("cannot read test data") }
-        // var config = PlantUMLConfiguration.default
-        // config.extensionStereotype = Stereotype(spot: Spot(character: "V", color: .Red), name: "EXT")
-        let script = PlantUMLScript(items: items) // , configuration: config)
+        let config = Configuration(elements: ElementOptions(showNestedTypes: false))
+        let script = PlantUMLScript(items: items, configuration: config)
         XCTAssertTrue(script.text.contains("aClass"))
         let expected = try! getTestFileContent(named: "basicsAsPlantUML")
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
@@ -79,6 +78,13 @@ final class PlantUMLScriptTests: XCTestCase {
         config.elements = ElementOptions(extensions: .merged)
         let script = PlantUMLScript(items: items, configuration: config)
         let expected = try! getTestFileContent(named: "basicsAsPlantUML-mergedExtensions")
+        XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+    }
+    
+    func testShowNestedTypesE2E() {
+        guard let items = try! SyntaxStructure.create(from: getTestFile(named: "nestedTypes"))?.substructure else { return XCTFail("cannot read test data") }
+        let script = PlantUMLScript(items: items)
+        let expected = try! getTestFileContent(named: "nestedTypesAsPlantUML")
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
     }
 
