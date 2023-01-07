@@ -28,6 +28,9 @@ create-and-install-man-files: $(SOURCES)
 	mkdir -p ${DESTDIR}${mandir}/man1
 	cp $(BUILDDIR)/plugins/GenerateManualPlugin/outputs/swiftplantuml/swiftplantuml.1 ${DESTDIR}${mandir}/man1/swiftplantuml.1
 
+download-plantuml:
+	curl -L https://github.com/plantuml/plantuml/releases/download/v1.2022.14/plantuml.jar > plantuml.jar
+
 build-swiftplantuml: $(SOURCES)
 	@swift build \
 		-c release \
