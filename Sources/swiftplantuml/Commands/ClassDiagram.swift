@@ -51,14 +51,14 @@ extension SwiftPlantUML {
                 config.files.exclude = exclude
             }
 
-            if config.elements.extensions == nil {
+            if config.elements.showExtensions == nil {
                 switch extensionVisualization {
                 case .hideExtensions:
-                    config.elements.extensions = SwiftPlantUMLFramework.ExtensionVisualization.none
+                    config.elements.showExtensions = SwiftPlantUMLFramework.ExtensionVisualization.none
                 case .mergeExtensions:
-                    config.elements.extensions = .merged
+                    config.elements.showExtensions = .merged
                 case .showExtensions:
-                    config.elements.extensions = .all
+                    config.elements.showExtensions = .all
                 }
             }
 

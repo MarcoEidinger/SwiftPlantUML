@@ -29,7 +29,7 @@
 			],
 			"showGenerics": true,
 			"showNestedTypes": true,
-			"extensions": "all",
+			"showExtensions": "all",
 			"showMemberAccessLevelAttribute": true,
 			"exclude": [
 				"Logger",
@@ -242,7 +242,7 @@
 				],
 				"showGenerics": true,
 				"showNestedTypes": false,
-				"extensions": "all",
+				"showExtensions": "all",
 				"showMemberAccessLevelAttribute": true,
 				"exclude": [
 					"Logger",
@@ -314,10 +314,10 @@
 						true
 					]
 				},
-				"extensions": {
+				"showExtensions": {
 					"type": "string",
 					"default": "all",
-					"title": "The extensions Schema",
+					"title": "The showExtensions Schema",
 					"description": "Options which and how extensions shall be considered for class diagram generation. Choose to show all or none extensions as well as merging extensions into their parent type.",
 					"enum": ["all", "merged", "none"]
 				},

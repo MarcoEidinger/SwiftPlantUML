@@ -13,12 +13,8 @@ public struct ElementOptions: Codable {
     /// show generic type and type constraint information for a struct/class (default: true)
     public private(set) var showGenerics: Bool = true
 
-    /// show Swift extensions  (default: true)
-    /// OBSOLETE !!!
-    internal private(set) var showExtensions: Bool = true
-
-    /// options which and how extensions shall be considered for class diagram generation
-    public var extensions: ExtensionVisualization?
+    /// options which and how extensions shall be considered for class diagram generation  (default: all)
+    public var showExtensions: ExtensionVisualization?
 
     /// a suffix added to an extension member which will be displayed as part of the main type . You can use [Emoji](https://plantuml.com/creole#68305e25f5788db0), [OpenIconic](https://plantuml.com/creole#041a1eb0031c373d), or any string
     public private(set) var mergedExtensionMemberIndicator: String? = "<&bolt>"
@@ -43,11 +39,10 @@ public struct ElementOptions: Codable {
         if let showGenerics = try container.decodeIfPresent(Bool.self, forKey: .showGenerics) {
             self.showGenerics = showGenerics
         }
-        if let visualization = try container.decodeIfPresent(String.self, forKey: .extensions) {
-            extensions = ExtensionVisualization(rawValue: visualization)
-        } else if let showExtensions = try container.decodeIfPresent(Bool.self, forKey: .showExtensions) {
-            self.showExtensions = showExtensions
-            extensions = ExtensionVisualization.from(showExtensions)
+        if let visualization = try? container.decodeIfPresent(String.self, forKey: .showExtensions) {
+            showExtensions = ExtensionVisualization(rawValue: visualization)
+        } else if let showExtensionsBoolean = try? container.decodeIfPresent(Bool.self, forKey: .showExtensions) {
+            self.showExtensions = ExtensionVisualization.from(showExtensionsBoolean)
         }
         if let mergedExtensionMemberIndicator = try container.decodeIfPresent(String.self, forKey: .mergedExtensionMemberIndicator) {
             self.mergedExtensionMemberIndicator = mergedExtensionMemberIndicator
@@ -66,7 +61,7 @@ public struct ElementOptions: Codable {
         showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private],
         showNestedTypes: Bool = true,
         showGenerics: Bool = true,
-        extensions: ExtensionVisualization? = nil,
+        showExtensions: ExtensionVisualization? = nil,
         mergedExtensionMemberIndicator: String? = "<&bolt>",
         showMemberAccessLevelAttribute: Bool = true,
         exclude: [String]? = nil
@@ -75,7 +70,7 @@ public struct ElementOptions: Codable {
         self.showMembersWithAccessLevel = showMembersWithAccessLevel
         self.showNestedTypes = showNestedTypes
         self.showGenerics = showGenerics
-        self.extensions = extensions
+        self.showExtensions = showExtensions
         self.mergedExtensionMemberIndicator = mergedExtensionMemberIndicator
         self.showMemberAccessLevelAttribute = showMemberAccessLevelAttribute
         self.exclude = exclude

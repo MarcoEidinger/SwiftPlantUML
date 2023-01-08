@@ -9,8 +9,7 @@ elements:
   - public
   showMemberAccessLevelAttribute: true
   showGenerics: false
-  showExtensions: true
-  extensions: merged
+  showExtensions: merged
   mergedExtensionMemberIndicator: "!!!"
   exclude:
     - UIViewController

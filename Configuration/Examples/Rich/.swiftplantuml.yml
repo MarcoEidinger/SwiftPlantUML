@@ -12,7 +12,7 @@ elements:
   - private
   showGenerics: true
   showNestedTypes: false
-  extensions: merged
+  showExtensions: merged
   mergedExtensionMemberIndicator: "!!!"
   showMemberAccessLevelAttribute: true
   exclude:
