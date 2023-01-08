@@ -248,11 +248,12 @@ Rich example: [here](./Configuration/Examples/Rich/.swiftplantuml.yml)
 
 ### Code Completion during Editing
 
-![codeCompletion](https://user-images.githubusercontent.com/4176826/109524456-66358080-7a65-11eb-8cb8-02452c1b3732.gif)
+![codeCompletion](https://user-images.githubusercontent.com/4176826/211212524-1700c32f-b094-49ce-b191-c1492b90da30.gif)
 
-To get code completiong during editing use Visual Studio Code, the [YAML extension created by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) and the [JSON schema for SwiftPlantUML](./Configuration/Schema/json-schema-swiftplantuml.json).
 
-In Visual Studio Code:  `Code` -> `Preferences` -> `Settings` -> search for yaml
+To get code completion during editing use Visual Studio Code, the [YAML extension created by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) and the [JSON schema for SwiftPlantUML](./Configuration/Schema/json-schema-swiftplantuml.json).
+
+In Visual Studio Code:  <kbd>Code</kbd> -> <kbd>Preferences</kbd> -> <kbd>Settings</kbd> -> search for yaml
 
 <img width="503" alt="Screen Shot 2021-02-27 at 5 57 49 AM" src="https://user-images.githubusercontent.com/4176826/109389381-1b7b0380-78c1-11eb-9ba2-0b553aa4dd14.png">
 
