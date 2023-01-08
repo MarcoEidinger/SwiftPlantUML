@@ -1,3 +1,21 @@
+## [0.7.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.6.2...0.7.0) (2023-01-08)
+### ⚠ BREAKING CHANGES
+
+* 🧨 minor public API changes
+
+### Features
+
+* ✨ support built-in themes from PlantUML (closes [#40](https://github.com/MarcoEidinger/SwiftPlantUML/issues/40))
+* ✨ able to merge extensions into main type (closes [#54](https://github.com/MarcoEidinger/SwiftPlantUML/issues/54))
+* ✨ show nested types (closes [#53](https://github.com/MarcoEidinger/SwiftPlantUML/issues/53))
+
+### Bug Fixes
+
+* 🐛 fix: no access level for extension members if no explicit (fix [#42]((https://github.com/MarcoEidinger/SwiftPlantUML/issues/42)))
+* 🐛 fix: no access level indicator for fileprivate members (fix [#44]((https://github.com/MarcoEidinger/SwiftPlantUML/issues/44)))
+* 🐛 fix: incorrect inheritance/extensions when parent class is not scanned first (fix [#47]((https://github.com/MarcoEidinger/SwiftPlantUML/issues/47)))
+* 🐛 fix: incorrect relationship label when protocol is not scanned first (fix [#49]((https://github.com/MarcoEidinger/SwiftPlantUML/issues/49)))
+
 ## [0.6.2](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.6.1...0.6.2) (2022-08-30)
 
 ### Bug Fixes
