@@ -146,6 +146,15 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertEqual(merged.count, 1)
         XCTAssertEqual(merged.first?.substructure?.count, 3)
     }
+    
+    func testMergedIntoParentWithNoMembers() {
+        let c1 = SyntaxStructure(kind: .class, name: "Class", substructure: nil)
+        let ext1 = SyntaxStructure(kind: .extension, name: "Class", substructure: [.init(kind: .varInstance, name: "propExt1")])
+        let ext2 = SyntaxStructure(kind: .extension, name: "Class", substructure: [.init(kind: .varInstance, name: "propExt2")])
+        let merged = [c1, ext1, ext2].mergeExtensions()
+        XCTAssertEqual(merged.count, 1)
+        XCTAssertEqual(merged.first?.substructure?.count, 2)
+    }
 
     func testMergedAndNonMergableExtension() {
         let c1 = SyntaxStructure(kind: .class, name: "Class", substructure: [.init(kind: .varInstance, name: "prop")])

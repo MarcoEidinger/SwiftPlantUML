@@ -34,10 +34,12 @@ extension Array where Element == SyntaxStructure {
                     members[index].memberSuffix = memberSuffix
                 }
             }
+            if parent.substructure == nil {
+                parent.substructure = []
+            }
             parent.substructure?.append(contentsOf: members)
             processedItems[parentIndex] = parent
         }
-        // }
         return processedItems
     }
 
