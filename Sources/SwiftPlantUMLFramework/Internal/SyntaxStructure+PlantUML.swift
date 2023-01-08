@@ -127,7 +127,7 @@ extension SyntaxStructure {
             guard generateElementsWithAccessLevel.contains(accessibility ?? ElementAccessibility.other) else { return true }
         }
 
-        if configuration.elements.extensions.safelyUnwrap == .none, kind == .extension {
+        if configuration.elements.showExtensions.safelyUnwrap == .none, kind == .extension {
             return true
         }
 

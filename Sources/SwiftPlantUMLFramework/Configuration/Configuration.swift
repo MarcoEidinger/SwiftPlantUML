@@ -84,6 +84,6 @@ public struct Configuration: Codable {
     public private(set) var stereotypes = Stereotypes(classStereotype: Stereotype.class, structStereotype: Stereotype.struct, extensionStereotype: Stereotype.extension, enumStereotype: Stereotype.enum, protocolStereotype: Stereotype.protocol)
 
     internal var shallExtensionsBeMerged: Bool {
-        elements.extensions.safelyUnwrap == .merged
+        elements.showExtensions.safelyUnwrap == .merged
     }
 }

@@ -225,7 +225,7 @@ elements:
   - public
   - open
   showNestedTypes: false
-  extensions: merged
+  showExtensions: merged
 theme: plain # see https://plantuml.com/theme
 skinparamCommands: # see https://plantuml.com/skinparam
 - skinparam classBackgroundColor PaleGreen
