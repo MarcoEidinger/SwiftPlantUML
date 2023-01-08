@@ -146,7 +146,7 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertEqual(merged.count, 1)
         XCTAssertEqual(merged.first?.substructure?.count, 3)
     }
-    
+
     func testMergedIntoParentWithNoMembers() {
         let c1 = SyntaxStructure(kind: .class, name: "Class", substructure: nil)
         let ext1 = SyntaxStructure(kind: .extension, name: "Class", substructure: [.init(kind: .varInstance, name: "propExt1")])
