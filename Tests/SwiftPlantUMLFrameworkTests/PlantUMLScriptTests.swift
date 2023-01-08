@@ -80,7 +80,7 @@ final class PlantUMLScriptTests: XCTestCase {
         let expected = try! getTestFileContent(named: "basicsAsPlantUML-mergedExtensions")
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
     }
-    
+
     func testShowNestedTypesE2E() {
         guard let items = try! SyntaxStructure.create(from: getTestFile(named: "nestedTypes"))?.substructure else { return XCTFail("cannot read test data") }
         let script = PlantUMLScript(items: items)

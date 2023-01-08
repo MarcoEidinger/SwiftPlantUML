@@ -6,6 +6,9 @@ import Foundation
  View class diagram examples on https://the-lum.github.io/puml-themes-gallery by appending `/gallery/img/Class-<themeName>.svg`, e.g. https://the-lum.github.io/puml-themes-gallery/gallery/img/Class-crt-amber.svg
  */
 public enum Theme: Codable {
+    /// themes that look good for class diagrams
+    public static var preferred: [Theme] = [.amiga, .carbonGray, .cloudscapeDesign, .mars, .minty, .plain, .reddressDarkblue, .sketchy, .sketchyOutline, .toy]
+
     /// amiga
     case amiga
     /// awsOrange
@@ -94,7 +97,8 @@ public enum Theme: Codable {
     /// remote example: `amiga from https://raw.githubusercontent.com/plantuml/plantuml/master/themes`
     case __directive__(String) // swiftlint:disable:this identifier_name
 
-    var rawValue: String {
+    /// PlantUML theme name/value
+    public var rawValue: String {
         switch self {
         case let .__directive__(name):
             return "\(name)"

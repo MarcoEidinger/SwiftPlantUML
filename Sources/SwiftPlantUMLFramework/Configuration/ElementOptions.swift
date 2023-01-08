@@ -42,7 +42,7 @@ public struct ElementOptions: Codable {
         if let visualization = try? container.decodeIfPresent(String.self, forKey: .showExtensions) {
             showExtensions = ExtensionVisualization(rawValue: visualization)
         } else if let showExtensionsBoolean = try? container.decodeIfPresent(Bool.self, forKey: .showExtensions) {
-            self.showExtensions = ExtensionVisualization.from(showExtensionsBoolean)
+            showExtensions = ExtensionVisualization.from(showExtensionsBoolean)
         }
         if let mergedExtensionMemberIndicator = try container.decodeIfPresent(String.self, forKey: .mergedExtensionMemberIndicator) {
             self.mergedExtensionMemberIndicator = mergedExtensionMemberIndicator
