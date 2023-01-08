@@ -50,13 +50,33 @@
                 <a href="Enums/Color.html">Color</a>
               </li>
               <li class="nav-group-task">
+                <a href="Enums/ExtensionVisualization.html">ExtensionVisualization</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/LogLevel.html">LogLevel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/PumlThemes.html">PumlThemes</a>
+                <a href="Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
+                <a href="Enums/Theme.html">Theme</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions.html#/s:22SwiftPlantUMLFramework20ElementAccessibilityO">ElementAccessibility</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions.html#/s:22SwiftPlantUMLFramework11ElementKindO">ElementKind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions.html#/s:22SwiftPlantUMLFramework0B7UMLTextV">PlantUMLText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UnknownCaseRepresentable.html">UnknownCaseRepresentable</a>
               </li>
             </ul>
           </li>
@@ -164,6 +184,7 @@ with their instance and static members as well as their inheritance and implemen
     - [Note: Working with Multiple Swift Versions](#note-working-with-multiple-swift-versions)
   - [Configuration](#configuration)
     - [Options](#options)
+      - [Theming](#theming)
     - [Examples](#examples)
     - [Code Completion during Editing](#code-completion-during-editing)
   - [Large Diagrams](#large-diagrams)
@@ -205,6 +226,9 @@ OPTIONS:
   --sdk &lt;sdk&gt;             MacOSX SDK path used to handle type inference
                           resolution, usually `$(xcrun --show-sdk-path -sdk
                           macosx)`
+  --hide-extensions/--merge-extensions/--show-extensions
+                          Decide if/how Swift extensions shall be considered for class diagram generation (default:
+                          hideExtensions)
   --verbose               Verbose
   --version               Show the version.
   -h, --help              Show help information.
@@ -239,7 +263,7 @@ SwiftPlantUML requires the macosx SDK in order to properly recognize the inferre
 <span class="p">]</span>
 </code></pre>
 
-<p>This project is still in initial development. Generally this anything may change at any time and the public API should not be considered stable). However, I&rsquo;ll try to reserve breaking changes for new minor versions. You might feel more comfortable to pin the version to <code>.upToNextMinor</code> or even to an <code>.exact</code> version.</p>
+<p>This project has yet to reach a major version. Anything may change at anytime, and the public API should not be considered stable. However, I&rsquo;ll try to reserve breaking changes for new minor versions. You might feel more comfortable pinning the version to <code>.upToNextMinor</code> or even to an <code>.exact</code> version.</p>
 
 <p><a href="https://marcoeidinger.github.io/SwiftPlantUML/">API documentation</a></p>
 <h3 id='xcode-source-editor-extension' class='heading'>Xcode source editor extension</h3>
@@ -297,17 +321,59 @@ $ make install
 <p>Configure SwiftPlantUML by adding a <code>.swiftplantuml.yml</code> file from the directory you&rsquo;ll run SwiftPlantUML from. Note: the same configuration options can be set programmatically with <code><a href="Structs/Configuration.html">Configuration</a></code>.</p>
 <h3 id='options' class='heading'>Options</h3>
 
-<p>You are able to</p>
+<p>You can</p>
 
 <ul>
 <li>include/exclude files (wildcards supported)</li>
 <li>include/exclude elements by name (wildcards supported)</li>
-<li>limit elements and members bases on their access level, e.g. show only <code>public</code> types</li>
-<li>hide extensions</li>
+<li>limit elements and members based on their access level, e.g. show only <code>public</code> types</li>
+<li>hide extensions or merge extensions (with their known type)</li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Show Extensions  (Default)</th>
+<th>Merge Extensions</th>
+<th>Hide Extensions</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img src=".assets/extensionExamples/ShowExtensions.svg" alt="Show Extensions"></td>
+<td><img src=".assets/extensionExamples/MergeExtensions.svg" alt="Merge Extensions"></td>
+<td><img src=".assets/extensionExamples/HideExtensions.svg" alt="Hide Extensions"></td>
+</tr>
+<tr>
+<td>Clutter but represents codebase accurately</td>
+<td>Reduced clutter. No loss of information</td>
+<td>No clutter but loss of information</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li>hide nested types</li>
 <li>hide member access level attribute</li>
-<li>configure styles, use <a href="https://plantuml.com/skinparam">skin parameters</a> and even include external files for theming (e.g. <a href="https://bschwarz.github.io/puml-themes/">PUML Themes</a>)</li>
+<li>configure styles, use <a href="https://plantuml.com/skinparam">skin parameters</a> and even include external files or <a href="./THEMING.md">themes</a></li>
 <li>exclude inheritance relationships based on parent (wildcards supported), e.g. do not show inheritance to <code>Codable</code></li>
 </ul>
+<h4 id='theming' class='heading'>Theming</h4>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Default</th>
+<th>Amiga</th>
+<th>Reddress-darkblue</th>
+<th>Sketchy Outline</th>
+<th>Many More Available</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src=".assets/themingExamples/default.svg" alt="default"></td>
+<td><img src=".assets/themingExamples/amiga.svg" alt="amiga"></td>
+<td><img src=".assets/themingExamples/reddress-darkblue.svg" alt="reddress-darkblue"></td>
+<td><img src=".assets/themingExamples/sketchy-outline.svg" alt="sketchy-outline"></td>
+<td>See <a href="./THEMING.md">here</a> for more examples</td>
+</tr>
+</tbody></table>
 <h3 id='examples' class='heading'>Examples</h3>
 
 <p>Simple Example:</p>
@@ -321,7 +387,9 @@ $ make install
   <span class="na">showMembersWithAccessLevel</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">public</span>
   <span class="pi">-</span> <span class="s">open</span>
-  <span class="na">showExtensions</span><span class="pi">:</span> <span class="s">false</span>
+  <span class="na">showNestedTypes</span><span class="pi">:</span> <span class="s">false</span>
+  <span class="na">showExtensions</span><span class="pi">:</span> <span class="s">merged</span>
+<span class="na">theme</span><span class="pi">:</span> <span class="s">plain</span> <span class="c1"># see https://plantuml.com/theme</span>
 <span class="na">skinparamCommands</span><span class="pi">:</span> <span class="c1"># see https://plantuml.com/skinparam</span>
 <span class="pi">-</span> <span class="s">skinparam classBackgroundColor PaleGreen</span>
 <span class="pi">-</span> <span class="s">skinparam classArrowColor SeaGreen</span>
@@ -342,11 +410,11 @@ $ make install
 <p>Rich example: <a href="./Configuration/Examples/Rich/.swiftplantuml.yml">here</a></p>
 <h3 id='code-completion-during-editing' class='heading'>Code Completion during Editing</h3>
 
-<p><img src="https://user-images.githubusercontent.com/4176826/109524456-66358080-7a65-11eb-8cb8-02452c1b3732.gif" alt="codeCompletion"></p>
+<p><img src="https://user-images.githubusercontent.com/4176826/211212524-1700c32f-b094-49ce-b191-c1492b90da30.gif" alt="codeCompletion"></p>
 
-<p>To get code completiong during editing use Visual Studio Code, the <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML extension created by Red Hat</a> and the <a href="./Configuration/Schema/json-schema-swiftplantuml.json">JSON schema for SwiftPlantUML</a>.</p>
+<p>To get code completion during editing use Visual Studio Code, the <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML extension created by Red Hat</a> and the <a href="./Configuration/Schema/json-schema-swiftplantuml.json">JSON schema for SwiftPlantUML</a>.</p>
 
-<p>In Visual Studio Code:  <code>Code</code> -&gt; <code>Preferences</code> -&gt; <code>Settings</code> -&gt; search for yaml</p>
+<p>In Visual Studio Code:  <kbd>Code</kbd> -&gt; <kbd>Preferences</kbd> -&gt; <kbd>Settings</kbd> -&gt; search for yaml</p>
 
 <p><img width="503" alt="Screen Shot 2021-02-27 at 5 57 49 AM" src="https://user-images.githubusercontent.com/4176826/109389381-1b7b0380-78c1-11eb-9ba2-0b553aa4dd14.png"></p>
 
@@ -393,7 +461,6 @@ $ make install
 
 <ul>
 <li>being able to render associations between elements</li>
-<li>being able to merge extensions with their known type</li>
 </ul>
 <h2 id='known-limitations' class='heading'>Known limitations</h2>
 
@@ -414,15 +481,15 @@ $ make install
 <p><img src="https://user-images.githubusercontent.com/4176826/187481252-d6100a7c-1f6e-4589-9361-c4ab3cca4e42.png" alt="manual page for swiftplantuml"></p>
 <h2 id='acknowledgements' class='heading'>Acknowledgements</h2>
 
-<p>This project was inspired by <a href="https://github.com/palaniraja">https://github.com/palaniraja</a> and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. </p>
+<p>This project was inspired by <a href="https://github.com/palaniraja/swiftuml">https://github.com/palaniraja/swiftuml</a> and its various predecessors. Out of personal preference I chose to start a new project. I wanted to provide a tool for Swift developers written in Swift! This will hopefully allow me and potential contributors to work on planned improvements faster and more efficient. </p>
 
 <p>Last but not least a big shoutout to the great developers of <a href="https://github.com/plantuml/plantuml">PlantUML</a> and the people who operate the related online servers / tools available on <a href="http://plantuml.com/">http://plantuml.com/</a> and <a href="https://www.planttext.com/">https://www.planttext.com/</a> </p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-08-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>&copy; 2023 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2023-01-08)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

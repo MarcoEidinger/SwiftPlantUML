@@ -51,13 +51,33 @@
                 <a href="../Enums/Color.html">Color</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/ExtensionVisualization.html">ExtensionVisualization</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/LogLevel.html">LogLevel</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/PumlThemes.html">PumlThemes</a>
+                <a href="../Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
+                <a href="../Enums/Theme.html">Theme</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:22SwiftPlantUMLFramework20ElementAccessibilityO">ElementAccessibility</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:22SwiftPlantUMLFramework11ElementKindO">ElementKind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/s:22SwiftPlantUMLFramework0B7UMLTextV">PlantUMLText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UnknownCaseRepresentable.html">UnknownCaseRepresentable</a>
               </li>
             </ul>
           </li>
@@ -201,6 +221,33 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:22SwiftPlantUMLFramework14ElementOptionsV15showNestedTypesSbvp"></a>
+                    <a name="//apple_ref/swift/Property/showNestedTypes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework14ElementOptionsV15showNestedTypesSbvp">showNestedTypes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>show nested types</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">showNestedTypes</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:22SwiftPlantUMLFramework14ElementOptionsV12showGenericsSbvp"></a>
                     <a name="//apple_ref/swift/Property/showGenerics" class="dashAnchor"></a>
                     <a class="token" href="#/s:22SwiftPlantUMLFramework14ElementOptionsV12showGenericsSbvp">showGenerics</a>
@@ -228,9 +275,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22SwiftPlantUMLFramework14ElementOptionsV14showExtensionsSbvp"></a>
+                    <a name="/s:22SwiftPlantUMLFramework14ElementOptionsV14showExtensionsAA22ExtensionVisualizationOSgvp"></a>
                     <a name="//apple_ref/swift/Property/showExtensions" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22SwiftPlantUMLFramework14ElementOptionsV14showExtensionsSbvp">showExtensions</a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework14ElementOptionsV14showExtensionsAA22ExtensionVisualizationOSgvp">showExtensions</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -238,14 +285,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>show Swift extensions  (default: true)</p>
+                        <p>options which and how extensions shall be considered for class diagram generation  (default: all)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">showExtensions</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">showExtensions</span><span class="p">:</span> <span class="kt"><a href="../Enums/ExtensionVisualization.html">ExtensionVisualization</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:22SwiftPlantUMLFramework14ElementOptionsV30mergedExtensionMemberIndicatorSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/mergedExtensionMemberIndicator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework14ElementOptionsV30mergedExtensionMemberIndicatorSSSgvp">mergedExtensionMemberIndicator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>a suffix added to an extension member which will be displayed as part of the main type . You can use <a href="https://plantuml.com/creole#68305e25f5788db0">Emoji</a>, <a href="https://plantuml.com/creole#041a1eb0031c373d">OpenIconic</a>, or any string</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">private(set)</span> <span class="k">var</span> <span class="nv">mergedExtensionMemberIndicator</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -335,9 +409,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22SwiftPlantUMLFramework14ElementOptionsV17havingAccessLevel015showMembersWithgH00I8Generics0I10Extensions0i6MembergH9Attribute7excludeACSayAA0gH0OG_ALS3bSaySSGSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(havingAccessLevel:showMembersWithAccessLevel:showGenerics:showExtensions:showMemberAccessLevelAttribute:exclude:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22SwiftPlantUMLFramework14ElementOptionsV17havingAccessLevel015showMembersWithgH00I8Generics0I10Extensions0i6MembergH9Attribute7excludeACSayAA0gH0OG_ALS3bSaySSGSgtcfc">init(havingAccessLevel:<wbr>showMembersWithAccessLevel:<wbr>showGenerics:<wbr>showExtensions:<wbr>showMemberAccessLevelAttribute:<wbr>exclude:<wbr>)</a>
+                    <a name="/s:22SwiftPlantUMLFramework14ElementOptionsV17havingAccessLevel015showMembersWithgH00I11NestedTypes0I8Generics0I10Extensions30mergedExtensionMemberIndicator0irgH9Attribute7excludeACSayAA0gH0OG_ANS2bAA0Q13VisualizationOSgSSSgSbSaySSGSgtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(havingAccessLevel:showMembersWithAccessLevel:showNestedTypes:showGenerics:showExtensions:mergedExtensionMemberIndicator:showMemberAccessLevelAttribute:exclude:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework14ElementOptionsV17havingAccessLevel015showMembersWithgH00I11NestedTypes0I8Generics0I10Extensions30mergedExtensionMemberIndicator0irgH9Attribute7excludeACSayAA0gH0OG_ANS2bAA0Q13VisualizationOSgSSSgSbSaySSGSgtcfc">init(havingAccessLevel:<wbr>showMembersWithAccessLevel:<wbr>showNestedTypes:<wbr>showGenerics:<wbr>showExtensions:<wbr>mergedExtensionMemberIndicator:<wbr>showMemberAccessLevelAttribute:<wbr>exclude:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -352,7 +426,16 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">havingAccessLevel</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AccessLevel.html">AccessLevel</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="kd">open</span><span class="p">,</span> <span class="o">.</span><span class="kd">public</span><span class="p">,</span> <span class="o">.</span><span class="kd">internal</span><span class="p">,</span> <span class="o">.</span><span class="kd">private</span><span class="p">],</span> <span class="nv">showMembersWithAccessLevel</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AccessLevel.html">AccessLevel</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="kd">open</span><span class="p">,</span> <span class="o">.</span><span class="kd">public</span><span class="p">,</span> <span class="o">.</span><span class="kd">internal</span><span class="p">,</span> <span class="o">.</span><span class="kd">private</span><span class="p">],</span> <span class="nv">showGenerics</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">showExtensions</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">showMemberAccessLevelAttribute</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">exclude</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+    <span class="nv">havingAccessLevel</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AccessLevel.html">AccessLevel</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="kd">open</span><span class="p">,</span> <span class="o">.</span><span class="kd">public</span><span class="p">,</span> <span class="o">.</span><span class="kd">internal</span><span class="p">,</span> <span class="o">.</span><span class="kd">private</span><span class="p">],</span>
+    <span class="nv">showMembersWithAccessLevel</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/AccessLevel.html">AccessLevel</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="kd">open</span><span class="p">,</span> <span class="o">.</span><span class="kd">public</span><span class="p">,</span> <span class="o">.</span><span class="kd">internal</span><span class="p">,</span> <span class="o">.</span><span class="kd">private</span><span class="p">],</span>
+    <span class="nv">showNestedTypes</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nv">showGenerics</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nv">showExtensions</span><span class="p">:</span> <span class="kt"><a href="../Enums/ExtensionVisualization.html">ExtensionVisualization</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+    <span class="nv">mergedExtensionMemberIndicator</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="s">"&lt;&amp;bolt&gt;"</span><span class="p">,</span>
+    <span class="nv">showMemberAccessLevelAttribute</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nv">exclude</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -364,8 +447,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-08-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>&copy; 2023 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2023-01-08)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>

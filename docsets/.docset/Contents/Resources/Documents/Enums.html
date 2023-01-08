@@ -51,13 +51,33 @@
                 <a href="Enums/Color.html">Color</a>
               </li>
               <li class="nav-group-task">
+                <a href="Enums/ExtensionVisualization.html">ExtensionVisualization</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/LogLevel.html">LogLevel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/PumlThemes.html">PumlThemes</a>
+                <a href="Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/RelationshipInlineStyle.html">RelationshipInlineStyle</a>
+                <a href="Enums/Theme.html">Theme</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions.html#/s:22SwiftPlantUMLFramework20ElementAccessibilityO">ElementAccessibility</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions.html#/s:22SwiftPlantUMLFramework11ElementKindO">ElementKind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions.html#/s:22SwiftPlantUMLFramework0B7UMLTextV">PlantUMLText</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/UnknownCaseRepresentable.html">UnknownCaseRepresentable</a>
               </li>
             </ul>
           </li>
@@ -224,6 +244,34 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:22SwiftPlantUMLFramework22ExtensionVisualizationO"></a>
+                    <a name="//apple_ref/swift/Enum/ExtensionVisualization" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework22ExtensionVisualizationO">ExtensionVisualization</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Options which and how extensions shall be considered for class diagram generation</p>
+
+                        <a href="Enums/ExtensionVisualization.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ExtensionVisualization</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Codable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:22SwiftPlantUMLFramework23RelationshipInlineStyleO"></a>
                     <a name="//apple_ref/swift/Enum/RelationshipInlineStyle" class="dashAnchor"></a>
                     <a class="token" href="#/s:22SwiftPlantUMLFramework23RelationshipInlineStyleO">RelationshipInlineStyle</a>
@@ -252,9 +300,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:22SwiftPlantUMLFramework10PumlThemesO"></a>
-                    <a name="//apple_ref/swift/Enum/PumlThemes" class="dashAnchor"></a>
-                    <a class="token" href="#/s:22SwiftPlantUMLFramework10PumlThemesO">PumlThemes</a>
+                    <a name="/s:22SwiftPlantUMLFramework5ThemeO"></a>
+                    <a name="//apple_ref/swift/Enum/Theme" class="dashAnchor"></a>
+                    <a class="token" href="#/s:22SwiftPlantUMLFramework5ThemeO">Theme</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -262,15 +310,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Open-source themes for PlantUML diagrams, see <a href="https://bschwarz.github.io/puml-themes/gallery.html">https://bschwarz.github.io/puml-themes/gallery.html</a></p>
+                        <p>Built-in themes for PlantUML diagrams, see <a href="https://plantuml.com/theme">https://plantuml.com/theme</a></p>
 
-                        <a href="Enums/PumlThemes.html" class="slightly-smaller">See more</a>
+<p>View class diagram examples on <a href="https://the-lum.github.io/puml-themes-gallery">https://the-lum.github.io/puml-themes-gallery</a> by appending <code>/gallery/img/Class-&lt;themeName&gt;.svg</code>, e.g. <a href="https://the-lum.github.io/puml-themes-gallery/gallery/img/Class-crt-amber.svg">https://the-lum.github.io/puml-themes-gallery/gallery/img/Class-crt-amber.svg</a></p>
+
+                        <a href="Enums/Theme.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PumlThemes</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">Theme</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Theme</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
                         </div>
                       </div>
@@ -338,8 +388,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-08-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+          <p>&copy; 2023 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2023-01-08)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
