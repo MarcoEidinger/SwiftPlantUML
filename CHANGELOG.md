@@ -1,3 +1,8 @@
+## [0.7.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.0...0.7.1) (2023-01-13)
+### Features
+
+* ✨ able to programmatically open diagram as SVG in browser (PR [#59](https://github.com/MarcoEidinger/SwiftPlantUML/pull/59))
+
 ## [0.7.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.6.2...0.7.0) (2023-01-08)
 ### ⚠ BREAKING CHANGES
 
