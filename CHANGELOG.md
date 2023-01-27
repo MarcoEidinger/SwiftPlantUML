@@ -1,3 +1,8 @@
+## [0.7.2](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.1...0.7.2) (2023-01-27)
+### Features
+
+* ✨ add descriptive texts like header or title to the diagram (closes [#61](https://github.com/MarcoEidinger/SwiftPlantUML/issues/61))
+
 ## [0.7.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.0...0.7.1) (2023-01-13)
 ### Features
 
