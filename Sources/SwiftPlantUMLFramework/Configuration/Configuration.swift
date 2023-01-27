@@ -18,7 +18,7 @@ public enum AccessLevel: String, Codable {
 /// Configuration options to influence the generation and visual representation of the class diagram
 public struct Configuration: Codable {
     /// memberwise initializer
-    public init(files: FileOptions = FileOptions(), elements: ElementOptions = ElementOptions(), hideShowCommands: [String]? = ["hide empty members"], skinparamCommands: [String]? = ["skinparam shadowing false"], includeRemoteURL: String? = nil, theme: Theme? = nil, relationships: RelationshipOptions = RelationshipOptions(), stereotypes: Stereotypes = Stereotypes.default, relationshipExclude _: [String]? = nil) {
+    public init(files: FileOptions = FileOptions(), elements: ElementOptions = ElementOptions(), hideShowCommands: [String]? = ["hide empty members"], skinparamCommands: [String]? = ["skinparam shadowing false"], includeRemoteURL: String? = nil, theme: Theme? = nil, relationships: RelationshipOptions = RelationshipOptions(), stereotypes: Stereotypes = Stereotypes.default, relationshipExclude _: [String]? = nil, texts: PageTexts? = nil) {
         self.files = files
         self.elements = elements
         self.hideShowCommands = hideShowCommands
@@ -27,6 +27,7 @@ public struct Configuration: Codable {
         self.theme = theme
         self.relationships = relationships
         self.stereotypes = stereotypes
+        self.texts = texts
     }
 
     public init(from decoder: Decoder) throws {
@@ -55,6 +56,9 @@ public struct Configuration: Codable {
         if let stereotypes = try container.decodeIfPresent(Stereotypes.self, forKey: .stereotypes) {
             self.stereotypes = stereotypes
         }
+        if let texts = try container.decodeIfPresent(PageTexts.self, forKey: .texts) {
+            self.texts = texts
+        }
     }
 
     /// default configuration used if no configuration file was found
@@ -82,6 +86,9 @@ public struct Configuration: Codable {
 
     /// sterotypes (spotted character with background color and optional name) to be shown for an entity type
     public private(set) var stereotypes = Stereotypes(classStereotype: Stereotype.class, structStereotype: Stereotype.struct, extensionStereotype: Stereotype.extension, enumStereotype: Stereotype.enum, protocolStereotype: Stereotype.protocol)
+
+    // Descriptive texts ("common commands") you can add around your diagram
+    public var texts: PageTexts?
 
     internal var shallExtensionsBeMerged: Bool {
         elements.showExtensions.safelyUnwrap == .merged

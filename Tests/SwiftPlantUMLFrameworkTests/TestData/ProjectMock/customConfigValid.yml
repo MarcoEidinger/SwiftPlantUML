@@ -62,4 +62,9 @@ stereotypes:
     spot:
       character: P
       color: AntiqueWhite
-
+texts:
+  header: headerText
+  title: titleText
+  legend: legendText
+  caption: captionText
+  footer: footerText

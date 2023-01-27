@@ -24,6 +24,10 @@ public struct PlantUMLScript {
         }
         text.appendAsNewLine(defaultStyling)
 
+        if let texts = configuration.texts?.plantuml() {
+            text.appendAsNewLine(texts)
+        }
+
         let newLine = "\n"
         var mainContent = newLine
 

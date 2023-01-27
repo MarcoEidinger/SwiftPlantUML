@@ -67,3 +67,11 @@ stereotypes:
     spot:
       character: P
       color: AntiqueWhite
+texts:
+  header: Simple header example
+  title: |
+    <u>Formatted</u> title example
+    on <i>several</i> lines and using <font color=red>html</font>
+  legend: Some boxed text
+  caption: Second to last
+  footer: The end
