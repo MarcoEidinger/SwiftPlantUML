@@ -1040,31 +1040,26 @@
 			"properties": {
 				"header": {
 					"type": "string",
-					"default": "",
 					"title": "The header Schema",
 					"description": "Add a header to the top right above the diagram"
 				},
 				"title": {
 					"type": "string",
-					"default": "",
 					"title": "The title Schema",
 					"description": "Add a title above the diagram"
 				},
 				"legend": {
 					"type": "string",
-					"default": "",
 					"title": "The legend Schema",
 					"description": "Add a legend (boxed text) under the diagram but above the caption"
 				},
 				"caption": {
 					"type": "string",
-					"default": "",
 					"title": "The caption Schema",
 					"description": "Add a caption under the diagram"
 				},
 				"footer": {
 					"type": "string",
-					"default": "",
 					"title": "The footer Schema",
 					"description": "Add a footer at the bottom below the diagram"
 				}
