@@ -88,6 +88,15 @@ final class PlantUMLScriptTests: XCTestCase {
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
     }
 
+    func testIncludingPageTexts() {
+        guard let items = try! SyntaxStructure.create(from: getTestFile())?.substructure else { return XCTFail("cannot read test data") }
+        let headerText = "Header123"
+        var config = Configuration.default
+        config.texts = PageTexts(header: headerText)
+        let script = PlantUMLScript(items: items, configuration: config)
+        XCTAssertTrue(script.text.contains(headerText))
+    }
+
     func getTestFile(named: String = "basics") throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: named, ofType: "txt", inDirectory: "TestData") ?? "nonesense"

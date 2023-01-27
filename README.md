@@ -227,6 +227,10 @@ elements:
   showNestedTypes: false
   showExtensions: merged
 theme: plain # see https://plantuml.com/theme
+texts:
+  title: |
+    <u>Formatted</u> title example
+    on <i>several</i> lines and using <font color=red>html</font>
 skinparamCommands: # see https://plantuml.com/skinparam
 - skinparam classBackgroundColor PaleGreen
 - skinparam classArrowColor SeaGreen

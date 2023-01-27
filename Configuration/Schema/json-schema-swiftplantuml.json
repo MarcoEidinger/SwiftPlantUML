@@ -105,6 +105,9 @@
 					"color": "AntiqueWhite"
 				}
 			}
+		},
+		"texts": {
+            "title": "Diagram Title"
 		}
 	}],
 	"definitions": {
@@ -1020,6 +1023,45 @@
 						}
 					},
 					"additionalProperties": true
+				}
+			},
+			"additionalProperties": true
+		},
+		"texts": {
+			"$id": "#/properties/texts",
+			"type": "object",
+			"title": "The texts schema",
+			"description": "Descriptive texts (a.k.a common commands) you can add around your diagram",
+			"default": {},
+			"examples": [{
+				"title": "Diagram Title"
+			}],
+			"required": [],
+			"properties": {
+				"header": {
+					"type": "string",
+					"title": "The header Schema",
+					"description": "Add a header to the top right above the diagram"
+				},
+				"title": {
+					"type": "string",
+					"title": "The title Schema",
+					"description": "Add a title above the diagram"
+				},
+				"legend": {
+					"type": "string",
+					"title": "The legend Schema",
+					"description": "Add a legend (boxed text) under the diagram but above the caption"
+				},
+				"caption": {
+					"type": "string",
+					"title": "The caption Schema",
+					"description": "Add a caption under the diagram"
+				},
+				"footer": {
+					"type": "string",
+					"title": "The footer Schema",
+					"description": "Add a footer at the bottom below the diagram"
 				}
 			},
 			"additionalProperties": true
