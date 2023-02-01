@@ -1,3 +1,8 @@
+## [0.7.3](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.2...0.7.3) (2023-02-01)
+### Bug Fixes
+
+* 🐛 typo fix for relationship label, i.e. use 'conforms to' (closes [#63](https://github.com/MarcoEidinger/SwiftPlantUML/issues/63))
+
 ## [0.7.2](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.1...0.7.2) (2023-01-27)
 ### Features
 
