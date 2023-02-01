@@ -19,7 +19,7 @@ class "aClass" as aClass1 << (X, Orchid) extension >> {
   ~anotherComputedProperty : String
   ~anotherFunction() 
 }
-aProtocol <|.. aClass : confirms to
+aProtocol <|.. aClass : conforms to
 aProtocol <.. aProtocol0 : ext
 aClass <.. aClass1 : ext
 @enduml

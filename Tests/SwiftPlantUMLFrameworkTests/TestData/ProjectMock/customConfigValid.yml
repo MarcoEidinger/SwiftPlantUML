@@ -29,7 +29,7 @@ relationships:
     exclude:
     - "Codable"
   realize:
-    label: "confirms to"
+    label: "conforms to"
     style:
       lineStyle: dashed
       lineColor: Blue

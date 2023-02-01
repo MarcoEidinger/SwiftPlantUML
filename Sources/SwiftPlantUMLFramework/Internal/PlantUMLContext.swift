@@ -32,7 +32,7 @@ class PlantUMLContext {
         let namedConnection = (uniqElementAndTypes[linkTo] != nil) ? "\(uniqElementAndTypes[linkTo] ?? "--ERROR--")" : "inherits"
         var linkTypeKey = item.name! + "LinkType"
 
-        if uniqElementAndTypes[linkTo] == "confirms to" {
+        if uniqElementAndTypes[linkTo] == "conforms to" {
             linkTypeKey = linkTo + "LinkType"
         }
 
@@ -55,7 +55,7 @@ class PlantUMLContext {
     func relationshipLabel(for name: String) -> String? {
         if name == "inherits" {
             return configuration.relationships.inheritance?.label
-        } else if name == "confirms to" {
+        } else if name == "conforms to" {
             return configuration.relationships.realize?.label
         } else if name == "ext" {
             return configuration.relationships.dependency?.label
@@ -67,7 +67,7 @@ class PlantUMLContext {
     func relationshipStyle(for name: String) -> RelationshipStyle? {
         if name == "inherits" {
             return configuration.relationships.inheritance?.style
-        } else if name == "confirms to" {
+        } else if name == "conforms to" {
             return configuration.relationships.realize?.style
         } else if name == "ext" {
             return configuration.relationships.dependency?.style
@@ -99,7 +99,7 @@ class PlantUMLContext {
 
             if relationship == "inherits" {
                 uniqElementAndTypes[linkTypeKey] = linkTypeInheritance
-            } else if relationship == "confirms to" {
+            } else if relationship == "conforms to" {
                 uniqElementAndTypes[linkTypeKey] = linkTypeRealize
             } else if relationship == "ext" {
                 uniqElementAndTypes[linkTypeKey] = linkTypeDependency

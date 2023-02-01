@@ -57,7 +57,7 @@
 				]
 			},
 			"realize": {
-				"label": "confirms to",
+				"label": "conforms to",
 				"style": {
 					"lineStyle": "dashed",
 					"lineColor": "Blue",
@@ -462,7 +462,7 @@
 					]
 				},
 				"realize": {
-					"label": "confirms to",
+					"label": "conforms to",
 					"style": {
 						"lineStyle": "dashed",
 						"lineColor": "Blue",
@@ -584,7 +584,7 @@
 					"description": "Struct/Class realizes protocol",
 					"default": {},
 					"examples": [{
-						"label": "confirms to",
+						"label": "conforms to",
 						"style": {
 							"lineStyle": "dashed",
 							"lineColor": "Blue",
@@ -598,9 +598,9 @@
 							"type": "string",
 							"title": "The label schema",
 							"description": "Label shown next to relationship arrow",
-							"default": "confirms to",
+							"default": "conforms to",
 							"examples": [
-								"confirms to"
+								"conforms to"
 							]
 						},
 						"style": {

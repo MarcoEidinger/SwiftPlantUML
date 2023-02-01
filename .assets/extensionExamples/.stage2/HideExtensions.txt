@@ -12,6 +12,6 @@ class "aClass" as aClass << (C, DarkSeaGreen) >> {
   ~computedProperty : String
   ~aFunction() 
 }
-aProtocol <|.. aClass : confirms to
+aProtocol <|.. aClass : conforms to
 
 @enduml
