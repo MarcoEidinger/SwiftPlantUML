@@ -15,6 +15,6 @@ class "aClass" as aClass << (C, DarkSeaGreen) >> {
   ~anotherComputedProperty : String <&bolt>
   ~anotherFunction() <&bolt> 
 }
-aProtocol <|.. aClass : confirms to
+aProtocol <|.. aClass : conforms to
 
 @enduml

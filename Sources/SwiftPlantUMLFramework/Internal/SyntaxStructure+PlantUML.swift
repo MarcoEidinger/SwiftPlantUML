@@ -24,7 +24,7 @@ extension SyntaxStructure {
         case ElementKind.enum:
             textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: ""))\(generics ?? "") \(context.configuration.stereotypes.enum?.plantuml ?? Stereotype.enum.plantuml) { \(members(context: context)) \n}"
         case ElementKind.protocol:
-            textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: "confirms to"))\(generics ?? "") \(context.configuration.stereotypes.protocol?.plantuml ?? Stereotype.protocol.plantuml) { \(members(context: context)) \n}"
+            textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: "conforms to"))\(generics ?? "") \(context.configuration.stereotypes.protocol?.plantuml ?? Stereotype.protocol.plantuml) { \(members(context: context)) \n}"
         default:
             Logger.shared.error("not supported")
             return nil

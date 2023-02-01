@@ -3,7 +3,7 @@ import Foundation
 /// Options which relationships to show and how to style them in a class diagram
 public struct RelationshipOptions: Codable {
     /// memberwise initializer
-    public init(inheritance: Relationship? = Relationship(label: "inherits"), realize: Relationship? = Relationship(label: "confirms to"), dependency: Relationship? = Relationship(label: "ext")) {
+    public init(inheritance: Relationship? = Relationship(label: "inherits"), realize: Relationship? = Relationship(label: "conforms to"), dependency: Relationship? = Relationship(label: "ext")) {
         self.inheritance = inheritance
         self.realize = realize
         self.dependency = dependency
@@ -12,7 +12,7 @@ public struct RelationshipOptions: Codable {
     /// struct/class inherits from another struct/class
     public var inheritance: Relationship? = Relationship(label: "inherits")
     /// struct/class realizes protocol
-    public var realize: Relationship? = Relationship(label: "confirms to")
+    public var realize: Relationship? = Relationship(label: "conforms to")
     /// struct/class has exension
     public var dependency: Relationship? = Relationship(label: "ext") // , style: RelationshipStyle(lineStyle: .bold, lineColor: .BlueViolet, textColor: .BlueViolet))
 }

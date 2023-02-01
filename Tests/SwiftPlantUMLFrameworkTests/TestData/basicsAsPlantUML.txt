@@ -74,7 +74,7 @@ class "anInternalStruct" as anInternalStruct3 << (X, Orchid) extension >> {
 }
 aClass <|-- anInternalSubClass : inherits
 aPrivateGenericClass <|-- aPrivateGenericSubClass : inherits
-aProtocol <|.. aPublicStruct : confirms to
+aProtocol <|.. aPublicStruct : conforms to
 aPublicStruct <.. aPublicStruct0 : ext
 aPublicStruct <.. aPublicStruct1 : ext
 anInternalStruct <.. anInternalStruct2 : ext
