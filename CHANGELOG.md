@@ -1,3 +1,8 @@
+## [0.7.4](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.3...0.7.4) (2023-02-17)
+### Bug Fixes
+
+* 🐛 fix diagram syntax error when class inherited a generic type (closes [#65](https://github.com/MarcoEidinger/SwiftPlantUML/issues/65))
+
 ## [0.7.3](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.2...0.7.3) (2023-02-01)
 ### Bug Fixes
 
