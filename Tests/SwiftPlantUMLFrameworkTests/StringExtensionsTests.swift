@@ -5,6 +5,15 @@ final class StringExtensionsTests: XCTestCase {
     func testRemoveAngleBracketsWithContent() {
         XCTAssertEqual("A<U>".removeAngleBracketsWithContent(), "A")
         XCTAssertEqual("A<U: View, T: View>".removeAngleBracketsWithContent(), "A")
+        XCTAssertEqual("Handler<Void, [SelectedTenant]>".removeAngleBracketsWithContent(), "Handler")
+    }
+
+    func testExtractsContentInAngleBrackets() {
+        XCTAssertEqual("Hello, <[World]>".getAngleBracketsWithContent(), "<[World]>")
+        XCTAssertEqual("Hello, <<[World]>>".getAngleBracketsWithContent(), "<<[World]>>")
+        XCTAssertNil("Hello, World!".getAngleBracketsWithContent())
+        XCTAssertNil("Hello, <World!".getAngleBracketsWithContent())
+        XCTAssertNil("Hello, World!>".getAngleBracketsWithContent())
     }
 
     func testIsMatching() {

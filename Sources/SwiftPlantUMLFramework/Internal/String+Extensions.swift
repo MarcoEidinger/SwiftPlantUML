@@ -7,8 +7,26 @@ internal extension String {
 }
 
 internal extension String {
+    /// example: "Hello<World>".getAngleBracketsWithContent() returns  "Hello"
     func removeAngleBracketsWithContent() -> String {
-        replacingOccurrences(of: "\\<[^\\]]+\\>", with: "", options: .regularExpression)
+        replacingOccurrences(of: "\\<.*\\>", with: "", options: .regularExpression)
+    }
+
+    /// example: "Hello<World>".getAngleBracketsWithContent() returns  "<World>"
+    func getAngleBracketsWithContent() -> String? {
+        do {
+            let regex = try NSRegularExpression(pattern: "\\<.*\\>")
+            let results = regex.matches(in: self,
+                                        range: NSRange(startIndex..., in: self))
+            let result = results.map {
+                String(self[Range($0.range, in: self)!])
+            }
+
+            return result.first
+        } catch {
+            print("invalid regex: \(error.localizedDescription)")
+            return nil
+        }
     }
 }
 
