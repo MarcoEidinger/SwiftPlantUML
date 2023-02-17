@@ -106,6 +106,16 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertTrue(plantUMLElement!.contains("<Title: View>"))
     }
 
+    func testStructureGenericsParent() {
+        let code = """
+         class Handler<T, S> {}
+         class MyHandler: Handler<Int, String> {}
+        """
+        let cut = SyntaxStructure.create(from: code)
+        let plantUMLElement = cut?.find(.class, named: "MyHandler")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showGenerics: true))))
+        XCTAssertTrue(plantUMLElement!.contains(#"class "MyHandler" as MyHandler<Int, String>"#))
+    }
+
     func testStructureHideGenerics() {
         let cut = SyntaxStructure.create(from: "struct aStruct <Title: View> {}")
         let plantUMLElement = cut?.find(.struct, named: "aStruct")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showGenerics: false))))

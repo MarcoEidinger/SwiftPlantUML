@@ -141,7 +141,10 @@ extension SyntaxStructure {
     }
 
     private func genericsStatement() -> String? {
-        guard let substructure = substructure else { return nil }
+        guard let substructure = substructure else {
+            guard let parent = inheritedTypes?.first else { return nil }
+            return parent.name?.getAngleBracketsWithContent()
+        }
         let params = substructure.filter { $0.kind == SwiftPlantUMLFramework.ElementKind.genericTypeParam }
         var genParts: [String] = []
         for param in params {
