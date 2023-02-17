@@ -105,7 +105,7 @@ final class SyntaxStructureTests: XCTestCase {
         let plantUMLElement = cut?.find(.struct, named: "aStruct")?.plantuml(context: PlantUMLContext(configuration: Configuration(elements: ElementOptions(showGenerics: true))))
         XCTAssertTrue(plantUMLElement!.contains("<Title: View>"))
     }
-    
+
     func testStructureGenericsParent() {
         let code = """
          class Handler<T, S> {}
