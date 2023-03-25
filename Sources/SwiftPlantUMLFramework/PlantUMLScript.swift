@@ -23,6 +23,7 @@ public struct PlantUMLScript {
             text.appendAsNewLine("!include \(includeRemoteURL)")
         }
         text.appendAsNewLine(defaultStyling)
+        text.appendAsNewLine("set namespaceSeparator none")
 
         if let texts = configuration.texts?.plantuml() {
             text.appendAsNewLine(texts)

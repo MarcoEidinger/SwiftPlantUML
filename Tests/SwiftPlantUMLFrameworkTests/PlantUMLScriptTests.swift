@@ -17,7 +17,7 @@ final class PlantUMLScriptTests: XCTestCase {
 
     func testEncodedScript() {
         let script = PlantUMLScript(items: [])
-        XCTAssertEqual(script.encodeText(), "SoWkIImgAStDuL9N20w9z745aev18LmPcIcf2gcv1IML2hcfkKcfHSLSnTcPUGM9HOcv2iKPYIdvvPbvwGffYJd5gN2jhdukN23Wa9gN0ZGI00==")
+        XCTAssertEqual(script.encodeText(), "FOsn3i8m30LtVuKtVgD8T4CCj0kZ8QyqedQYs5N5tzCkt73RwJeFQR7gGYSUniUrtts-ZpJd18RM-B92dsXE_ibMfOcopvBAbktDaooEVzhVBkG8Db5ubHS6746KnbOCTD31qhxx0G==")
     }
 
     func testScriptWithInclude() {
@@ -54,6 +54,7 @@ final class PlantUMLScriptTests: XCTestCase {
         hide empty members
         skinparam shadowing false
         ' STYLE END
+        set namespaceSeparator none
 
 
 
@@ -85,6 +86,15 @@ final class PlantUMLScriptTests: XCTestCase {
         guard let items = try! SyntaxStructure.create(from: getTestFile(named: "nestedTypes"))?.substructure else { return XCTFail("cannot read test data") }
         let script = PlantUMLScript(items: items)
         let expected = try! getTestFileContent(named: "nestedTypesAsPlantUML")
+        XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+    }
+
+    func testShowNestedTypesMergedExtensionsE2E() {
+        guard let items = try! SyntaxStructure.create(from: getTestFile(named: "nestedTypes"))?.substructure else { return XCTFail("cannot read test data") }
+        var config = Configuration.default
+        config.elements = ElementOptions(showExtensions: .merged)
+        let script = PlantUMLScript(items: items, configuration: config)
+        let expected = try! getTestFileContent(named: "nestedTypesMergedExtensionsAsPlantUML")
         XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
     }
 

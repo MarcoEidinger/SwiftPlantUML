@@ -16,15 +16,15 @@ extension SyntaxStructure {
         // swiftlint:disable line_length
         switch kind {
         case ElementKind.class:
-            textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: "inherits"))\(generics ?? "") \(context.configuration.stereotypes.class?.plantuml ?? Stereotype.class.plantuml) { \(members(context: context)) \n}"
+            textualRepresentation = "class \"\(displayName!)\" as \(context.uniqName(item: self, relationship: "inherits"))\(generics ?? "") \(context.configuration.stereotypes.class?.plantuml ?? Stereotype.class.plantuml) { \(members(context: context)) \n}"
         case ElementKind.struct:
-            textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: "inherits"))\(generics ?? "") \(context.configuration.stereotypes.struct?.plantuml ?? Stereotype.struct.plantuml) { \(members(context: context)) \n}"
+            textualRepresentation = "class \"\(displayName!)\" as \(context.uniqName(item: self, relationship: "inherits"))\(generics ?? "") \(context.configuration.stereotypes.struct?.plantuml ?? Stereotype.struct.plantuml) { \(members(context: context)) \n}"
         case ElementKind.extension:
-            textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: "ext"))\(generics ?? "") \(context.configuration.stereotypes.extension?.plantuml ?? Stereotype.extension.plantuml) { \(members(context: context)) \n}"
+            textualRepresentation = "class \"\(displayName!)\" as \(context.uniqName(item: self, relationship: "ext"))\(generics ?? "") \(context.configuration.stereotypes.extension?.plantuml ?? Stereotype.extension.plantuml) { \(members(context: context)) \n}"
         case ElementKind.enum:
-            textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: ""))\(generics ?? "") \(context.configuration.stereotypes.enum?.plantuml ?? Stereotype.enum.plantuml) { \(members(context: context)) \n}"
+            textualRepresentation = "class \"\(displayName!)\" as \(context.uniqName(item: self, relationship: ""))\(generics ?? "") \(context.configuration.stereotypes.enum?.plantuml ?? Stereotype.enum.plantuml) { \(members(context: context)) \n}"
         case ElementKind.protocol:
-            textualRepresentation = "class \"\(name!)\" as \(context.uniqName(item: self, relationship: "conforms to"))\(generics ?? "") \(context.configuration.stereotypes.protocol?.plantuml ?? Stereotype.protocol.plantuml) { \(members(context: context)) \n}"
+            textualRepresentation = "class \"\(displayName!)\" as \(context.uniqName(item: self, relationship: "conforms to"))\(generics ?? "") \(context.configuration.stereotypes.protocol?.plantuml ?? Stereotype.protocol.plantuml) { \(members(context: context)) \n}"
         default:
             Logger.shared.error("not supported")
             return nil
@@ -124,7 +124,7 @@ extension SyntaxStructure {
 
         if elementKind != .extension {
             let generateElementsWithAccessLevel: [ElementAccessibility] = configuration.elements.havingAccessLevel.map { ElementAccessibility(orig: $0)! }
-            guard generateElementsWithAccessLevel.contains(accessibility ?? ElementAccessibility.other) else { return true }
+            guard generateElementsWithAccessLevel.contains(accessibility ?? ElementAccessibility.internal) else { return true }
         }
 
         if configuration.elements.showExtensions.safelyUnwrap == .none, kind == .extension {

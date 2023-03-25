@@ -3,17 +3,44 @@
 hide empty members
 skinparam shadowing false
 ' STYLE END
+set namespaceSeparator none
 
 
-class "OuterOuter" as OuterOuter << (E, LightSteelBlue) enum >> {
-  +{static} test : String
+class "APublic" as APublic << (E, LightSteelBlue) enum >> {
 }
-class "OuterOuter" as OuterOuter0 << (E, LightSteelBlue) enum >> {
+class "BPublic" as APublic.BPublic << (E, LightSteelBlue) enum >> {
+  +{static} publicFuncDefinedInType()
 }
-class "Inner" as Inner << (E, LightSteelBlue) enum >> {
-  +aCase
+class "CPublic" as APublic.BPublic.CPublic << (C, DarkSeaGreen) >> {
+  +{static} publicFunc()
+  ~{static} internalFunc()
 }
-OuterOuter+--OuterOuter0
-OuterOuter0+--Inner
+class "CInternal" as APublic.BPublic.CInternal << (C, DarkSeaGreen) >> {
+  +{static} publicFunc()
+}
+class "DPrivate" as APublic.BPublic.CInternal.DPrivate << (C, DarkSeaGreen) >> {
+  ~init()
+}
+class "DPublic" as APublic.BPublic.CInternal.DPublic << (C, DarkSeaGreen) >> {
+  +init()
+}
+class "BPublic" as APublic.BPublic0 << (X, Orchid) extension >> {
+  +{static} hasAccessLevel()
+}
+class "BPublic" as APublic.BPublic1 << (X, Orchid) extension >> {
+  +{static} publicFuncAddedInExtenion()
+}
+class "CPublic" as APublic.BPublic.CPublic2 << (X, Orchid) extension >> {
+  +{static} publicFuncAddedInExtenion()
+  ~{static} internalFuncAddedInExtenion()
+  -{static} privateFuncAddedInExtenion()
+}
+class "CInternal" as APublic.BPublic.CInternal3 << (X, Orchid) extension >> {
+}
+APublic+--APublic.BPublic
+APublic.BPublic0+--APublic.BPublic.CPublic
+APublic.BPublic1+--APublic.BPublic.CInternal
+APublic.BPublic.CInternal3+--APublic.BPublic.CInternal.DPrivate
+APublic.BPublic.CInternal3+--APublic.BPublic.CInternal.DPublic
 
 @enduml

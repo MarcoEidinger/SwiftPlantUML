@@ -19,7 +19,7 @@ extension Array where Element == SyntaxStructure {
         var processedItems = self
 
         for structure in self where structure.kind == .extension {
-            guard let parentIndex = processedItems.firstIndex(where: { $0.name == structure.name }) else {
+            guard let parentIndex = processedItems.firstIndex(where: { $0.fullName == structure.fullName }) else {
                 continue
             }
             var parent = processedItems[parentIndex]
@@ -45,7 +45,7 @@ extension Array where Element == SyntaxStructure {
 
     func populateNestedTypes(parent: SyntaxStructure? = nil) -> [SyntaxStructure] {
         var items: [SyntaxStructure] = []
-        for structure in self where structure.kind == .class || structure.kind == .struct || structure.kind == .enum {
+        for structure in self where structure.kind == .class || structure.kind == .struct || structure.kind == .enum || structure.kind == .extension {
             structure.parent = parent
             items.append(structure)
             guard let substructure = structure.substructure, substructure.count > 0 else {
@@ -54,11 +54,35 @@ extension Array where Element == SyntaxStructure {
             items.append(contentsOf: substructure.populateNestedTypes(parent: structure))
         }
         if parent == nil {
-            for structure in self where structure.kind != .class && structure.kind != .struct && structure.kind != .enum {
+            for structure in self where structure.kind != .class && structure.kind != .struct && structure.kind != .enum && structure.kind != .extension {
                 items.append(structure)
             }
         }
         return items
+    }
+}
+
+extension SyntaxStructure {
+    var fullName: String? {
+        var fn = name
+        var aParent: SyntaxStructure?
+        aParent = parent
+        while aParent != nil {
+            fn = (aParent?.name ?? "") + "." + (fn ?? "")
+            aParent = aParent?.parent
+        }
+        return fn
+    }
+
+    var displayName: String? {
+        guard let comps = name?.components(separatedBy: ".") else { return name }
+        return comps.last
+    }
+}
+
+extension SyntaxStructure {
+    override var debugDescription: String {
+        "\(kind!.rawValue.components(separatedBy: ".").last!) \(fullName!)"
     }
 }
 
