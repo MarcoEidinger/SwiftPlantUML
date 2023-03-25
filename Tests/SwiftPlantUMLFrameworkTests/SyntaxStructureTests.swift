@@ -191,6 +191,23 @@ final class SyntaxStructureTests: XCTestCase {
         XCTAssertEqual(merged.count, 3)
     }
 
+    func testFullName() {
+        let c1 = SyntaxStructure(kind: .enum, name: "classA", substructure: [])
+        let c2 = SyntaxStructure(kind: .class, name: "classB", substructure: [])
+        c2.parent = c1
+        c1.substructure?.append(c2)
+        XCTAssertEqual(c2.fullName, "classA.classB")
+    }
+
+    func testDisplayName() {
+        let c1 = SyntaxStructure(kind: .enum, name: "classA", substructure: [])
+        let c2 = SyntaxStructure(kind: .class, name: "classB", substructure: [])
+        c2.parent = c1
+        c1.substructure?.append(c2)
+        XCTAssertEqual(c1.displayName, "classA")
+        XCTAssertEqual(c2.displayName, "classB")
+    }
+
     func getTestFile() throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: "demo", ofType: "txt", inDirectory: "TestData") ?? "nonesense"

@@ -30,13 +30,13 @@ class PlantUMLContext {
         let linkTo = parent.name?.removeAngleBracketsWithContent() ?? "___"
         guard skipLinking(element: parent, basedOn: configuration.relationships.inheritance?.exclude) == false else { return }
         let namedConnection = (uniqElementAndTypes[linkTo] != nil) ? "\(uniqElementAndTypes[linkTo] ?? "--ERROR--")" : "inherits"
-        var linkTypeKey = item.name! + "LinkType"
+        var linkTypeKey = item.fullName! + "LinkType"
 
         if uniqElementAndTypes[linkTo] == "conforms to" {
             linkTypeKey = linkTo + "LinkType"
         }
 
-        var connect = "\(linkTo) \(uniqElementAndTypes[linkTypeKey] ?? "--ERROR--") \(item.name!)"
+        var connect = "\(linkTo) \(uniqElementAndTypes[linkTypeKey] ?? "--ERROR--") \(item.fullName!)"
         if let relStyle = relationshipStyle(for: namedConnection)?.plantuml {
             connect += " \(relStyle)"
         }
@@ -77,7 +77,7 @@ class PlantUMLContext {
     }
 
     func uniqName(item: SyntaxStructure, relationship: String) -> String {
-        guard let name = item.name else { return "" }
+        guard let name = item.fullName else { return "" }
         var newName = name
         let linkTypeKey = name + "LinkType"
         if uniqElementNames.contains(name) {
@@ -114,7 +114,7 @@ class PlantUMLContext {
     func collectNestedTypeConnections(items: [SyntaxStructure]) {
         for item in items where item.parent != nil {
             guard let name = uniqueNameForElement[item],
-                  let parentName = uniqueNameForElement[item.parent!]
+                  let parentName = uniqueNameForElement[item.parent!] ?? item.parent?.name
             else {
                 continue
             }

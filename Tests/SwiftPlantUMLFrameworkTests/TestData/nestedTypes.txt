@@ -1,10 +1,54 @@
 import Foundation
 
-public enum OuterOuter {
-    public static var test: String { "" }
-    public enum OuterOuter {
-        public enum Inner {
-            case aCase
-        }
+public enum APublic {
+    public enum BPublic {
+        public static func publicFuncDefinedInType() {}
     }
 }
+
+// Extension is declared public, so each top level member "inherits" that access level.
+public extension APublic.BPublic {
+    
+    // Hence this is public even if it is not annotated
+    static func hasAccessLevel() -> String { return "public" }
+    
+    // Also this class is public
+    class CPublic { // NEW: nested type defined in extension
+        // However, its members must be annotated. This is public
+        public static func publicFunc() {}
+        
+        // This is internal because no explicit access level modifier is used
+        static func internalFunc() {}
+    }
+}
+
+// Extension has no explicit access level modifier and therefore it is internal
+// so each top level member "inherits" that access level.
+extension APublic.BPublic {
+    
+    public static func publicFuncAddedInExtenion() {} // NEW: extending nested type
+    
+    class CInternal {
+        public static func publicFunc() {}
+    }
+}
+
+extension APublic.BPublic.CPublic {
+    public static func publicFuncAddedInExtenion() {} // NEW: extending nested type
+
+    static func internalFuncAddedInExtenion() {}
+    
+    private static func privateFuncAddedInExtenion() {}
+}
+
+private extension APublic.BPublic.CInternal {
+    private class DPrivate {
+        init() {}
+    }
+    
+    // compiles but `DPublic` will not be accessible as it is defined in a private extension
+    public class DPublic {
+        public init() {}
+    }
+}
+

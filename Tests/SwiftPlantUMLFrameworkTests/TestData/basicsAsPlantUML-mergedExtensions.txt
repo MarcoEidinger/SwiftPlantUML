@@ -3,6 +3,7 @@
 hide empty members
 skinparam shadowing false
 ' STYLE END
+set namespaceSeparator none
 
 
 class "aProtocol" as aProtocol << (P, GoldenRod) protocol >> {

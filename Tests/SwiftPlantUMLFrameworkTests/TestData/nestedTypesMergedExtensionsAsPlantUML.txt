@@ -1,0 +1,38 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+set namespaceSeparator none
+
+
+class "APublic" as APublic << (E, LightSteelBlue) enum >> {  
+}
+class "BPublic" as APublic.BPublic << (E, LightSteelBlue) enum >> { 
+  +{static} publicFuncDefinedInType()
+  +{static} hasAccessLevel() <&bolt>
+  +{static} publicFuncAddedInExtenion() <&bolt> 
+}
+class "CPublic" as APublic.BPublic.CPublic << (C, DarkSeaGreen) >> { 
+  +{static} publicFunc()
+  ~{static} internalFunc()
+  +{static} publicFuncAddedInExtenion() <&bolt>
+  ~{static} internalFuncAddedInExtenion() <&bolt>
+  -{static} privateFuncAddedInExtenion() <&bolt> 
+}
+class "CInternal" as APublic.BPublic.CInternal << (C, DarkSeaGreen) >> { 
+  +{static} publicFunc() 
+}
+class "DPrivate" as APublic.BPublic.CInternal.DPrivate << (C, DarkSeaGreen) >> { 
+  ~init() 
+}
+class "DPublic" as APublic.BPublic.CInternal.DPublic << (C, DarkSeaGreen) >> { 
+  +init() 
+}
+APublic+--APublic.BPublic
+APublic.BPublic+--APublic.BPublic.CPublic
+APublic.BPublic+--APublic.BPublic.CInternal
+APublic.BPublic.CInternal+--APublic.BPublic.CInternal.DPrivate
+APublic.BPublic.CInternal+--APublic.BPublic.CInternal.DPublic
+
+@enduml
