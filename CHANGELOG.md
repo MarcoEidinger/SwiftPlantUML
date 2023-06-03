@@ -1,3 +1,8 @@
+## [0.7.5](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.4...0.7.5) (2023-06-03)
+
+* 🐛 fix nested types in extensions (closes [#69](https://github.com/MarcoEidinger/SwiftPlantUML/issues/69))
+* 🐛 fix whitespaces for nested type relationships (closes [#70](https://github.com/MarcoEidinger/SwiftPlantUML/issues/70))
+
 ## [0.7.4](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.3...0.7.4) (2023-02-17)
 ### Bug Fixes
 
