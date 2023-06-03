@@ -118,7 +118,7 @@ class PlantUMLContext {
             else {
                 continue
             }
-            connections.append("\(parentName)+--\(name)")
+            connections.append("\(parentName) +-- \(name)")
         }
     }
 }
