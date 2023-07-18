@@ -67,4 +67,16 @@ final class FileCollectorTests: XCTestCase {
         let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: ["Level 0.swift"], exclude: ["Level 0.swift"]))
         XCTAssertEqual(files.count, 0)
     }
+    
+    func testFilesStartingFromDirectoryExcludingDirectories() {
+        let testDir = TestResources.path.stringByAppendingPathComponent("ProjectMock")
+        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: nil, exclude: ["Level 1/Level2/Level3"]))
+        XCTAssertEqual(files.count, 6)
+    }
+    
+    func testFilesStartingFromDirectoryIncludngAndExcludingDirectories() {
+        let testDir = TestResources.path.stringByAppendingPathComponent("ProjectMock")
+        let files = FileCollector().getFiles(for: ["."], in: testDir, honoring: FileOptions(include: ["Level 1/Level2"], exclude: ["Level 1/Level2/Level3"]))
+        XCTAssertEqual(files.count, 2)
+    }
 }

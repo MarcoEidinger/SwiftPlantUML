@@ -14,3 +14,22 @@ public struct FileOptions: Codable {
     /// paths to Swift source files to be excluded
     public var exclude: [String]? = []
 }
+
+extension FileOptions: CustomStringConvertible {
+    public var description: String {
+        let includeArray = include ?? []
+        let excludeArray = exclude ?? []
+        if includeArray.isEmpty && excludeArray.isEmpty {
+            return "no values"
+        } else {
+            if includeArray.isEmpty {
+                return "exclude: \(excludeArray.joined(separator: ", "))"
+            } else if excludeArray.isEmpty {
+                return "include: \(includeArray.joined(separator: ", "))"
+            } else {
+                return "include: \(includeArray.joined(separator: ", ")) && exclude: \(excludeArray.joined(separator: ", "))"
+            }
+        }
+
+    }
+}
