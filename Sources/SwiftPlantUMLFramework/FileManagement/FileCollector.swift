@@ -21,17 +21,20 @@ public struct FileCollector {
 
         if let include = fileOptions?.include, !include.isEmpty {
             searchPaths = ["."]
-            Logger.shared.info("paths will be ignored in favor of configuration (files:include: \(include.joined(separator: ", ")))")
         }
 
         let allFiles = getFiles(for: searchPaths, in: directory)
         var filesExcluded: [URL] = []
-
         if let exclude = fileOptions?.exclude, !exclude.isEmpty {
             excluded = expandGlobs(exclude.joined(separator: ","), in: directory)
         } else {
             filesNotExcluded = allFiles
         }
+        
+        if let fileOptions = fileOptions, fileOptions.someProvided {
+            Logger.shared.info("paths will be ignored in favor of configuration  \(fileOptions.description)")
+        }
+        
         excluded.forEach { glob in
             filesExcluded = allFiles.filter { glob.matches($0.path) == true }
             let notExcluded = allFiles.filter { glob.matches($0.path) == false }
@@ -95,5 +98,11 @@ public struct FileCollector {
         } else {
             return [url]
         }
+    }
+}
+
+fileprivate extension FileOptions {
+    var someProvided: Bool {
+        include?.isEmpty == false || exclude?.isEmpty == false
     }
 }

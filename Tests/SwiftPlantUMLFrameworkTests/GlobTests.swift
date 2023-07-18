@@ -59,6 +59,14 @@ class GlobsTests: XCTestCase {
         let directory = TestResources.path.stringByAppendingPathComponent("ProjectMock")
         XCTAssertEqual(matchGlobs(expandGlobs(path, in: directory), in: directory).count, 1)
     }
+    
+    func testExpandPathWithSubdirectoryAndNoWildcard() {
+        let path = "Level 1/Level2"
+        let directory = TestResources.path.stringByAppendingPathComponent("ProjectMock")
+        let expand = expandGlobs(path, in: directory)
+        let result = matchGlobs(expand, in: directory)
+        XCTAssertEqual(result.count, 1)
+    }
 
     // MARK: glob regex
 

@@ -20,7 +20,7 @@ internal enum Glob: CustomStringConvertible {
     internal func matches(_ path: String) -> Bool {
         switch self {
         case let .path(_path):
-            return _path == path
+            return _path == path || path.contains(_path)
         case let .regex(regex):
             let range = NSRange(location: 0, length: path.utf16.count)
             return regex.firstMatch(in: path, options: [], range: range) != nil
@@ -101,7 +101,6 @@ internal func expandGlobs(_ paths: String, in directory: String) -> [Glob] {
     }
 }
 
-// NOTE: currently only used for testing
 func matchGlobs(_ globs: [Glob], in directory: String) -> [URL] {
     var urls = [URL]()
     let keys: [URLResourceKey] = [.isDirectoryKey]
