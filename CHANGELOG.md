@@ -1,3 +1,7 @@
+## [0.7.6](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.5...0.7.6) (2023-07-21)
+
+* 🐛 fix: file options (include/exclude) without wildcard (closes [#73](https://github.com/MarcoEidinger/SwiftPlantUML/issues/73))
+
 ## [0.7.5](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.4...0.7.5) (2023-06-03)
 
 * 🐛 fix nested types in extensions (closes [#69](https://github.com/MarcoEidinger/SwiftPlantUML/issues/69))
