@@ -59,4 +59,15 @@ final class PlantUMLContextTests: XCTestCase {
 
         XCTAssertEqual(context.connections.count, 0)
     }
+    
+    func testAddLinkingEscapeName() {
+        let superclass = SyntaxStructure(kind: .class, name: "@unchecked Sendable")
+        let subclass = SyntaxStructure(kind: .class, name: "Yoo")
+        let context = PlantUMLContext()
+
+        _ = context.uniqName(item: subclass, relationship: "inherits")
+        context.addLinking(item: subclass, parent: superclass)
+
+        XCTAssertEqual(context.connections.first!, #""@unchecked Sendable" <|-- Yoo : inherits"#)
+    }
 }

@@ -27,7 +27,13 @@ class PlantUMLContext {
     var index = 0
 
     func addLinking(item: SyntaxStructure, parent: SyntaxStructure) {
-        let linkTo = parent.name?.removeAngleBracketsWithContent() ?? "___"
+        var linkTo = parent.name?.removeAngleBracketsWithContent() ?? "___"
+        
+        // escape names like "@unchecked Sendable" for PlantUML
+        if linkTo.starts(with: "@") {
+            linkTo = "\"\(linkTo)\""
+        }
+        
         guard skipLinking(element: parent, basedOn: configuration.relationships.inheritance?.exclude) == false else { return }
         let namedConnection = (uniqElementAndTypes[linkTo] != nil) ? "\(uniqElementAndTypes[linkTo] ?? "--ERROR--")" : "inherits"
         var linkTypeKey = item.fullName! + "LinkType"
