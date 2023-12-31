@@ -106,12 +106,16 @@ final class PlantUMLScriptTests: XCTestCase {
         let script = PlantUMLScript(items: items, configuration: config)
         XCTAssertTrue(script.text.contains(headerText))
     }
-    
+
     func testPackageAccessModifierE2E() {
         guard let items = try! SyntaxStructure.create(from: getTestFile(named: "packageAccessModifier"))?.substructure else { return XCTFail("cannot read test data") }
         let script = PlantUMLScript(items: items)
         let expected = try! getTestFileContent(named: "packageAccessModifierAsPlantUML")
-        XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+        #if swift(>=5.9)
+            XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+        #else
+            XCTAssertNotNil("Compiling SwiftPlantUML with a lower Swift version will have incorrect result, i.e. ~{static}package()~aStaticPackageInstanceMethod()")
+        #endif
     }
 
     func getTestFile(named: String = "basics") throws -> URL {
