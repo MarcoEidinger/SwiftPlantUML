@@ -18,12 +18,14 @@
 			"havingAccessLevel": [
                 "open",
 				"public",
+				"package",
 				"internal",
 				"private"
 			],
 			"showMembersWithAccessLevel": [
                 "open",
 				"public",
+				"package",
 				"internal",
 				"private"
 			],

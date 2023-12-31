@@ -6,6 +6,8 @@ public enum AccessLevel: String, Codable {
     case open
     /// `public`
     case `public`
+    /// `package`
+    case `package`
     /// `internal`
     case `internal`
     /// `private`

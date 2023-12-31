@@ -107,6 +107,17 @@ final class PlantUMLScriptTests: XCTestCase {
         XCTAssertTrue(script.text.contains(headerText))
     }
 
+    func testPackageAccessModifierE2E() {
+        guard let items = try! SyntaxStructure.create(from: getTestFile(named: "packageAccessModifier"))?.substructure else { return XCTFail("cannot read test data") }
+        let script = PlantUMLScript(items: items)
+        let expected = try! getTestFileContent(named: "packageAccessModifierAsPlantUML")
+        #if swift(>=5.9)
+            XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+        #else
+            XCTAssertNotNil("Compiling SwiftPlantUML with a lower Swift version will have incorrect result, i.e. ~{static}package()~aStaticPackageInstanceMethod()")
+        #endif
+    }
+
     func getTestFile(named: String = "basics") throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: named, ofType: "txt", inDirectory: "TestData") ?? "nonesense"

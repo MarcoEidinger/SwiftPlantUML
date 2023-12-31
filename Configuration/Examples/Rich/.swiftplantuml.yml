@@ -8,6 +8,7 @@ elements:
   - public
   showMembersWithAccessLevel:
   - public
+  - package
   - internal
   - private
   showGenerics: true
