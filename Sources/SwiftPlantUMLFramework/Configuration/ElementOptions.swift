@@ -3,9 +3,9 @@ import Foundation
 /// Options which and how elements shall be considered for class diagram generation
 public struct ElementOptions: Codable {
     /// only elements (classes, structs, ...) with the specified access level will be processed and rendered in the class diagram
-    public private(set) var havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private]
+    public private(set) var havingAccessLevel: [AccessLevel] = [.open, .public, .package, .internal, .private]
     /// only members (properties and functions) with the specified access level will be processed and renderd in the class diagram
-    public private(set) var showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private]
+    public private(set) var showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .package, .internal, .private]
 
     /// show nested types
     public private(set) var showNestedTypes: Bool = true
@@ -57,8 +57,8 @@ public struct ElementOptions: Codable {
 
     /// memberwise initializer
     public init(
-        havingAccessLevel: [AccessLevel] = [.open, .public, .internal, .private],
-        showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .internal, .private],
+        havingAccessLevel: [AccessLevel] = [.open, .public, .package, .internal, .private],
+        showMembersWithAccessLevel: [AccessLevel] = [.open, .public, .package, .internal, .private],
         showNestedTypes: Bool = true,
         showGenerics: Bool = true,
         showExtensions: ExtensionVisualization? = nil,

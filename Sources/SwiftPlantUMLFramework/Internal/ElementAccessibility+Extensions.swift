@@ -5,7 +5,7 @@ extension ElementAccessibility {
         switch self {
         case .public, .open:
             return "+"
-        case .internal:
+        case .internal, .package:
             return "~"
         case .private, .fileprivate:
             return "-"
