@@ -1,0 +1,5 @@
+import Foundation
+
+package struct anPackageInternalStruct {
+    static package func aStaticPackageInstanceMethod()
+}

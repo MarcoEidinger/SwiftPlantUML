@@ -106,6 +106,13 @@ final class PlantUMLScriptTests: XCTestCase {
         let script = PlantUMLScript(items: items, configuration: config)
         XCTAssertTrue(script.text.contains(headerText))
     }
+    
+    func testPackageAccessModifierE2E() {
+        guard let items = try! SyntaxStructure.create(from: getTestFile(named: "packageAccessModifier"))?.substructure else { return XCTFail("cannot read test data") }
+        let script = PlantUMLScript(items: items)
+        let expected = try! getTestFileContent(named: "packageAccessModifierAsPlantUML")
+        XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+    }
 
     func getTestFile(named: String = "basics") throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager

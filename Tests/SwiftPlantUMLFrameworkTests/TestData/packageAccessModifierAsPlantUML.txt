@@ -1,0 +1,11 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+set namespaceSeparator none
+
+
+class "anPackageInternalStruct" as anPackageInternalStruct << (S, SkyBlue) struct >> { ~{static} aStaticPackageInstanceMethod()
+}
+@enduml

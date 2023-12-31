@@ -64,8 +64,6 @@ class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
   ~{static} aStaticInternalMethod()
   ~anInternalComputedVar : AnEnum
 }
-class "anPackageInternalStruct" as anPackageInternalStruct << (S, SkyBlue) struct >> { ~{static} aStaticPackageInstanceMethod()
-}
 aClass <|-- anInternalSubClass : inherits
 aPrivateGenericClass <|-- aPrivateGenericSubClass : inherits
 

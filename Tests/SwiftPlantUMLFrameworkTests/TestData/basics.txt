@@ -118,7 +118,3 @@ public enum AnEnum {
         .simpleCase
     }
 }
-
-package struct anPackageInternalStruct {
-    static package func aStaticPackageInstanceMethod()
-}

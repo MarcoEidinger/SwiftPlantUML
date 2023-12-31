@@ -59,8 +59,6 @@ class "AnEnum" as AnEnum << (E, LightSteelBlue) enum >> {
   ~{static} aStaticInternalMethod()
   ~anInternalComputedVar : AnEnum
 }
-class "anPackageInternalStruct" as anPackageInternalStruct << (S, SkyBlue) struct >> { ~{static} aStaticPackageInstanceMethod()
-}
 class "aPublicStruct" as aPublicStruct0 << (X, Orchid) extension >> {
   +anExtensionComputedInstanceVar : String
   +anExtensionInstanceMethod(param1:param2:)
