@@ -1,3 +1,7 @@
+## [0.8.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.8.0...0.7.7) (2024-01-01)
+
+* ✨ feat: support `package` access level (PR [#78](https://github.com/MarcoEidinger/SwiftPlantUML/pull/78))
+
 ## [0.7.7](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.7.6...0.7.7) (2023-11-11)
 
 * 🐛 fix: incorrect PlantUMLScript when @unchecked Sendable present in Swift code (closes [#76](https://github.com/MarcoEidinger/SwiftPlantUML/issues/76))
