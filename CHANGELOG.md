@@ -1,3 +1,6 @@
+## [0.8.1](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.8.0...0.8.1) (2024-02-22)
+* 🐛 fix: When linking inheritedType, if the name includes `&`, separate and link it by @TTOzzi in https://github.com/MarcoEidinger/SwiftPlantUML/pull/82
+
 ## [0.8.0](https://github.com/MarcoEidinger/SwiftPlantUML/compare/0.8.0...0.7.7) (2024-01-01)
 
 * ✨ feat: support `package` access level (PR [#78](https://github.com/MarcoEidinger/SwiftPlantUML/pull/78))
