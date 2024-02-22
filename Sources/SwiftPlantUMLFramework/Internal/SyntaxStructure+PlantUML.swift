@@ -37,7 +37,16 @@ extension SyntaxStructure {
     private func addLinking(context: PlantUMLContext) {
         if inheritedTypes != nil, inheritedTypes!.count > 0 {
             inheritedTypes!.forEach { parent in
-                context.addLinking(item: self, parent: parent)
+                if parent.name?.contains("&") == true {
+                    parent.name?
+                        .components(separatedBy: "&")
+                        .forEach {
+                            let name = $0.trimmingCharacters(in: .whitespacesAndNewlines)
+                            context.addLinking(item: self, parent: SyntaxStructure(name: name))
+                        }
+                } else {
+                    context.addLinking(item: self, parent: parent)
+                }
             }
         }
     }
