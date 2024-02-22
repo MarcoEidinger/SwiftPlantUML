@@ -118,6 +118,31 @@ final class PlantUMLScriptTests: XCTestCase {
         #endif
     }
 
+    func testMultipleInheritanceSeparatedByAmpersand() {
+        let code = """
+        class MyClass: ProtocolA & ProtocolB {}
+        """
+        let items = SyntaxStructure.create(from: code)!.substructure
+        let script = PlantUMLScript(items: items!)
+        let expected = """
+        @startuml
+        ' STYLE START
+        hide empty members
+        skinparam shadowing false
+        ' STYLE END
+        set namespaceSeparator none
+
+
+        class "MyClass" as MyClass << (C, DarkSeaGreen) >> {
+        }
+        ProtocolA <|-- MyClass : inherits
+        ProtocolB <|-- MyClass : inherits
+
+        @enduml
+        """
+        XCTAssertEqual(script.text.noSpacesAndNoLineBreaks, expected.noSpacesAndNoLineBreaks)
+    }
+
     func getTestFile(named: String = "basics") throws -> URL {
         // https://stackoverflow.com/questions/47177036/use-resources-in-unit-tests-with-swift-package-manager
         let path = Bundle.module.path(forResource: named, ofType: "txt", inDirectory: "TestData") ?? "nonesense"
